@@ -504,6 +504,71 @@
         </section>
     </main>
 
+       <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
         <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Ralls. Semua hak cipta dilindungi.</p>
