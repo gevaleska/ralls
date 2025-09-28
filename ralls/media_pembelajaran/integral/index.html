@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Integral Interaktif</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <h1 class="header__title">Media Pembelajaran Integral Interaktif</h1>
+                <nav class="header__nav">
+                    <a href="#materi" class="nav-link">Materi</a>
+                    <a href="#simulasi" class="nav-link">Simulasi</a>
+                    <a href="#contoh-soal" class="nav-link">Contoh Soal</a>
+                    <a href="#games" class="nav-link">Games</a>
+                    <a href="#aplikasi" class="nav-link">Aplikasi</a>
+                    <a href="#kuis" class="nav-link">Kuis</a>
+                </nav>
+                <button id="theme-toggle" class="btn btn--secondary btn--sm">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">Selamat Datang di Dunia Integral!</h2>
+                <p class="hero__subtitle">Jelajahi konsep integral melalui pembelajaran interaktif yang menarik dan mudah dipahami</p>
+                <div class="hero__math">
+                    $$\int f(x) \, dx = F(x) + C$$
+                </div>
+                <button class="btn btn--primary btn--lg" onclick="scrollToSection('materi')">Mulai Belajar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section id="materi" class="section">
+        <div class="container">
+            <h2 class="section__title">Materi Pembelajaran</h2>
+            <div class="theory-grid">
+                <div class="theory-card" data-topic="definition">
+                    <h3>Pengertian Integral</h3>
+                    <div class="theory-content">
+                        <p>Integral adalah operasi matematika yang merupakan kebalikan dari diferensiasi. Integral digunakan untuk mencari antiturunan suatu fungsi dan menghitung luas di bawah kurva.</p>
+                        <div class="math-formula">$$\frac{d}{dx}\int f(x) \, dx = f(x)$$</div>
+                    </div>
+                </div>
+                <div class="theory-card" data-topic="types">
+                    <h3>Jenis-jenis Integral</h3>
+                    <div class="theory-content">
+                        <h4>Integral Tak Tentu</h4>
+                        <p>Integral tak tentu tidak memiliki batas dan menghasilkan fungsi plus konstanta integrasi C.</p>
+                        <div class="math-formula">$$\int f(x) \, dx = F(x) + C$$</div>
+                        <h4>Integral Tentu</h4>
+                        <p>Integral tentu memiliki batas atas dan batas bawah yang jelas, menghasilkan nilai numerik tertentu.</p>
+                        <div class="math-formula">$$\int_a^b f(x) \, dx = F(b) - F(a)$$</div>
+                    </div>
+                </div>
+                <div class="theory-card" data-topic="methods">
+                    <h3>Metode Integrasi</h3>
+                    <div class="theory-content">
+                        <ul class="method-list">
+                            <li><strong>Substitusi:</strong> Untuk fungsi komposit</li>
+                            <li><strong>Integrasi Parsial:</strong> Untuk perkalian fungsi</li>
+                            <li><strong>Pecahan Parsial:</strong> Untuk fungsi rasional</li>
+                            <li><strong>Substitusi Trigonometri:</strong> Untuk bentuk akar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="theory-card" data-topic="fundamental">
+                    <h3>Teorema Fundamental</h3>
+                    <div class="theory-content">
+                        <p>Teorema Fundamental Kalkulus menghubungkan konsep diferensiasi dan integrasi sebagai operasi yang saling berkebalikan.</p>
+                        <div class="math-formula">$$\int_a^b f'(x) \, dx = f(b) - f(a)$$</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulasi Section -->
+    <section id="simulasi" class="section section--bg">
+        <div class="container">
+            <h2 class="section__title">Simulasi Visual Integral</h2>
+            <div class="simulation-container">
+                <div class="simulation-controls">
+                    <div class="form-group">
+                        <label class="form-label">Fungsi f(x):</label>
+                        <select id="function-select" class="form-control">
+                            <option value="x*x">x²</option>
+                            <option value="Math.sin(x)">sin(x)</option>
+                            <option value="Math.cos(x)">cos(x)</option>
+                            <option value="x">x</option>
+                            <option value="Math.exp(x/2)">e^(x/2)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Batas Bawah (a):</label>
+                        <input type="range" id="lower-bound" min="-5" max="5" value="0" step="0.1" class="form-control">
+                        <span id="lower-value">0</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Batas Atas (b):</label>
+                        <input type="range" id="upper-bound" min="-5" max="5" value="2" step="0.1" class="form-control">
+                        <span id="upper-value">2</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Jumlah Pita Riemann:</label>
+                        <input type="range" id="riemann-slices" min="5" max="100" value="20" step="1" class="form-control">
+                        <span id="slices-value">20</span>
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="integral-canvas" width="600" height="400"></canvas>
+                    <div class="calculation-result">
+                        <p>Luas Perkiraan: <span id="area-result">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contoh Soal Section -->
+    <section id="contoh-soal" class="section">
+        <div class="container">
+            <h2 class="section__title">Contoh Soal</h2>
+            <div class="problem-tabs">
+                <button class="tab-btn active" data-level="basic">Dasar</button>
+                <button class="tab-btn" data-level="intermediate">Menengah</button>
+                <button class="tab-btn" data-level="advanced">Lanjut</button>
+            </div>
+            <div class="problem-container">
+                <div id="problem-content" class="problem-content">
+                    <!-- Problems will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section section--bg">
+        <div class="container">
+            <h2 class="section__title">Games Integral</h2>
+            <div class="games-grid">
+                <div class="game-card" data-game="quiz">
+                    <h3>Kuis Cepat</h3>
+                    <p>Uji pengetahuan Anda dengan soal-soal integral</p>
+                    <button class="btn btn--primary">Mulai Kuis</button>
+                </div>
+                <div class="game-card" data-game="match">
+                    <h3>Cocokkan Integral</h3>
+                    <p>Cocokkan fungsi dengan hasil integralnya</p>
+                    <button class="btn btn--primary">Mulai Game</button>
+                </div>
+                <div class="game-card" data-game="method">
+                    <h3>Pilih Metode</h3>
+                    <p>Pilih metode integrasi yang tepat</p>
+                    <button class="btn btn--primary">Mulai Game</button>
+                </div>
+            </div>
+            
+            <!-- Game Modal -->
+            <div id="game-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3 id="game-title">Kuis Integral</h3>
+                    <div id="game-content">
+                        <div class="quiz-container">
+                            <div class="quiz-progress">
+                                <div class="progress-bar">
+                                    <div id="progress" class="progress-fill"></div>
+                                </div>
+                                <span id="question-counter">1/5</span>
+                            </div>
+                            <div id="question-text" class="question-text">
+                                <!-- Question will be loaded here -->
+                            </div>
+                            <div id="options-container" class="options-container">
+                                <!-- Options will be loaded here -->
+                            </div>
+                            <div class="quiz-actions">
+                                <button id="next-question" class="btn btn--primary hidden">Soal Berikutnya</button>
+                                <button id="finish-quiz" class="btn btn--primary hidden">Selesai</button>
+                            </div>
+                            <div id="quiz-result" class="quiz-result hidden">
+                                <h4>Hasil Kuis</h4>
+                                <p>Skor Anda: <span id="final-score">0</span>/5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplikasi Section -->
+    <section id="aplikasi" class="section">
+        <div class="container">
+            <h2 class="section__title">Aplikasi Integral</h2>
+            <div class="applications-grid">
+                <div class="app-card">
+                    <h3>Fisika</h3>
+                    <h4>Menghitung jarak dari kecepatan</h4>
+                    <p>Integral digunakan untuk mencari perpindahan dari fungsi kecepatan.</p>
+                    <div class="math-example">
+                        $$s = \int v(t) \, dt$$
+                    </div>
+                    <div class="calculator">
+                        <input type="text" id="velocity-func" placeholder="Masukkan v(t) = t² + 2t" class="form-control">
+                        <button onclick="calculateDistance()" class="btn btn--secondary">Hitung Jarak</button>
+                        <div id="distance-result" class="calc-result"></div>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <h3>Teknik</h3>
+                    <h4>Menghitung volume benda putar</h4>
+                    <p>Integral digunakan untuk menghitung volume benda 3D yang dibentuk dengan memutar kurva.</p>
+                    <div class="math-example">
+                        $$V = \pi \int_a^b [f(x)]^2 \, dx$$
+                    </div>
+                    <div class="calculator">
+                        <input type="text" id="volume-func" placeholder="Masukkan f(x) = x" class="form-control">
+                        <button onclick="calculateVolume()" class="btn btn--secondary">Hitung Volume</button>
+                        <div id="volume-result" class="calc-result"></div>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <h3>Ekonomi</h3>
+                    <h4>Surplus konsumen dan produsen</h4>
+                    <p>Integral digunakan untuk menghitung surplus ekonomi dalam analisis pasar.</p>
+                    <div class="math-example">
+                        $$CS = \int_0^{Q_e} [D(q) - P_e] \, dq$$
+                    </div>
+                    <div class="calculator">
+                        <input type="text" id="demand-func" placeholder="Demand: 100 - 2q" class="form-control">
+                        <button onclick="calculateSurplus()" class="btn btn--secondary">Hitung Surplus</button>
+                        <div id="surplus-result" class="calc-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kuis Section -->
+    <section id="kuis" class="section section--bg">
+        <div class="container">
+            <h2 class="section__title">Kuis Interaktif</h2>
+            <div class="quiz-dashboard">
+                <div class="quiz-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-questions">0</span>
+                        <span class="stat-label">Total Soal</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="correct-answers">0</span>
+                        <span class="stat-label">Benar</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="accuracy-rate">0%</span>
+                        <span class="stat-label">Akurasi</span>
+                    </div>
+                </div>
+                <button id="start-main-quiz" class="btn btn--primary btn--lg">Mulai Kuis Utama</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Siriusly Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

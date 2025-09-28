@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksponen (Bilangan Berpangkat) - Media Pembelajaran Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                <span class="math-symbol">²</span>
+                Eksponen
+                <span class="math-symbol">³</span>
+            </h1>
+            <p class="header__subtitle">Media Pembelajaran Interaktif</p>
+            <div class="theorem-formula">
+                <span class="formula">aⁿ = a × a × a × ... (n kali)</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="btn btn--primary nav__btn active" data-section="beranda" id="nav-beranda">
+                    <span class="nav__icon">🏠</span>
+                    Beranda
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="teori" id="nav-teori">
+                    <span class="nav__icon">📚</span>
+                    Teori
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="sifat" id="nav-sifat">
+                    <span class="nav__icon">⚖️</span>
+                    Sifat Eksponen
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="simulasi" id="nav-simulasi">
+                    <span class="nav__icon">⚡</span>
+                    Simulasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="notasi" id="nav-notasi">
+                    <span class="nav__icon">🔢</span>
+                    Notasi Ilmiah
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="kalkulator" id="nav-kalkulator">
+                    <span class="nav__icon">🧮</span>
+                    Kalkulator
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="aplikasi" id="nav-aplikasi">
+                    <span class="nav__icon">🌍</span>
+                    Aplikasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="latihan" id="nav-latihan">
+                    <span class="nav__icon">📝</span>
+                    Latihan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Beranda Section -->
+            <section id="beranda-section" class="section active">
+                <div class="intro-hero">
+                    <h2>Pelajari Eksponen dengan Cara Interaktif</h2>
+                    <p>Memahami konsep bilangan berpangkat melalui visualisasi, simulasi, dan aplikasi nyata!</p>
+                    <div class="hero-visualization" id="hero-visualization">
+                        <canvas id="hero-canvas" width="400" height="250"></canvas>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <h3>Fitur Pembelajaran</h3>
+                    <div class="feature-cards">
+                        <div class="card feature-card" data-section="teori">
+                            <div class="feature-icon">📚</div>
+                            <h4>Teori Lengkap</h4>
+                            <p>Penjelasan konsep dasar eksponen dengan definisi dan contoh yang mudah dipahami</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="sifat">
+                            <div class="feature-icon">⚖️</div>
+                            <h4>8 Sifat Eksponen</h4>
+                            <p>Interaksi langsung dengan hukum-hukum eksponen dan pembuktian visual</p>
+                            <button class="btn btn--sm btn--primary">Jelajahi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="simulasi">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Simulasi Interaktif</h4>
+                            <p>Visualisasi pertumbuhan eksponensial dan manipulasi nilai secara real-time</p>
+                            <button class="btn btn--sm btn--primary">Coba →</button>
+                        </div>
+                        <div class="card feature-card" data-section="notasi">
+                            <div class="feature-icon">🔢</div>
+                            <h4>Notasi Ilmiah</h4>
+                            <p>Konverter otomatis untuk bilangan besar dan kecil dalam bentuk notasi ilmiah</p>
+                            <button class="btn btn--sm btn--primary">Konversi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="kalkulator">
+                            <div class="feature-icon">🧮</div>
+                            <h4>Kalkulator Eksponen</h4>
+                            <p>Multi-mode calculator untuk berbagai jenis perhitungan eksponen</p>
+                            <button class="btn btn--sm btn--primary">Hitung →</button>
+                        </div>
+                        <div class="card feature-card" data-section="aplikasi">
+                            <div class="feature-icon">🌍</div>
+                            <h4>Aplikasi Nyata</h4>
+                            <p>Contoh penerapan eksponen dalam kehidupan sehari-hari dan sains</p>
+                            <button class="btn btn--sm btn--primary">Lihat →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teori Section -->
+            <section id="teori-section" class="section">
+                <div class="theory-content">
+                    <h2>Konsep Dasar Eksponen</h2>
+                    
+                    <div class="theory-main">
+                        <div class="theory-text">
+                            <h3>Definisi Eksponen</h3>
+                            <div class="definition-box">
+                                <p>Eksponen adalah bilangan berpangkat yang menunjukkan berapa kali bilangan pokok (basis) dikalikan dengan dirinya sendiri</p>
+                                <div class="formula-box">
+                                    <span class="formula-main">aⁿ = a × a × a × ... (n kali)</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Komponen Eksponen</h3>
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <strong>a</strong> = Bilangan pokok (basis)
+                                </div>
+                                <div class="component-item">
+                                    <strong>n</strong> = Pangkat (eksponen)
+                                </div>
+                                <div class="component-item">
+                                    <strong>aⁿ</strong> = Hasil perpangkatan
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-visual">
+                            <canvas id="theory-visualization" width="350" height="280"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="examples-section">
+                        <h3>Contoh Perhitungan</h3>
+                        <div class="examples-grid">
+                            <div class="card example-card">
+                                <h4>2³ = ?</h4>
+                                <p><strong>Proses:</strong> 2 × 2 × 2 = 8</p>
+                                <p><strong>Hasil:</strong> 2³ = 8</p>
+                            </div>
+                            <div class="card example-card">
+                                <h4>5⁴ = ?</h4>
+                                <p><strong>Proses:</strong> 5 × 5 × 5 × 5 = 625</p>
+                                <p><strong>Hasil:</strong> 5⁴ = 625</p>
+                            </div>
+                            <div class="card example-card">
+                                <h4>10² = ?</h4>
+                                <p><strong>Proses:</strong> 10 × 10 = 100</p>
+                                <p><strong>Hasil:</strong> 10² = 100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sifat Eksponen Section -->
+            <section id="sifat-section" class="section">
+                <div class="laws-content">
+                    <h2>8 Sifat Eksponen</h2>
+                    
+                    <div class="laws-interactive">
+                        <div class="laws-selector">
+                            <h3>Pilih Sifat untuk Dipelajari</h3>
+                            <div class="law-buttons">
+                                <button class="btn btn--outline law-btn active" data-law="1">Perkalian Pangkat</button>
+                                <button class="btn btn--outline law-btn" data-law="2">Pembagian Pangkat</button>
+                                <button class="btn btn--outline law-btn" data-law="3">Pangkat dari Pangkat</button>
+                                <button class="btn btn--outline law-btn" data-law="4">Pangkat Perkalian</button>
+                                <button class="btn btn--outline law-btn" data-law="5">Pangkat Pembagian</button>
+                                <button class="btn btn--outline law-btn" data-law="6">Pangkat Nol</button>
+                                <button class="btn btn--outline law-btn" data-law="7">Pangkat Negatif</button>
+                                <button class="btn btn--outline law-btn" data-law="8">Pangkat Pecahan</button>
+                            </div>
+                        </div>
+                        
+                        <div class="law-display">
+                            <div class="card law-explanation">
+                                <h3 id="law-title">Sifat Perkalian Pangkat</h3>
+                                <div class="law-rule">
+                                    <span class="formula-main" id="law-formula">aᵐ × aⁿ = aᵐ⁺ⁿ</span>
+                                </div>
+                                <p id="law-description">Perkalian bilangan berpangkat dengan basis sama, pangkatnya dijumlahkan</p>
+                                <div class="law-example">
+                                    <h4>Contoh:</h4>
+                                    <p id="law-example-text">3² × 3⁴ = 3²⁺⁴ = 3⁶ = 729</p>
+                                </div>
+                                <div class="law-visual">
+                                    <canvas id="law-canvas" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulasi Section -->
+            <section id="simulasi-section" class="section">
+                <div class="simulation-content">
+                    <h2>Simulasi Interaktif</h2>
+                    
+                    <div class="simulation-tabs">
+                        <button class="btn btn--outline sim-tab active" data-sim="growth">Pertumbuhan Eksponensial</button>
+                        <button class="btn btn--outline sim-tab" data-sim="calculator">Kalkulator Visual</button>
+                        <button class="btn btn--outline sim-tab" data-sim="comparison">Perbandingan Basis</button>
+                    </div>
+                    
+                    <!-- Growth Simulation -->
+                    <div class="simulation-panel" id="growth-simulation">
+                        <div class="simulation-main">
+                            <div class="simulation-canvas">
+                                <h3>Visualisasi Pertumbuhan Eksponensial</h3>
+                                <div class="canvas-container">
+                                    <canvas id="growth-canvas" width="600" height="400"></canvas>
+                                </div>
+                                <div class="growth-controls">
+                                    <div class="control-group">
+                                        <label class="form-label">Basis (a): <span id="base-value">2</span></label>
+                                        <input type="range" id="base-slider" min="1.1" max="5" step="0.1" value="2" class="slider">
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="form-label">Pangkat maksimum: <span id="max-exp-value">8</span></label>
+                                        <input type="range" id="max-exp-slider" min="3" max="12" step="1" value="8" class="slider">
+                                    </div>
+                                    <button class="btn btn--primary" id="animate-growth">▶️ Animasi</button>
+                                    <button class="btn btn--outline" id="reset-growth">🔄 Reset</button>
+                                </div>
+                            </div>
+                            
+                            <div class="simulation-info">
+                                <div class="card values-display">
+                                    <h4>Nilai Perhitungan</h4>
+                                    <div id="calculation-steps"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calculator Simulation -->
+                    <div class="simulation-panel hidden" id="calculator-simulation">
+                        <div class="visual-calculator">
+                            <h3>Kalkulator Visual</h3>
+                            <div class="calc-input-section">
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Basis (a):</label>
+                                        <input type="number" id="visual-base" class="form-control" value="2" min="0.1" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Pangkat (n):</label>
+                                        <input type="number" id="visual-exp" class="form-control" value="3" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calculate-visual">Hitung</button>
+                                </div>
+                                <div class="calc-result-display">
+                                    <div id="visual-result" class="result-large">8</div>
+                                    <div id="visual-process" class="process-steps">2³ = 2 × 2 × 2 = 8</div>
+                                </div>
+                            </div>
+                            <div class="visual-representation">
+                                <canvas id="visual-calc-canvas" width="500" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comparison Simulation -->
+                    <div class="simulation-panel hidden" id="comparison-simulation">
+                        <div class="comparison-tool">
+                            <h3>Perbandingan Basis yang Berbeda</h3>
+                            <div class="comparison-controls">
+                                <div class="comparison-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Basis 1:</label>
+                                        <input type="number" id="compare-base1" class="form-control" value="2" min="1.1" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Basis 2:</label>
+                                        <input type="number" id="compare-base2" class="form-control" value="3" min="1.1" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Pangkat maksimum:</label>
+                                        <input type="number" id="compare-max-exp" class="form-control" value="6" min="3" max="10" step="1">
+                                    </div>
+                                    <button class="btn btn--primary" id="compare-bases">Bandingkan</button>
+                                </div>
+                            </div>
+                            <div class="comparison-chart">
+                                <canvas id="comparison-canvas" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notasi Ilmiah Section -->
+            <section id="notasi-section" class="section">
+                <div class="notation-content">
+                    <h2>Notasi Ilmiah (Bentuk Baku)</h2>
+                    
+                    <div class="notation-main">
+                        <div class="notation-theory">
+                            <h3>Definisi Notasi Ilmiah</h3>
+                            <div class="definition-box">
+                                <p>Notasi ilmiah adalah cara penulisan bilangan yang sangat besar atau sangat kecil dalam bentuk:</p>
+                                <div class="formula-box">
+                                    <span class="formula-main">a × 10ⁿ</span>
+                                </div>
+                                <p>dimana 1 ≤ |a| < 10 dan n adalah bilangan bulat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="notation-converter">
+                            <h3>Konverter Notasi Ilmiah</h3>
+                            <div class="card converter-card">
+                                <div class="converter-input">
+                                    <label class="form-label">Masukkan bilangan:</label>
+                                    <input type="text" id="number-input" class="form-control" placeholder="Contoh: 300000000 atau 0.000001">
+                                    <button class="btn btn--primary" id="convert-btn">Konversi</button>
+                                </div>
+                                
+                                <div class="converter-result">
+                                    <h4>Hasil Konversi:</h4>
+                                    <div id="conversion-result" class="conversion-display">
+                                        <p>Masukkan bilangan untuk melihat konversi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="notation-examples">
+                        <h3>Contoh Notasi Ilmiah</h3>
+                        <div class="examples-grid">
+                            <div class="card example-card">
+                                <h4>Kecepatan Cahaya</h4>
+                                <p><strong>Bilangan:</strong> 300,000,000 m/s</p>
+                                <p><strong>Notasi Ilmiah:</strong> 3 × 10⁸ m/s</p>
+                            </div>
+                            <div class="card example-card">
+                                <h4>Satu Nanometer</h4>
+                                <p><strong>Bilangan:</strong> 0.000000001 m</p>
+                                <p><strong>Notasi Ilmiah:</strong> 1 × 10⁻⁹ m</p>
+                            </div>
+                            <div class="card example-card">
+                                <h4>Bilangan Avogadro</h4>
+                                <p><strong>Bilangan:</strong> 602,000,000,000,000,000,000,000</p>
+                                <p><strong>Notasi Ilmiah:</strong> 6.02 × 10²³</p>
+                            </div>
+                            <div class="card example-card">
+                                <h4>Massa Proton</h4>
+                                <p><strong>Bilangan:</strong> 0.00000000000000000000000167 g</p>
+                                <p><strong>Notasi Ilmiah:</strong> 1.67 × 10⁻²⁴ g</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalkulator Section -->
+            <section id="kalkulator-section" class="section">
+                <div class="calculator-content">
+                    <h2>Kalkulator Eksponen</h2>
+                    
+                    <div class="calculator-main">
+                        <div class="calculator-modes">
+                            <h3>Mode Perhitungan</h3>
+                            <div class="mode-selector">
+                                <button class="btn btn--primary mode-btn active" data-mode="basic">Perhitungan Dasar</button>
+                                <button class="btn btn--outline mode-btn" data-mode="equation">Persamaan Eksponen</button>
+                                <button class="btn btn--outline mode-btn" data-mode="roots">Akar dan Pangkat Pecahan</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Basic Calculator -->
+                        <div class="calculator-panel" id="basic-calculator">
+                            <div class="calc-form">
+                                <div class="card">
+                                    <h3>Perhitungan aⁿ</h3>
+                                    <div class="input-group">
+                                        <label class="form-label">Basis (a):</label>
+                                        <input type="number" id="calc-base" class="form-control" value="2" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Pangkat (n):</label>
+                                        <input type="number" id="calc-exp" class="form-control" value="3" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-basic">Hitung</button>
+                                    
+                                    <div class="calc-result-section">
+                                        <h4>Hasil:</h4>
+                                        <div id="basic-result" class="result-display">
+                                            <p>Masukkan nilai dan tekan hitung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="calc-history">
+                                <div class="card">
+                                    <h4>Riwayat Perhitungan</h4>
+                                    <div id="calc-history" class="history-list">
+                                        <p class="history-empty">Belum ada perhitungan</p>
+                                    </div>
+                                    <button class="btn btn--outline btn--sm" id="clear-history">Hapus Riwayat</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Equation Calculator -->
+                        <div class="calculator-panel hidden" id="equation-calculator">
+                            <div class="equation-solver">
+                                <div class="card">
+                                    <h3>Persamaan Eksponen</h3>
+                                    <div class="equation-type-selector">
+                                        <label class="radio-label">
+                                            <input type="radio" name="equation-type" value="find-x" checked>
+                                            <span>Cari x dari aˣ = b</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="equation-type" value="find-base">
+                                            <span>Cari a dari aⁿ = b</span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="equation-inputs">
+                                        <div class="input-group">
+                                            <label class="form-label">Basis (a):</label>
+                                            <input type="number" id="eq-base" class="form-control" value="2" step="0.1" min="0.1">
+                                        </div>
+                                        <div class="input-group">
+                                            <label class="form-label">Hasil (b):</label>
+                                            <input type="number" id="eq-result" class="form-control" value="8" step="0.1" min="0">
+                                        </div>
+                                        <button class="btn btn--primary btn--full-width" id="solve-equation">Selesaikan</button>
+                                    </div>
+                                    
+                                    <div class="equation-result">
+                                        <h4>Solusi:</h4>
+                                        <div id="equation-solution" class="result-display">
+                                            <p>Masukkan nilai dan tekan selesaikan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Roots Calculator -->
+                        <div class="calculator-panel hidden" id="roots-calculator">
+                            <div class="roots-solver">
+                                <div class="card">
+                                    <h3>Akar dan Pangkat Pecahan</h3>
+                                    <div class="roots-inputs">
+                                        <div class="input-group">
+                                            <label class="form-label">Bilangan (a):</label>
+                                            <input type="number" id="root-number" class="form-control" value="27" min="0" step="0.1">
+                                        </div>
+                                        <div class="input-group">
+                                            <label class="form-label">Indeks akar (n):</label>
+                                            <input type="number" id="root-index" class="form-control" value="3" min="2" step="1">
+                                        </div>
+                                        <button class="btn btn--primary btn--full-width" id="calc-root">Hitung Akar</button>
+                                    </div>
+                                    
+                                    <div class="roots-result">
+                                        <h4>Hasil:</h4>
+                                        <div id="roots-solution" class="result-display">
+                                            <p>Masukkan nilai dan tekan hitung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Section -->
+            <section id="aplikasi-section" class="section">
+                <div class="applications-content">
+                    <h2>Aplikasi Eksponen dalam Kehidupan</h2>
+                    
+                    <div class="apps-grid">
+                        <div class="app-card">
+                            <h3>💰 Bunga Majemuk</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> A = P(1 + r)ᵗ</p>
+                                    <p>Menghitung pertumbuhan investasi dengan bunga majemuk</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Modal Awal (P):</label>
+                                        <input type="number" id="principal" class="form-control" value="10000000" step="100000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Suku Bunga (%) per tahun:</label>
+                                        <input type="number" id="interest-rate" class="form-control" value="8" step="0.1" min="0">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (tahun):</label>
+                                        <input type="number" id="time-years" class="form-control" value="5" step="1" min="1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-compound">Hitung</button>
+                                    <div id="compound-result" class="app-result"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>📈 Pertumbuhan Populasi</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> P(t) = P₀ × rᵗ</p>
+                                    <p>Model pertumbuhan populasi bakteri atau organisme</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Populasi Awal:</label>
+                                        <input type="number" id="initial-pop" class="form-control" value="1000" step="100">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Faktor Pertumbuhan:</label>
+                                        <input type="number" id="growth-factor" class="form-control" value="2" step="0.1" min="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (jam):</label>
+                                        <input type="number" id="time-hours" class="form-control" value="5" step="1" min="0">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-population">Hitung</button>
+                                    <div id="population-result" class="app-result"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>💾 Penyimpanan Digital</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Konsep:</strong> 1 KB = 2¹⁰ bytes, 1 MB = 2²⁰ bytes</p>
+                                    <p>Konversi satuan penyimpanan digital</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Nilai:</label>
+                                        <input type="number" id="storage-value" class="form-control" value="1" step="0.1" min="0">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Dari:</label>
+                                        <select id="storage-from" class="form-control">
+                                            <option value="byte">Byte</option>
+                                            <option value="kb">KB</option>
+                                            <option value="mb">MB</option>
+                                            <option value="gb" selected>GB</option>
+                                            <option value="tb">TB</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Ke:</label>
+                                        <select id="storage-to" class="form-control">
+                                            <option value="byte" selected>Byte</option>
+                                            <option value="kb">KB</option>
+                                            <option value="mb">MB</option>
+                                            <option value="gb">GB</option>
+                                            <option value="tb">TB</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-storage">Konversi</button>
+                                    <div id="storage-result" class="app-result"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>☢️ Peluruhan Radioaktif</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> N(t) = N₀ × (1/2)^(t/T)</p>
+                                    <p>Model peluruhan zat radioaktif dengan waktu paruh</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Jumlah Awal:</label>
+                                        <input type="number" id="initial-amount" class="form-control" value="1000" step="10">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu Paruh (tahun):</label>
+                                        <input type="number" id="half-life" class="form-control" value="5730" step="100">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (tahun):</label>
+                                        <input type="number" id="decay-time" class="form-control" value="1000" step="100">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-decay">Hitung</button>
+                                    <div id="decay-result" class="app-result"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Section -->
+            <section id="latihan-section" class="section">
+                <div class="practice-content">
+                    <h2>Latihan Soal</h2>
+                    
+                    <div class="practice-main">
+                        <div class="problem-container">
+                            <div class="card current-problem">
+                                <div class="problem-header">
+                                    <h3>Soal <span id="problem-number">1</span> dari <span id="total-problems">8</span></h3>
+                                    <div class="problem-score">
+                                        <span>Skor: <span id="current-score">0</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="problem-content">
+                                    <p id="problem-text">Hitunglah 2⁵</p>
+                                    
+                                    <div class="answer-input">
+                                        <label class="form-label">Jawaban:</label>
+                                        <input type="text" id="answer-input" class="form-control" placeholder="Masukkan jawaban Anda">
+                                        <div class="answer-buttons">
+                                            <button class="btn btn--primary" id="check-answer">✓ Periksa</button>
+                                            <button class="btn btn--outline" id="show-hint">💡 Petunjuk</button>
+                                            <button class="btn btn--outline" id="show-solution">📝 Pembahasan</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="answer-feedback" id="answer-feedback"></div>
+                                    
+                                    <div class="problem-navigation">
+                                        <button class="btn btn--outline" id="prev-problem" disabled>← Sebelumnya</button>
+                                        <button class="btn btn--primary" id="next-problem">Selanjutnya →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-sidebar">
+                            <div class="card progress-card">
+                                <h4>Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="progress-text"><span id="completed-problems">0</span> dari <span id="total-problems-2">8</span> soal selesai</p>
+                            </div>
+                            
+                            <div class="card stats-card">
+                                <h4>Statistik</h4>
+                                <div class="stat-item">
+                                    <span class="stat-label">Benar:</span>
+                                    <span class="stat-value" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Salah:</span>
+                                    <span class="stat-value" id="wrong-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Akurasi:</span>
+                                    <span class="stat-value" id="accuracy">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card help-card">
+                                <h4>Tips</h4>
+                                <ul>
+                                    <li>Pahami definisi eksponen sebagai perkalian berulang</li>
+                                    <li>Gunakan sifat-sifat eksponen untuk menyederhanakan</li>
+                                    <li>Perhatikan tanda pangkat (positif/negatif)</li>
+                                    <li>Ingat bahwa a⁰ = 1 untuk a ≠ 0</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Media Pembelajaran Eksponen</h3>
+                    <p>Platform interaktif untuk mempelajari konsep eksponen (bilangan berpangkat) dengan simulasi, visualisasi, dan aplikasi nyata</p>
+                </div>
+                
+                <div class="footer-creator">
+                    <div class="creator-info">
+                        <h4>👨‍🎓 Dibuat oleh: Geraldi Valeska</h4>
+                        <p class="creator-title">Pembuat Media Pembelajaran</p>
+                        <p class="creation-date">📅 September 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ralls. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

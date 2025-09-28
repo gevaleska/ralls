@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ralls - Transforming Education Through Innovation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>Ralls</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home">Beranda</a>
+                    <a href="#services">Layanan</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">Ralls</h1>
+                <p class="hero-subtitle animate-fade-in delay-1">Transforming Education Through Innovation</p>
+                <p class="hero-description animate-fade-in delay-2">
+                    Platform terdepan yang menyediakan solusi pembelajaran digital dan layanan pendidikan terpadu 
+                    untuk mendukung proses belajar mengajar yang efektif dan menyenangkan.
+                </p>
+                <div class="hero-cta animate-fade-in delay-3">
+                    <a href="#services" class="btn btn--primary btn--lg">Jelajahi Layanan Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Layanan Kami</h2>
+                <p class="section-subtitle">Temukan berbagai solusi pembelajaran dan layanan digital yang kami tawarkan</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Mathematics Learning Media -->
+                <div class="service-card" data-service="matematika">
+                    <div class="service-icon">🧮</div>
+                    <h3 class="service-title">Media Pembelajaran Matematika</h3>
+                    <p class="service-description">
+                        Platform pembelajaran matematika interaktif dengan berbagai tools dan simulasi. 
+                        Membantu siswa memahami konsep matematika dengan cara yang menyenangkan dan efektif.
+                    </p>
+                    <a href="../ralls/index.html"
+                        class="service-link btn btn--primary"
+                        onclick="event.preventDefault(); showNavigationMessage('matematika', this.href);">
+                        Kunjungi
+                        </a>
+                </div>
+
+                <!-- Science Learning Media -->
+                <div class="service-card" data-service="ipa">
+                    <div class="service-icon">🔬</div>
+                    <h3 class="service-title">Media Pembelajaran IPA</h3>
+                    <p class="service-description">
+                        Koleksi media pembelajaran sains yang komprehensif untuk semua tingkat. 
+                        Dilengkapi dengan simulasi virtual dan eksperimen digital yang aman.
+                    </p>
+                    <a href="../ralls/lab_ipa/index.html" 
+                        class="service-link btn btn--primary" 
+                        onclick="event.preventDefault(); showNavigationMessage('ipa', this.href);">
+                        Kunjungi
+                        </a>
+                </div>
+
+                <!-- Ralls Academy -->
+                <div class="service-card" data-service="academy">
+                    <div class="service-icon">🎓</div>
+                    <h3 class="service-title">Ralls Academy</h3>
+                    <p class="service-description">
+                        Program bimbingan belajar dan kursus online berkualitas tinggi. 
+                        Memberikan pendampingan akademik dengan metode pembelajaran yang terbukti efektif.
+                    </p>
+                    <a href="https://www.siriusly.my.id" 
+                        class="service-link btn btn--primary" 
+                        onclick="event.preventDefault(); showNavigationMessage('academy', this.href);">
+                        Kunjungi
+                        </a>
+                </div>
+
+                <!-- Ralls Digital -->
+                <div class="service-card" data-service="digital">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Ralls Digital</h3>
+                    <p class="service-description">
+                        Layanan pengembangan website, aplikasi, dan solusi digital untuk pendidikan. 
+                        Membantu institusi pendidikan dalam transformasi digital.
+                    </p>
+                    <a href="https://www.siriusly.my.id/siriusly_digital/index.html" 
+                        class="service-link btn btn--primary" 
+                        onclick="event.preventDefault(); showNavigationMessage('digital', this.href);">
+                        Kunjungi
+                        </a>
+                </div>
+
+                <!-- Online Shop -->
+                <div class="service-card" data-service="shop">
+                    <div class="service-icon">🛒</div>
+                    <h3 class="service-title">Online Shop</h3>
+                    <p class="service-description">
+                        Toko online menyediakan berbagai produk edukatif, buku pembelajaran, dan perangkat pendidikan. 
+                        Semua kebutuhan belajar dalam satu tempat.
+                    </p>
+                    <a href="#" 
+                        class="service-link btn btn--primary" 
+                        onclick="event.preventDefault(); showNavigationMessage('shop', this.href);">
+                        Kunjungi
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Tentang Ralls</h2>
+                    <p>
+                        Ralls hadir sebagai solusi terdepan dalam dunia pendidikan digital. Kami berkomitmen 
+                        untuk mentransformasi cara belajar dan mengajar melalui inovasi teknologi yang 
+                        mudah diakses dan efektif.
+                    </p>
+                    <p>
+                        Dengan tim yang berpengalaman dan passionate di bidang pendidikan, kami menyediakan 
+                        berbagai platform pembelajaran interaktif, layanan pengembangan digital, dan 
+                        program akademik yang disesuaikan dengan kebutuhan modern.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">✨</div>
+                            <div class="feature-text">
+                                <h4>Inovasi Berkelanjutan</h4>
+                                <p>Selalu mengembangkan solusi terbaru untuk pendidikan</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-text">
+                                <h4>Fokus pada Hasil</h4>
+                                <p>Mengutamakan efektivitas dan hasil pembelajaran</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🤝</div>
+                            <div class="feature-text">
+                                <h4>Kolaborasi Terpercaya</h4>
+                                <p>Membangun kemitraan jangka panjang dengan klien</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">Siap membantu transformasi pendidikan Anda</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>gerallsvaleska@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+62 813-1377-2566</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Cimahi, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="https://fb.com/geraldi.hp" class="social-link" target="_blank">Facebook</a>
+                        <a href="https://instagram.com/alls_valeska" class="social-link" target="_blank">Instagram</a>
+                        <a href="https://www.linkedin.com/in/geraldi-valeska-643861216?originalSubdomain=id" class="social-link" target="_blank">LinkedIn</a>
+                        <a href="https://youtube.com/@gerallsvaleska" class="social-link" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Ralls</h3>
+                    <p>Transforming Education Through Innovation</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Ralls. Semua hak cipta dilindungi.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

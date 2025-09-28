@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Matematika Dasar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        .btn {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-option.selected {
+            transform: scale(1.05);
+        }
+        .btn-option.correct {
+            background-color: #10B981; /* Emerald-500 */
+            color: white;
+            border-color: #059669;
+        }
+        .btn-option.incorrect {
+            background-color: #EF4444; /* Red-500 */
+            color: white;
+            border-color: #DC2626;
+        }
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Konten utama -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-2xl mx-auto">
+            <!-- semua layar start-screen, quiz-screen, result-screen -->
+        </div>
+    </main>
+    <div class="w-full max-w-2xl mx-auto">
+        <!-- Layar Mulai -->
+        <div id="start-screen" class="card p-8 md:p-12 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Selamat Datang di Kuis Matematika!</h1>
+            <p class="text-gray-600 mb-8 text-lg">Uji kemampuan matematika dasarmu (penjumlahan, pengurangan, perkalian, dan pembagian) dalam 20 soal seru.</p>
+            <button id="start-btn" class="w-full md:w-auto bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-xl btn hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Mulai Kuis
+            </button>
+        </div>
+
+        <!-- Layar Kuis -->
+        <div id="quiz-screen" class="card p-6 md:p-10 hidden">
+            <!-- Header Kuis -->
+            <div class="flex justify-between items-center mb-6">
+                <p class="text-sm font-semibold text-gray-500">Soal <span id="question-number">1</span> dari 20</p>
+                <p class="text-sm font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Skor: <span id="score">0</span></p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full progress-bar-fill" style="width: 5%"></div>
+            </div>
+
+            <!-- Pertanyaan -->
+            <div class="mb-8 min-h-[80px] flex items-center justify-center">
+                 <h2 id="question-text" class="text-4xl md:text-5xl font-bold text-center text-gray-800">12 x 5 = ?</h2>
+            </div>
+
+            <!-- Pilihan Jawaban -->
+            <div id="answer-options" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <!-- Opsi akan di-generate oleh JavaScript -->
+            </div>
+            
+            <button id="next-btn" class="w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg btn hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                Selanjutnya
+            </button>
+        </div>
+
+        <!-- Layar Hasil -->
+        <div id="result-screen" class="card p-8 md:p-12 text-center hidden">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Kuis Selesai!</h1>
+            <p class="text-gray-600 mb-6 text-lg">Berikut adalah hasil dan analisis belajarmu.</p>
+            
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 mb-8">
+                <p class="text-xl text-blue-800">Skor Akhir Kamu</p>
+                <p id="final-score" class="text-6xl font-bold text-blue-600 my-2">85</p>
+                <p id="score-text" class="text-lg text-blue-700 font-medium">17 dari 20 soal benar</p>
+            </div>
+            
+            <div class="text-left space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 border-b-2 pb-2">Analisis Kemampuan</h3>
+                    <div id="analysis-strengths" class="p-4 bg-green-50 text-green-800 rounded-lg">
+                        <h4 class="font-bold mb-2">Kelebihan Kamu:</h4>
+                        <ul id="strengths-list" class="list-disc list-inside">
+                            <!-- Diisi oleh JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                     <div id="analysis-weaknesses" class="p-4 bg-red-50 text-red-800 rounded-lg">
+                        <h4 class="font-bold mb-2">Perlu Ditingkatkan:</h4>
+                        <ul id="weaknesses-list" class="list-disc list-inside">
+                             <!-- Diisi oleh JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <button id="retry-btn" class="mt-10 w-full md:w-auto bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-xl btn hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Coba Lagi
+            </button>
+        </div>
+    </div>
+  <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm py-4">
+        © 2025 Siriusly Digital. All rights reserved.
+    </footer>
+<script>
+    // --- ELEMEN DOM ---
+    const startScreen = document.getElementById('start-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultScreen = document.getElementById('result-screen');
+    
+    const startBtn = document.getElementById('start-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const retryBtn = document.getElementById('retry-btn');
+    
+    const questionNumberEl = document.getElementById('question-number');
+    const scoreEl = document.getElementById('score');
+    const progressBar = document.getElementById('progress-bar');
+    const questionTextEl = document.getElementById('question-text');
+    const answerOptionsEl = document.getElementById('answer-options');
+    
+    const finalScoreEl = document.getElementById('final-score');
+    const scoreTextEl = document.getElementById('score-text');
+    const strengthsList = document.getElementById('strengths-list');
+    const weaknessesList = document.getElementById('weaknesses-list');
+    const analysisStrengthsEl = document.getElementById('analysis-strengths');
+    const analysisWeaknessesEl = document.getElementById('analysis-weaknesses');
+
+    // --- STATE KUIS ---
+    const TOTAL_QUESTIONS = 20;
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let userAnswers = []; // Untuk analisis { questionType, isCorrect }
+
+    // --- FUNGSI LOGIKA KUIS ---
+
+    /**
+     * Menghasilkan pertanyaan matematika acak
+     */
+    function generateQuestion() {
+        const operators = ['+', '-', '*', '/'];
+        const operator = operators[Math.floor(Math.random() * operators.length)];
+        let num1, num2, question, answer, type;
+
+        switch (operator) {
+            case '+':
+                num1 = Math.floor(Math.random() * 50) + 1;
+                num2 = Math.floor(Math.random() * 50) + 1;
+                answer = num1 + num2;
+                question = `${num1} + ${num2} = ?`;
+                type = 'Penjumlahan';
+                break;
+            case '-':
+                num1 = Math.floor(Math.random() * 50) + 20;
+                num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
+                answer = num1 - num2;
+                question = `${num1} - ${num2} = ?`;
+                type = 'Pengurangan';
+                break;
+            case '*':
+                num1 = Math.floor(Math.random() * 12) + 2;
+                num2 = Math.floor(Math.random() * 12) + 2;
+                answer = num1 * num2;
+                question = `${num1} × ${num2} = ?`;
+                type = 'Perkalian';
+                break;
+            case '/':
+                num2 = Math.floor(Math.random() * 10) + 2;
+                answer = Math.floor(Math.random() * 10) + 2;
+                num1 = num2 * answer;
+                question = `${num1} ÷ ${num2} = ?`;
+                type = 'Pembagian';
+                break;
+        }
+
+        return { question, answer, type };
+    }
+
+    /**
+     * Menghasilkan opsi jawaban (1 benar, 3 salah) dan mengacaknya
+     */
+    function generateAnswerOptions(correctAnswer) {
+        let options = new Set([correctAnswer]);
+        while (options.size < 4) {
+            const offset = Math.floor(Math.random() * 10) - 5 || 1;
+            options.add(correctAnswer + offset);
+        }
+        return Array.from(options).sort(() => Math.random() - 0.5);
+    }
+
+    /**
+     * Memulai kuis
+     */
+    function startQuiz() {
+        // Reset state
+        questions = [];
+        currentQuestionIndex = 0;
+        score = 0;
+        userAnswers = [];
+        
+        // Generate 20 pertanyaan baru
+        for (let i = 0; i < TOTAL_QUESTIONS; i++) {
+            questions.push(generateQuestion());
+        }
+
+        // Tampilkan layar kuis
+        startScreen.classList.add('hidden');
+        resultScreen.classList.add('hidden');
+        quizScreen.classList.remove('hidden');
+
+        displayQuestion();
+    }
+
+    /**
+     * Menampilkan pertanyaan dan opsi jawaban saat ini
+     */
+    function displayQuestion() {
+        if (currentQuestionIndex >= TOTAL_QUESTIONS) {
+            showResults();
+            return;
+        }
+        
+        const currentQuestion = questions[currentQuestionIndex];
+        const options = generateAnswerOptions(currentQuestion.answer);
+
+        // Update UI
+        questionNumberEl.textContent = currentQuestionIndex + 1;
+        scoreEl.textContent = score;
+        questionTextEl.textContent = currentQuestion.question;
+        progressBar.style.width = `${((currentQuestionIndex + 1) / TOTAL_QUESTIONS) * 100}%`;
+        
+        answerOptionsEl.innerHTML = '';
+        options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.classList.add('btn', 'btn-option', 'w-full', 'p-4', 'text-lg', 'font-semibold', 'border-2', 'rounded-lg', 'bg-white', 'text-gray-700', 'border-gray-300', 'hover:border-blue-500', 'hover:text-blue-600');
+            button.onclick = () => selectAnswer(button, option);
+            answerOptionsEl.appendChild(button);
+        });
+
+        nextBtn.disabled = true;
+    }
+
+    /**
+     * Dipanggil ketika pengguna memilih jawaban
+     */
+    function selectAnswer(selectedButton, selectedAnswer) {
+        const currentQuestion = questions[currentQuestionIndex];
+        const isCorrect = selectedAnswer === currentQuestion.answer;
+        
+        userAnswers.push({ questionType: currentQuestion.type, isCorrect: isCorrect });
+
+        if (isCorrect) {
+            score++;
+            scoreEl.textContent = score;
+            selectedButton.classList.add('correct');
+        } else {
+            selectedButton.classList.add('incorrect');
+            // Tampilkan jawaban yang benar
+            Array.from(answerOptionsEl.children).forEach(btn => {
+                if (parseInt(btn.textContent) === currentQuestion.answer) {
+                    btn.classList.add('correct');
+                }
+            });
+        }
+        
+        // Nonaktifkan semua tombol pilihan
+        Array.from(answerOptionsEl.children).forEach(btn => {
+            btn.disabled = true;
+        });
+        
+        nextBtn.disabled = false;
+    }
+
+    /**
+     * Menampilkan hasil akhir dan analisis
+     */
+    function showResults() {
+        quizScreen.classList.add('hidden');
+        resultScreen.classList.remove('hidden');
+
+        const finalPercentage = Math.round((score / TOTAL_QUESTIONS) * 100);
+        finalScoreEl.textContent = finalPercentage;
+        scoreTextEl.textContent = `${score} dari ${TOTAL_QUESTIONS} soal benar`;
+        
+        analyzeAnswers();
+    }
+    
+    /**
+     * Menganalisis jawaban pengguna untuk kelebihan & kekurangan
+     */
+    function analyzeAnswers() {
+        const analysis = {
+            'Penjumlahan': { correct: 0, total: 0 },
+            'Pengurangan': { correct: 0, total: 0 },
+            'Perkalian': { correct: 0, total: 0 },
+            'Pembagian': { correct: 0, total: 0 },
+        };
+
+        userAnswers.forEach(answer => {
+            if (analysis[answer.questionType]) {
+                analysis[answer.questionType].total++;
+                if (answer.isCorrect) {
+                    analysis[answer.questionType].correct++;
+                }
+            }
+        });
+
+        strengthsList.innerHTML = '';
+        weaknessesList.innerHTML = '';
+
+        let hasStrengths = false;
+        let hasWeaknesses = false;
+
+        for (const type in analysis) {
+            if (analysis[type].total > 0) {
+                const accuracy = (analysis[type].correct / analysis[type].total) * 100;
+                const listItem = document.createElement('li');
+                listItem.textContent = `${type} (${Math.round(accuracy)}% benar)`;
+
+                if (accuracy >= 75) {
+                    strengthsList.appendChild(listItem);
+                    hasStrengths = true;
+                } else if (accuracy <= 50) {
+                    weaknessesList.appendChild(listItem);
+                    hasWeaknesses = true;
+                }
+            }
+        }
+        
+        if (!hasStrengths) {
+            strengthsList.innerHTML = '<li>Tidak ada kelebihan menonjol, teruslah berlatih secara merata!</li>';
+        }
+        if (!hasWeaknesses) {
+            weaknessesList.innerHTML = '<li>Kerja bagus! Tidak ada kelemahan yang signifikan.</li>';
+        }
+
+        analysisStrengthsEl.style.display = hasStrengths || !hasWeaknesses ? 'block' : 'none';
+        analysisWeaknessesEl.style.display = hasWeaknesses ? 'block' : 'none';
+    }
+
+
+    // --- EVENT LISTENERS ---
+    startBtn.addEventListener('click', startQuiz);
+    nextBtn.addEventListener('click', () => {
+        currentQuestionIndex++;
+        displayQuestion();
+    });
+    retryBtn.addEventListener('click', startQuiz);
+</script>
+</body>
+</html>
