@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Matematika - Platform Interaktif</title>
+    <meta name="description" content="Platform interaktif untuk belajar matematika dengan berbagai alat pembelajaran yang menarik dan mudah digunakan">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mathematical Symbols Background -->
+    <div class="math-symbols-bg" id="math-symbols-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <span class="logo-icon">∫</span>
+                    <span class="logo-text">Siriusly Media</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#beranda" class="nav-link active">Beranda</a>
+                    <a href="#alat-pembelajaran" class="nav-link">Media Pembelajaran</a>
+                    <a href="#tentang" class="nav-link">Tentang</a>
+                    <a href="#testimoni" class="nav-link">Testimoni</a>
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-background">
+            <div class="geometric-shapes"></div>
+            <div class="floating-formulas" id="floating-formulas"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-main">Media Pembelajaran</span>
+                        <span class="title-accent">Matematika</span>
+                    </h1>
+                    <p class="hero-subtitle">Platform Interaktif untuk Belajar Matematika</p>
+                    <p class="hero-description">Kumpulan alat pembelajaran matematika interaktif yang dirancang khusus untuk mendukung proses belajar mengajar di tingkat SMP, SMA, dan SMK</p>
+                    <div class="hero-creator">
+                        <span class="creator-label">Dikembangkan oleh:</span>
+                        <span class="creator-name">Siriusly Digital</span>
+                        <span class="creator-title">Platform media pembelajaran matematika</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#alat-pembelajaran" class="btn btn--primary btn--lg">
+                            <span>Jelajahi Media Pembelajaran</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="#tentang" class="btn btn--outline btn--lg">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="calculator-animation">
+                        <div class="calc-screen">
+                            <span class="calc-display" id="calc-display">π = 3.14159...</span>
+                        </div>
+                        <div class="calc-grid">
+                            <div class="calc-btn">√</div>
+                            <div class="calc-btn">x²</div>
+                            <div class="calc-btn">π</div>
+                            <div class="calc-btn">∫</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll untuk menjelajahi</span>
+        </div>
+    </section>
+
+    <!-- Learning Tools Section -->
+    <section id="alat-pembelajaran" class="learning-tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Media Pembelajaran Interaktif</h2>
+                <p class="section-subtitle">Pilih media pembelajaran yang sesuai dengan kebutuhan belajar Kamu</p>
+            </div>
+            
+            <!-- Search and Filter -->
+            <div class="tools-controls">
+                <div class="search-container">
+                    <input type="text" id="search-tools" class="search-input" placeholder="Cari alat pembelajaran...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-container">
+                    <label for="grade-filter" class="filter-label">Tingkat:</label>
+                    <select id="grade-filter" class="filter-select form-control">
+                        <option value="all">Semua Tingkat</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="SMK">SMK</option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label for="category-filter" class="filter-label">Kategori:</label>
+                    <select id="category-filter" class="filter-select form-control">
+                        <option value="all">Semua Kategori</option>
+                        <option value="Arithmetic">Aritmatika</option>
+                        <option value="Algebra">Aljabar</option>
+                        <option value="Geometry">Geometri</option>
+                        <option value="Trigonometry">Trigonometri</option>
+                        <option value="Statistics">Statistika</option>
+                        <option value="Assessment">Penilaian</option>
+                        <option value="Tools">Alat Bantu</option>
+                        <option value="Reference">Referensi</option>
+                        <option value="Kalkulus">Kalkulus</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools-grid" id="tools-grid">
+                <!-- Math Master SMK -->
+                <div class="tool-card featured" data-category="Assessment" data-grade="SMK">
+                    <div class="card-badge">Unggulan</div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);">
+                        <div class="card-icon">🎮</div>
+                        <div class="card-meta">
+                            <span class="card-category">Assessment</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tes Matematika Dasar</h3>
+                        <p class="card-description">Kuis Matematika Dasar</p>
+                        <div class="card-features">
+                            <span>✓ 20 Soal Matematika</span>
+                            <span>✓ Penilaian Otomatis</span>
+                            <span>✓ Analisis Kelebihan & Kekurangan</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 5-15 menit</span>
+                                <span class="card-level">🎯 SD | SMP | SMA</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="tes-matematika-dasar">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Calculator -->
+                <div class="tool-card" data-category="Tools" data-grade="SMP SMA SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);">
+                        <div class="card-icon">🧮</div>
+                        <div class="card-meta">
+                            <span class="card-category">Tools</span>
+                            <span class="card-difficulty">Pemula</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kalkulator Interaktif</h3>
+                        <p class="card-description">Kalkulator canggih dengan langkah-langkah penyelesaian yang ditampilkan secara visual</p>
+                        <div class="card-features">
+                            <span>✓ Step-by-step Solution</span>
+                            <span>✓ Grafik Real-time</span>
+                            <span>✓ History Perhitungan</span>
+                            <span>✓ Export Hasil</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ Sesuai kebutuhan</span>
+                                <span class="card-level">🎯 SMP/SMA/SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="interactive-calculator">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Function Grapher -->
+                <div class="tool-card" data-category="Algebra" data-grade="SMA SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #45B7D1 0%, #096DD9 100%);">
+                        <div class="card-icon">📊</div>
+                        <div class="card-meta">
+                            <span class="card-category">Algebra</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Grafik Fungsi Interaktif</h3>
+                        <p class="card-description">Alat untuk membuat dan menganalisis grafik fungsi matematika dengan animasi yang menarik</p>
+                        <div class="card-features">
+                            <span>✓ Multiple Functions</span>
+                            <span>✓ Zoom & Pan</span>
+                            <span>✓ Intersection Points</span>
+                            <span>✓ Derivative Visualization</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 10-30 menit</span>
+                                <span class="card-level">🎯 SMA/SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="function-grapher">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometry Constructor -->
+                <div class="tool-card" data-category="Geometry" data-grade="SMP SMA">
+                    <div class="card-header" style="background: linear-gradient(135deg, #96CEB4 0%, #FFEAA7 100%);">
+                        <div class="card-icon">📐</div>
+                        <div class="card-meta">
+                            <span class="card-category">Geometry</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bidang Datar Interaktif</h3>
+                        <p class="card-description">Bidang datar interaktif untuk memahami konsep-konsep bidang datar</p>
+                        <div class="card-features">
+                            <span>✓ Drag & Drop Construction</span>
+                            <span>✓ Measurement Tools</span>
+                            <span>✓ Theorem Verification</span>
+                            <span>✓ Animation</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 15-25 menit</span>
+                                <span class="card-level">🎯 SMP/SMA</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="geometry-constructor">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equation Solver -->
+                <div class="tool-card" data-category="Algebra" data-grade="SMP SMA SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #FFA726 0%, #FB8C00 100%);">
+                        <div class="card-icon">🔢</div>
+                        <div class="card-meta">
+                            <span class="card-category">Algebra</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sistem Persamaan dan Pertidaksamaan</h3>
+                        <p class="card-description">Penyelesaian persamaan dengan 3 metode, lengkap dengan langkah-langkah</p>
+                        <div class="card-features">
+                            <span>✓ Metode Substitusi</span>
+                            <span>✓ Metode Elimasi</span>
+                            <span>✓ Metode Gabungan</span>
+                            <span>✓ Grafik</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 5-15 menit</span>
+                                <span class="card-level">🎯 SMP/SMA/SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="equation-solver">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Analyzer -->
+                <div class="tool-card" data-category="Statistics" data-grade="SMA SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #AB47BC 0%, #8E24AA 100%);">
+                        <div class="card-icon">📈</div>
+                        <div class="card-meta">
+                            <span class="card-category">Statistics</span>
+                            <span class="card-difficulty">Lanjutan</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Analisis Data Statistik</h3>
+                        <p class="card-description">Tool untuk analisis data statistik dengan visualisasi grafik dan perhitungan otomatis</p>
+                        <div class="card-features">
+                            <span>✓ Descriptive Statistics</span>
+                            <span>✓ Data Visualization</span>
+                            <span>✓ Regression Analysis</span>
+                            <span>✓ Probability Distributions</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 20-30 menit</span>
+                                <span class="card-level">🎯 SMA/SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="statistics-analyzer">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Circle -->
+                <div class="tool-card" data-category="kalkulus" data-grade="SMA SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #26C6DA 0%, #00ACC1 100%);">
+                        <div class="card-icon">⨛</div>
+                        <div class="card-meta">
+                            <span class="card-category">Kalkulus</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Integral</h3>
+                        <p class="card-description">Integral interaktif untuk memahami konsep integral</p>
+                        <div class="card-features">
+                            <span>✓ Konsep dasar</span>
+                            <span>✓ Aplikasi</span>
+                            <span>✓ Latihan</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 10-20 menit</span>
+                                <span class="card-level">🎯 SMA/SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="kalkulus-integral">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arithmetic Games -->
+                <div class="tool-card" data-category="Arithmetic" data-grade="SMP">
+                    <div class="card-header" style="background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-meta">
+                            <span class="card-category">Arithmetic</span>
+                            <span class="card-difficulty">Pemula</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Game Operasi Hitung</h3>
+                        <p class="card-description">Kumpulan game interaktif untuk melatih operasi hitung dasar dengan cara yang menyenangkan</p>
+                        <div class="card-features">
+                            <span>✓ Multiple Game Modes</span>
+                            <span>✓ Progressive Difficulty</span>
+                            <span>✓ Score Tracking</span>
+                            <span>✓ Achievement System</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 10-15 menit</span>
+                                <span class="card-level">🎯 SMP</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="arithmetic-games">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eksponen -->
+                <div class="tool-card" data-category="Arithmetic" data-grade="SMP">
+                    <div class="card-header" style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);">
+                        <div class="card-icon">♟</div>
+                        <div class="card-meta">
+                            <span class="card-category">Eksponen</span>
+                            <span class="card-difficulty">Pemula</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Eksponen</h3>
+                        <p class="card-description">Memahami konsep dasar Eksponen</p>
+                        <div class="card-features">
+                            <span>✓ Konsep Dasar</span>
+                            <span>✓ Simulasi</span>
+                            <span>✓ Aplikasi</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 10-15 menit</span>
+                                <span class="card-level">🎯 SMP, SMA, SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="Eksponen">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logaritma -->
+                <div class="tool-card" data-category="Arithmetic" data-grade="SMP, SMA, SMK">
+                    <div class="card-header" style="background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);">
+                        <div class="card-icon">LOG</div>
+                        <div class="card-meta">
+                            <span class="card-category">Logritma</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Logaritma</h3>
+                        <p class="card-description">Memahami konsep dasar Logritma</p>
+                        <div class="card-features">
+                            <span>✓ Konsep Dasar</span>
+                            <span>✓ Simulasi</span>
+                            <span>✓ Aplikasi</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 30-45 menit</span>
+                                <span class="card-level">🎯 SMA, SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="Logaritma">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bunga dan Anuitas -->
+                <div class="tool-card" data-category="Ekonomi" data-grade="SMA">
+                    <div class="card-header" style="background: linear-gradient(135deg, #45B7D1 0%, #096DD9 100%);">
+                        <div class="card-icon">🌸</div>
+                        <div class="card-meta">
+                            <span class="card-category">Bunga dan Anuitas</span>
+                            <span class="card-difficulty">Menengah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bunga dan Anuitas</h3>
+                        <p class="card-description">Media interaktif Bunga dan Anuitas</p>
+                        <div class="card-features">
+                            <span>✓ Konsep Dasar</span>
+                            <span>✓ Simulasi</span>
+                            <span>✓ Aplikasi</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <span class="card-duration">⏱ 30 -45 menit</span>
+                                <span class="card-level">🎯 SMA, SMK</span>
+                            </div>
+                            <button class="btn btn--primary card-btn" data-tool-id="Bunga dan Anuitas">
+                                Buka Tool
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn--outline" id="load-more-btn">Muat Lebih Banyak Tool</button>
+            </div>
+        </div>
+    </section>
+
+   <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+    <!-- About Section -->
+    <section id="tentang" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang Platform</h2>
+                <p class="section-subtitle">Mengenal lebih dekat platform pembelajaran matematika interaktif</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Visi & Misi</h3>
+                    <p>Dengan pengalaman mengajar matematika dan informatika, saya mengembangkan berbagai media pembelajaran interaktif untuk membuat matematika lebih mudah dipahami dan menyenangkan bagi siswa.</p>
+                    <p>Platform ini dirancang untuk membantu siswa memahami konsep matematika melalui visualisasi interaktif, simulasi, dan pendekatan yang engaging.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-content">
+                                <h4>Pembelajaran Terpersonalisasi</h4>
+                                <p>Setiap alat dirancang untuk menyesuaikan dengan tingkat kemampuan dan gaya belajar siswa</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-content">
+                                <h4>Visualisasi Interaktif</h4>
+                                <p>Konsep abstrak dibuat konkret melalui visualisasi dan animasi yang menarik</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🚀</div>
+                            <div class="feature-content">
+                                <h4>Teknologi Terdepan</h4>
+                                <p>Menggunakan teknologi web modern untuk pengalaman pembelajaran yang optimal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Alat Pembelajaran</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Kategori Materi</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Tingkat Pendidikan</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Gratis</div>
+                    </div>
+                </div>
+                <a href="about\index.html" target="_blank" class="info-btn">Info Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimoni Pengguna</h2>
+                <p class="section-subtitle">Apa kata guru dan siswa tentang platform ini</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="testimonial-text">"Platform ini sangat membantu dalam pembelajaran matematika. Siswa jadi lebih tertarik dan mudah memahami konsep abstrak."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Sari Dewi, S.Pd</strong>
+                            <span>Guru Matematika SMA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="testimonial-text">"Dengan media pembelajaran ini, matematika jadi tidak menakutkan lagi. Visualisasinya sangat membantu saya memahami rumus-rumus."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Ahmad Kurnia</strong>
+                            <span>Siswa Kelas XI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="testimonial-text">"Inovasi pembelajaran yang luar biasa! Sangat relevan dengan perkembangan teknologi pendidikan saat ini."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Dr. Budi Santoso</strong>
+                            <span>Kepala Sekolah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hubungi Pengembang</h2>
+                <p class="section-subtitle">Ada pertanyaan atau saran? Mari berkolaborasi untuk pendidikan yang lebih baik</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="creator-profile">
+                        <div class="creator-avatar">
+                            <span class="avatar-icon">👨‍🏫</span>
+                        </div>
+                        <div class="creator-details">
+                            <h3>Geraldi Valeska Heryadi Putra, S.Pd</h3>
+                            <p>Guru Matematika dan Informatika</p>
+                            <p class="creator-bio">Dengan pengalaman mengajar matematika dan informatika, saya berdedikasi mengembangkan media pembelajaran yang inovatif dan menyenangkan.</p>
+                        </div>
+                    </div>
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>geraldivaleska@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <p>+62 813-1377-2566</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div class="contact-details">
+                                <h4>Website</h4>
+                                <p>www.rals.my.id</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Nama</label>
+                            <input type="text" id="contact-name" name="name" class="form-control" required>
+                            <div class="form-error" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email</label>
+                            <input type="email" id="contact-email" name="email" class="form-control" required>
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">Subjek</label>
+                            <select id="contact-subject" name="subject" class="form-control" required>
+                                <option value="">Pilih subjek</option>
+                                <option value="feedback">Feedback Platform</option>
+                                <option value="suggestion">Saran Pengembangan</option>
+                                <option value="collaboration">Kolaborasi</option>
+                                <option value="bug-report">Laporan Bug</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                            <div class="form-error" id="subject-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Pesan</label>
+                            <textarea id="contact-message" name="message" rows="4" class="form-control" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                            <div class="form-error" id="message-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width" id="submit-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-icon">∫</span>
+                        <span class="logo-text">Media Pembelajaran Matematika</span>
+                    </div>
+                    <p class="footer-desc">Platform interaktif untuk membuat matematika lebih mudah dipahami dan menyenangkan</p>
+                    <div class="footer-meta">
+                        <p>&copy; 2025 Siriusly</p>
+                        <p>Version 1.0 - Last Updated: September 2025</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Platform</h4>
+                        <a href="#beranda">Beranda</a>
+                        <a href="#alat-pembelajaran">Alat Pembelajaran</a>
+                        <a href="#tentang">Tentang</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Dukungan</h4>
+                        <a href="#kontak">Hubungi Kami</a>
+                        <a href="#testimoni">Testimoni</a>
+                        <a href="#" target="_blank">Panduan Penggunaan</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Kategori</h4>
+                        <a href="#" data-filter-category="Algebra">Aljabar</a>
+                        <a href="#" data-filter-category="Geometry">Geometri</a>
+                        <a href="#" data-filter-category="Statistics">Statistika</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-symbol">∫</div>
+            <div class="loading-text">Memuat Platform Pembelajaran...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

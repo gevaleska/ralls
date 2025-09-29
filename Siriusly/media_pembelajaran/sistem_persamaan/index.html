@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Persamaan Linear - Media Pembelajaran Matematika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Sistem Persamaan Linear</h1>
+                <p class="hero-subtitle">Media Pembelajaran Matematika Interaktif untuk SPLDV & SPLTV</p>
+                <div class="hero-animation">
+                    <div class="equation-demo">
+                        <span>2x + 3y = 8</span>
+                        <span>x - y = 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="materi">📚 Materi</button>
+                <button class="tab-btn" data-tab="simulasi">🎯 Simulasi</button>
+                <button class="tab-btn" data-tab="contoh">📝 Contoh Soal</button>
+                <button class="tab-btn" data-tab="games">🎮 Games</button>
+                <button class="tab-btn" data-tab="aplikasi">💼 Aplikasi</button>
+                <button class="tab-btn" data-tab="kalkulator">🧮 Kalkulator</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Materi Section -->
+            <section id="materi" class="content-section active">
+                <h2>📚 Materi Pembelajaran</h2>
+                
+                <div class="material-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>SPLDV (Sistem Persamaan Linear Dua Variabel)</h3>
+                        </div>
+                        <div class="card__body">
+                            <h4>Definisi:</h4>
+                            <p>Sistem persamaan yang terdiri dari dua persamaan linear dengan dua variabel (x, y)</p>
+                            
+                            <h4>Bentuk Umum:</h4>
+                            <div class="math-formula">
+                                <div>ax + by = c</div>
+                                <div>dx + ey = f</div>
+                            </div>
+                            
+                            <h4>Metode Penyelesaian:</h4>
+                            <ul class="method-list">
+                                <li><strong>Grafik:</strong> Menggambar garis dan mencari titik potong</li>
+                                <li><strong>Substitusi:</strong> Mengganti nilai satu variabel</li>
+                                <li><strong>Eliminasi:</strong> Menghilangkan satu variabel</li>
+                                <li><strong>Campuran:</strong> Kombinasi eliminasi dan substitusi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>SPLTV (Sistem Persamaan Linear Tiga Variabel)</h3>
+                        </div>
+                        <div class="card__body">
+                            <h4>Definisi:</h4>
+                            <p>Sistem persamaan yang terdiri dari tiga persamaan linear dengan tiga variabel (x, y, z)</p>
+                            
+                            <h4>Bentuk Umum:</h4>
+                            <div class="math-formula">
+                                <div>ax + by + cz = d</div>
+                                <div>ex + fy + gz = h</div>
+                                <div>ix + jy + kz = l</div>
+                            </div>
+                            
+                            <h4>Metode Penyelesaian:</h4>
+                            <ul class="method-list">
+                                <li><strong>Substitusi:</strong> Mengganti nilai variabel secara bertahap</li>
+                                <li><strong>Eliminasi:</strong> Menghilangkan variabel satu per satu</li>
+                                <li><strong>Campuran:</strong> Kombinasi eliminasi dan substitusi</li>
+                                <li><strong>Matriks:</strong> Menggunakan operasi matriks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>Demo Interaktif Metode Penyelesaian</h3>
+                    <div class="demo-controls">
+                        <button class="btn btn--primary" onclick="showMethod('substitusi')">Metode Substitusi</button>
+                        <button class="btn btn--primary" onclick="showMethod('eliminasi')">Metode Eliminasi</button>
+                        <button class="btn btn--primary" onclick="showMethod('grafik')">Metode Grafik</button>
+                    </div>
+                    <div id="method-demo" class="method-demo-area"></div>
+                </div>
+            </section>
+
+            <!-- Simulasi Section -->
+            <section id="simulasi" class="content-section">
+                <h2>🎯 Simulasi Interaktif</h2>
+                
+                <div class="simulation-container">
+                    <div class="sim-tabs">
+                        <button class="sim-tab-btn active" data-sim="spldv">SPLDV 2D</button>
+                        <button class="sim-tab-btn" data-sim="spltv">SPLTV 3D</button>
+                    </div>
+
+                    <div id="spldv-sim" class="sim-content active">
+                        <h3>Visualisasi SPLDV (2 Dimensi)</h3>
+                        <div class="sim-grid">
+                            <div class="sim-controls">
+                                <h4>Persamaan 1: ax + by = c</h4>
+                                <div class="form-group">
+                                    <label>a: <input type="number" id="a1" value="2" class="form-control"></label>
+                                    <label>b: <input type="number" id="b1" value="3" class="form-control"></label>
+                                    <label>c: <input type="number" id="c1" value="8" class="form-control"></label>
+                                </div>
+                                
+                                <h4>Persamaan 2: dx + ey = f</h4>
+                                <div class="form-group">
+                                    <label>d: <input type="number" id="d1" value="1" class="form-control"></label>
+                                    <label>e: <input type="number" id="e1" value="-1" class="form-control"></label>
+                                    <label>f: <input type="number" id="f1" value="1" class="form-control"></label>
+                                </div>
+                                
+                                <button class="btn btn--primary" onclick="plotSPLDV()">Plot Grafik</button>
+                                <div id="spldv-solution" class="solution-display"></div>
+                            </div>
+                            <div class="graph-container">
+                                <canvas id="spldv-canvas" width="400" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="spltv-sim" class="sim-content">
+                        <h3>Visualisasi SPLTV (3 Dimensi)</h3>
+                        <div class="sim-grid">
+                            <div class="sim-controls">
+                                <h4>Persamaan 1: ax + by + cz = d</h4>
+                                <div class="form-group">
+                                    <label>a: <input type="number" id="a2" value="1" class="form-control"></label>
+                                    <label>b: <input type="number" id="b2" value="1" class="form-control"></label>
+                                    <label>c: <input type="number" id="c2" value="1" class="form-control"></label>
+                                    <label>d: <input type="number" id="d2" value="6" class="form-control"></label>
+                                </div>
+                                
+                                <h4>Persamaan 2: ex + fy + gz = h</h4>
+                                <div class="form-group">
+                                    <label>e: <input type="number" id="e2" value="2" class="form-control"></label>
+                                    <label>f: <input type="number" id="f2" value="1" class="form-control"></label>
+                                    <label>g: <input type="number" id="g2" value="-1" class="form-control"></label>
+                                    <label>h: <input type="number" id="h2" value="1" class="form-control"></label>
+                                </div>
+                                
+                                <h4>Persamaan 3: ix + jy + kz = l</h4>
+                                <div class="form-group">
+                                    <label>i: <input type="number" id="i2" value="1" class="form-control"></label>
+                                    <label>j: <input type="number" id="j2" value="-1" class="form-control"></label>
+                                    <label>k: <input type="number" id="k2" value="2" class="form-control"></label>
+                                    <label>l: <input type="number" id="l2" value="3" class="form-control"></label>
+                                </div>
+                                
+                                <button class="btn btn--primary" onclick="solveSPLTV()">Selesaikan SPLTV</button>
+                                <div id="spltv-solution" class="solution-display"></div>
+                            </div>
+                            <div class="graph-container">
+                                <div id="spltv-visualization" class="spltv-3d">
+                                    <p>Visualisasi 3D akan ditampilkan di sini setelah menyelesaikan persamaan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contoh Soal Section -->
+            <section id="contoh" class="content-section">
+                <h2>📝 Contoh Soal</h2>
+                
+                <div class="example-categories">
+                    <div class="example-tabs">
+                        <button class="example-tab-btn active" data-category="spldv">SPLDV</button>
+                        <button class="example-tab-btn" data-category="spltv">SPLTV</button>
+                    </div>
+
+                    <div id="spldv-examples" class="example-content active">
+                        <h3>Contoh Soal SPLDV</h3>
+                        
+                        <div class="example-card card">
+                            <div class="card__header">
+                                <h4>Masalah Belanja</h4>
+                            </div>
+                            <div class="card__body">
+                                <p><strong>Soal:</strong> Ani membeli 3 kg apel dan 2 kg jeruk seharga Rp 79.000. Budi membeli 2 kg apel dan 3 kg jeruk seharga Rp 71.000. Berapa harga per kg apel dan jeruk?</p>
+                                
+                                <div class="solution-steps">
+                                    <button class="btn btn--secondary" onclick="showSolution('belanja')">Tampilkan Penyelesaian</button>
+                                    <div id="solution-belanja" class="step-solution hidden">
+                                        <h5>Langkah-langkah:</h5>
+                                        <p>Misalkan: x = harga apel per kg, y = harga jeruk per kg</p>
+                                        <p>Persamaan 1: 3x + 2y = 79000</p>
+                                        <p>Persamaan 2: 2x + 3y = 71000</p>
+                                        
+                                        <p><strong>Metode Eliminasi:</strong></p>
+                                        <p>Eliminasi x: kalikan persamaan 1 dengan 2, persamaan 2 dengan 3</p>
+                                        <p>6x + 4y = 158000</p>
+                                        <p>6x + 9y = 213000</p>
+                                        <p>Kurangkan: -5y = -55000 → y = 11000</p>
+                                        
+                                        <p>Substitusi y = 11000 ke persamaan 1:</p>
+                                        <p>3x + 2(11000) = 79000</p>
+                                        <p>3x = 57000 → x = 19000</p>
+                                        
+                                        <p><strong>Jawaban:</strong> Harga apel Rp 19.000/kg, harga jeruk Rp 11.000/kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-card card">
+                            <div class="card__header">
+                                <h4>Masalah Umur</h4>
+                            </div>
+                            <div class="card__body">
+                                <p><strong>Soal:</strong> Umur ayah 3 kali umur anak. Lima tahun lagi, umur ayah akan menjadi 2 kali umur anak. Tentukan umur mereka sekarang.</p>
+                                
+                                <div class="solution-steps">
+                                    <button class="btn btn--secondary" onclick="showSolution('umur')">Tampilkan Penyelesaian</button>
+                                    <div id="solution-umur" class="step-solution hidden">
+                                        <h5>Langkah-langkah:</h5>
+                                        <p>Misalkan: x = umur ayah sekarang, y = umur anak sekarang</p>
+                                        <p>Persamaan 1: x = 3y</p>
+                                        <p>Persamaan 2: x + 5 = 2(y + 5)</p>
+                                        
+                                        <p><strong>Metode Substitusi:</strong></p>
+                                        <p>Dari persamaan 1: x = 3y</p>
+                                        <p>Substitusi ke persamaan 2:</p>
+                                        <p>3y + 5 = 2(y + 5)</p>
+                                        <p>3y + 5 = 2y + 10</p>
+                                        <p>y = 5</p>
+                                        
+                                        <p>Maka x = 3(5) = 15</p>
+                                        
+                                        <p><strong>Jawaban:</strong> Umur ayah 15 tahun, umur anak 5 tahun</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="spltv-examples" class="example-content">
+                        <h3>Contoh Soal SPLTV</h3>
+                        
+                        <div class="example-card card">
+                            <div class="card__header">
+                                <h4>Masalah Investasi</h4>
+                            </div>
+                            <div class="card__body">
+                                <p><strong>Soal:</strong> Seorang investor menanamkan uangnya dalam 3 jenis investasi: saham (x), obligasi (y), dan deposito (z). Total investasi Rp 100 juta. Keuntungan saham 8%, obligasi 6%, deposito 4% dengan total keuntungan Rp 6.2 juta. Investasi saham 2 kali investasi obligasi. Berapa masing-masing investasi?</p>
+                                
+                                <div class="solution-steps">
+                                    <button class="btn btn--secondary" onclick="showSolution('investasi')">Tampilkan Penyelesaian</button>
+                                    <div id="solution-investasi" class="step-solution hidden">
+                                        <h5>Langkah-langkah:</h5>
+                                        <p>Persamaan 1: x + y + z = 100000000</p>
+                                        <p>Persamaan 2: 0.08x + 0.06y + 0.04z = 6200000</p>
+                                        <p>Persamaan 3: x = 2y</p>
+                                        
+                                        <p><strong>Penyelesaian:</strong></p>
+                                        <p>Substitusi x = 2y ke persamaan 1 dan 2:</p>
+                                        <p>2y + y + z = 100000000 → 3y + z = 100000000</p>
+                                        <p>0.16y + 0.06y + 0.04z = 6200000 → 0.22y + 0.04z = 6200000</p>
+                                        
+                                        <p>Dari persamaan pertama: z = 100000000 - 3y</p>
+                                        <p>Substitusi: 0.22y + 0.04(100000000 - 3y) = 6200000</p>
+                                        <p>0.22y + 4000000 - 0.12y = 6200000</p>
+                                        <p>0.1y = 2200000 → y = 22000000</p>
+                                        
+                                        <p>Maka: x = 2(22000000) = 44000000</p>
+                                        <p>z = 100000000 - 44000000 - 22000000 = 34000000</p>
+                                        
+                                        <p><strong>Jawaban:</strong> Saham Rp 44 juta, Obligasi Rp 22 juta, Deposito Rp 34 juta</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Games Section -->
+            <section id="games" class="content-section">
+                <h2>🎮 Games Edukatif</h2>
+                
+                <div class="games-grid">
+                    <div class="game-card card">
+                        <div class="card__header">
+                            <h3>🏃‍♂️ Linear Equation Race</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Selesaikan soal SPLDV untuk memajukan karakter Anda!</p>
+                            <button class="btn btn--primary" onclick="startGame('race')">Mulai Game</button>
+                            <div id="race-game" class="game-area hidden">
+                                <div class="game-stats">
+                                    <span>Skor: <span id="race-score">0</span></span>
+                                    <span>Level: <span id="race-level">1</span></span>
+                                </div>
+                                <div id="race-question" class="game-question"></div>
+                                <div class="game-answers">
+                                    <button class="btn btn--secondary answer-btn" onclick="checkAnswer('race', 0)">A</button>
+                                    <button class="btn btn--secondary answer-btn" onclick="checkAnswer('race', 1)">B</button>
+                                    <button class="btn btn--secondary answer-btn" onclick="checkAnswer('race', 2)">C</button>
+                                    <button class="btn btn--secondary answer-btn" onclick="checkAnswer('race', 3)">D</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card card">
+                        <div class="card__header">
+                            <h3>🚀 3D Space Navigator</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Navigasi ruang 3D dengan menyelesaikan soal SPLTV!</p>
+                            <button class="btn btn--primary" onclick="startGame('space')">Mulai Game</button>
+                            <div id="space-game" class="game-area hidden">
+                                <div class="game-stats">
+                                    <span>Koordinat: <span id="space-coords">(0,0,0)</span></span>
+                                    <span>Target: <span id="space-target">(10,10,10)</span></span>
+                                </div>
+                                <div id="space-question" class="game-question"></div>
+                                <input type="text" id="space-answer" class="form-control" placeholder="Masukkan jawaban (x,y,z)">
+                                <button class="btn btn--primary" onclick="checkSpaceAnswer()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card card">
+                        <div class="card__header">
+                            <h3>🧩 Equation Builder</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Bangun persamaan dengan drag & drop!</p>
+                            <button class="btn btn--primary" onclick="startGame('builder')">Mulai Game</button>
+                            <div id="builder-game" class="game-area hidden">
+                                <div class="equation-parts">
+                                    <span class="draggable" draggable="true">2x</span>
+                                    <span class="draggable" draggable="true">+ 3y</span>
+                                    <span class="draggable" draggable="true">= 8</span>
+                                </div>
+                                <div class="equation-builder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <p>Seret bagian persamaan ke sini:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Section -->
+            <section id="aplikasi" class="content-section">
+                <h2>💼 Aplikasi Nyata</h2>
+                
+                <div class="app-grid">
+                    <div class="app-card card">
+                        <div class="card__header">
+                            <h3>📊 Optimasi Budget</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Optimalisasi pengeluaran dengan dua kategori utama</p>
+                            <div class="app-form">
+                                <label>Total Budget: <input type="number" id="total-budget" class="form-control" placeholder="1000000"></label>
+                                <label>Kategori A (% min): <input type="number" id="cat-a-min" class="form-control" placeholder="40"></label>
+                                <label>Kategori B (% min): <input type="number" id="cat-b-min" class="form-control" placeholder="30"></label>
+                                <button class="btn btn--primary" onclick="optimizeBudget()">Optimasi</button>
+                            </div>
+                            <div id="budget-result" class="app-result"></div>
+                        </div>
+                    </div>
+
+                    <div class="app-card card">
+                        <div class="card__header">
+                            <h3>🏭 Perencanaan Produksi</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Hitung produksi optimal untuk 3 produk</p>
+                            <div class="app-form">
+                                <label>Kapasitas Mesin (jam/hari): <input type="number" id="machine-hours" class="form-control" placeholder="480"></label>
+                                <label>Bahan Baku (kg/hari): <input type="number" id="raw-material" class="form-control" placeholder="1000"></label>
+                                <label>Tenaga Kerja (jam/hari): <input type="number" id="labor-hours" class="form-control" placeholder="320"></label>
+                                <button class="btn btn--primary" onclick="planProduction()">Hitung Produksi</button>
+                            </div>
+                            <div id="production-result" class="app-result"></div>
+                        </div>
+                    </div>
+
+                    <div class="app-card card">
+                        <div class="card__header">
+                            <h3>🛒 Kalkulator Belanja</h3>
+                        </div>
+                        <div class="card__body">
+                            <p>Hitung kombinasi belanja optimal</p>
+                            <div class="app-form">
+                                <label>Budget Total: <input type="number" id="shop-budget" class="form-control" placeholder="200000"></label>
+                                <label>Item A (harga): <input type="number" id="item-a-price" class="form-control" placeholder="15000"></label>
+                                <label>Item B (harga): <input type="number" id="item-b-price" class="form-control" placeholder="20000"></label>
+                                <label>Min Item A: <input type="number" id="min-item-a" class="form-control" placeholder="3"></label>
+                                <button class="btn btn--primary" onclick="calculateShopping()">Hitung</button>
+                            </div>
+                            <div id="shopping-result" class="app-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalkulator Section -->
+            <section id="kalkulator" class="content-section">
+                <h2>🧮 Kalkulator Interaktif</h2>
+                
+                <div class="calculator-tabs">
+                    <button class="calc-tab-btn active" data-calc="spldv">Kalkulator SPLDV</button>
+                    <button class="calc-tab-btn" data-calc="spltv">Kalkulator SPLTV</button>
+                    <button class="calc-tab-btn" data-calc="generator">Generator Soal</button>
+                </div>
+
+                <div id="spldv-calc" class="calc-content active">
+                    <h3>Kalkulator SPLDV</h3>
+                    <div class="calc-grid">
+                        <div class="calc-input">
+                            <h4>Masukkan Persamaan</h4>
+                            <div class="form-group">
+                                <label>Persamaan 1:</label>
+                                <div class="equation-input">
+                                    <input type="number" id="calc-a1" placeholder="a" class="form-control">x +
+                                    <input type="number" id="calc-b1" placeholder="b" class="form-control">y =
+                                    <input type="number" id="calc-c1" placeholder="c" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Persamaan 2:</label>
+                                <div class="equation-input">
+                                    <input type="number" id="calc-d1" placeholder="d" class="form-control">x +
+                                    <input type="number" id="calc-e1" placeholder="e" class="form-control">y =
+                                    <input type="number" id="calc-f1" placeholder="f" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Metode:</label>
+                                <select id="spldv-method" class="form-control">
+                                    <option value="eliminasi">Eliminasi</option>
+                                    <option value="substitusi">Substitusi</option>
+                                    <option value="campuran">Campuran</option>
+                                </select>
+                            </div>
+                            <button class="btn btn--primary" onclick="solveSPLDVCalculator()">Selesaikan</button>
+                        </div>
+                        <div class="calc-result">
+                            <div id="spldv-calc-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="spltv-calc" class="calc-content">
+                    <h3>Kalkulator SPLTV</h3>
+                    <div class="calc-grid">
+                        <div class="calc-input">
+                            <h4>Masukkan Persamaan</h4>
+                            <div class="form-group">
+                                <label>Persamaan 1:</label>
+                                <div class="equation-input">
+                                    <input type="number" id="calc-a2" placeholder="a" class="form-control">x +
+                                    <input type="number" id="calc-b2" placeholder="b" class="form-control">y +
+                                    <input type="number" id="calc-c2" placeholder="c" class="form-control">z =
+                                    <input type="number" id="calc-d2" placeholder="d" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Persamaan 2:</label>
+                                <div class="equation-input">
+                                    <input type="number" id="calc-e2" placeholder="e" class="form-control">x +
+                                    <input type="number" id="calc-f2" placeholder="f" class="form-control">y +
+                                    <input type="number" id="calc-g2" placeholder="g" class="form-control">z =
+                                    <input type="number" id="calc-h2" placeholder="h" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Persamaan 3:</label>
+                                <div class="equation-input">
+                                    <input type="number" id="calc-i2" placeholder="i" class="form-control">x +
+                                    <input type="number" id="calc-j2" placeholder="j" class="form-control">y +
+                                    <input type="number" id="calc-k2" placeholder="k" class="form-control">z =
+                                    <input type="number" id="calc-l2" placeholder="l" class="form-control">
+                                </div>
+                            </div>
+                            <button class="btn btn--primary" onclick="solveSPLTVCalculator()">Selesaikan</button>
+                        </div>
+                        <div class="calc-result">
+                            <div id="spltv-calc-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="generator" class="calc-content">
+                    <h3>Generator Soal Latihan</h3>
+                    <div class="generator-controls">
+                        <div class="form-group">
+                            <label>Jenis Soal:</label>
+                            <select id="problem-type" class="form-control">
+                                <option value="spldv">SPLDV</option>
+                                <option value="spltv">SPLTV</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tingkat Kesulitan:</label>
+                            <select id="difficulty" class="form-control">
+                                <option value="mudah">Mudah</option>
+                                <option value="sedang">Sedang</option>
+                                <option value="sulit">Sulit</option>
+                            </select>
+                        </div>
+                        <button class="btn btn--primary" onclick="generateProblem()">Generate Soal Baru</button>
+                    </div>
+                    <div id="generated-problem" class="problem-display"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+       <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; © 2025 Siriusly. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

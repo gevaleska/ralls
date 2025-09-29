@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunga dan Anuitas - Media Pembelajaran Matematika Keuangan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                <span class="finance-symbol">💰</span>
+                Bunga dan Anuitas
+                <span class="finance-symbol">📈</span>
+            </h1>
+            <p class="header__subtitle">Media Pembelajaran Matematika Keuangan</p>
+            <div class="concept-formula">
+                <span class="formula">Nilai Waktu Uang: FV = PV × (1 + r)ⁿ</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="btn btn--primary nav__btn active" data-section="beranda" id="nav-beranda">
+                    <span class="nav__icon">🏠</span>
+                    Beranda
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="bunga-tunggal" id="nav-bunga-tunggal">
+                    <span class="nav__icon">📊</span>
+                    Bunga Tunggal
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="bunga-majemuk" id="nav-bunga-majemuk">
+                    <span class="nav__icon">📈</span>
+                    Bunga Majemuk
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="nilai-waktu" id="nav-nilai-waktu">
+                    <span class="nav__icon">⏰</span>
+                    Nilai Waktu Uang
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="anuitas" id="nav-anuitas">
+                    <span class="nav__icon">💳</span>
+                    Anuitas
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="kalkulator" id="nav-kalkulator">
+                    <span class="nav__icon">🧮</span>
+                    Kalkulator
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="aplikasi-nyata" id="nav-aplikasi-nyata">
+                    <span class="nav__icon">🏦</span>
+                    Aplikasi Nyata
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="simulasi" id="nav-simulasi">
+                    <span class="nav__icon">💹</span>
+                    Simulasi Investasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="perencanaan" id="nav-perencanaan">
+                    <span class="nav__icon">📋</span>
+                    Perencanaan
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="latihan" id="nav-latihan">
+                    <span class="nav__icon">📝</span>
+                    Latihan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Beranda Section -->
+            <section id="beranda-section" class="section active">
+                <div class="intro-hero">
+                    <h2>Pelajari Matematika Keuangan dengan Mudah</h2>
+                    <p>Memahami konsep bunga, anuitas, dan perencanaan keuangan melalui simulasi interaktif!</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Jenis Bunga</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Kalkulator</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Aplikasi Nyata</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <h3>Fitur Pembelajaran</h3>
+                    <div class="feature-cards">
+                        <div class="card feature-card" data-section="bunga-tunggal">
+                            <div class="feature-icon">📊</div>
+                            <h4>Bunga Tunggal</h4>
+                            <p>Konsep bunga linear dengan rumus I = P × r × t dan visualisasi pertumbuhan sederhana</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="bunga-majemuk">
+                            <div class="feature-icon">📈</div>
+                            <h4>Bunga Majemuk</h4>
+                            <p>Efek compound interest dengan pertumbuhan eksponensial dan berbagai frekuensi</p>
+                            <button class="btn btn--sm btn--primary">Jelajahi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="nilai-waktu">
+                            <div class="feature-icon">⏰</div>
+                            <h4>Nilai Waktu Uang</h4>
+                            <p>Present Value dan Future Value untuk keputusan investasi yang tepat</p>
+                            <button class="btn btn--sm btn--primary">Coba →</button>
+                        </div>
+                        <div class="card feature-card" data-section="anuitas">
+                            <div class="feature-icon">💳</div>
+                            <h4>Anuitas & Pinjaman</h4>
+                            <p>Perhitungan cicilan, amortisasi, dan berbagai jenis anuitas</p>
+                            <button class="btn btn--sm btn--primary">Hitung →</button>
+                        </div>
+                        <div class="card feature-card" data-section="simulasi">
+                            <div class="feature-icon">💹</div>
+                            <h4>Simulasi Investasi</h4>
+                            <p>Perencanaan portofolio dan proyeksi keuangan jangka panjang</p>
+                            <button class="btn btn--sm btn--primary">Simulasi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="aplikasi-nyata">
+                            <div class="feature-icon">🏦</div>
+                            <h4>Aplikasi Perbankan</h4>
+                            <p>Contoh nyata dari deposito, kredit, investasi, dan asuransi</p>
+                            <button class="btn btn--sm btn--primary">Lihat →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bunga Tunggal Section -->
+            <section id="bunga-tunggal-section" class="section">
+                <div class="financial-content">
+                    <h2>Bunga Tunggal (Simple Interest)</h2>
+                    
+                    <div class="concept-overview">
+                        <div class="concept-text">
+                            <h3>Konsep Dasar</h3>
+                            <div class="definition-box">
+                                <p>Bunga tunggal adalah bunga yang dihitung hanya berdasarkan modal awal (principal) selama periode tertentu, tanpa memperhitungkan bunga yang telah terakumulasi sebelumnya.</p>
+                                <div class="formula-display">
+                                    <div class="formula-main">I = P × r × t</div>
+                                    <div class="formula-total">A = P + I = P(1 + rt)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <strong>I</strong> = Bunga yang diperoleh
+                                </div>
+                                <div class="component-item">
+                                    <strong>P</strong> = Modal awal (Principal)
+                                </div>
+                                <div class="component-item">
+                                    <strong>r</strong> = Tingkat bunga per periode (%)
+                                </div>
+                                <div class="component-item">
+                                    <strong>t</strong> = Jangka waktu (periode)
+                                </div>
+                                <div class="component-item">
+                                    <strong>A</strong> = Jumlah total akhir
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-visual">
+                            <div class="calculator-container">
+                                <h4>Kalkulator Bunga Tunggal</h4>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Modal Awal (Rp):</label>
+                                        <input type="number" id="simple-principal" class="form-control" value="1000000" step="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Bunga (% per tahun):</label>
+                                        <input type="number" id="simple-rate" class="form-control" value="8" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Jangka Waktu (tahun):</label>
+                                        <input type="number" id="simple-time" class="form-control" value="3" step="0.5">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-simple">Hitung Bunga Tunggal</button>
+                                </div>
+                                <div class="calc-result" id="simple-result">
+                                    Masukkan data untuk melihat hasil perhitungan
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-section">
+                        <h3>Visualisasi Pertumbuhan</h3>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="simple-interest-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bunga Majemuk Section -->
+            <section id="bunga-majemuk-section" class="section">
+                <div class="financial-content">
+                    <h2>Bunga Majemuk (Compound Interest)</h2>
+                    
+                    <div class="concept-overview">
+                        <div class="concept-text">
+                            <h3>Konsep Dasar</h3>
+                            <div class="definition-box">
+                                <p>Bunga majemuk adalah bunga yang dihitung dari modal awal ditambah bunga yang sudah terakumulasi sebelumnya. Menghasilkan efek "berbunga-bunga" dengan pertumbuhan eksponensial.</p>
+                                <div class="formula-display">
+                                    <div class="formula-main">A = P(1 + r)ⁿ</div>
+                                    <div class="formula-total">I = P[(1 + r)ⁿ - 1]</div>
+                                </div>
+                            </div>
+                            
+                            <div class="frequency-selector">
+                                <label class="form-label">Frekuensi Peracikan:</label>
+                                <select id="compound-frequency" class="form-control">
+                                    <option value="1">Tahunan (1x per tahun)</option>
+                                    <option value="2">Semesteran (2x per tahun)</option>
+                                    <option value="4">Kuartalan (4x per tahun)</option>
+                                    <option value="12" selected>Bulanan (12x per tahun)</option>
+                                    <option value="365">Harian (365x per tahun)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-visual">
+                            <div class="calculator-container">
+                                <h4>Kalkulator Bunga Majemuk</h4>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Modal Awal (Rp):</label>
+                                        <input type="number" id="compound-principal" class="form-control" value="1000000" step="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Bunga (% per tahun):</label>
+                                        <input type="number" id="compound-rate" class="form-control" value="8" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Jangka Waktu (tahun):</label>
+                                        <input type="number" id="compound-time" class="form-control" value="3" step="0.5">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-compound">Hitung Bunga Majemuk</button>
+                                </div>
+                                <div class="calc-result" id="compound-result">
+                                    Masukkan data untuk melihat hasil perhitungan
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-section">
+                        <h3>Perbandingan Bunga Tunggal vs Majemuk</h3>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="comparison-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nilai Waktu Uang Section -->
+            <section id="nilai-waktu-section" class="section">
+                <div class="financial-content">
+                    <h2>Nilai Waktu Uang (Time Value of Money)</h2>
+                    
+                    <div class="time-value-overview">
+                        <div class="card">
+                            <h3>Present Value (PV)</h3>
+                            <p>Nilai saat ini dari sejumlah uang yang akan diterima di masa depan</p>
+                            <div class="formula-display">
+                                <div class="formula-main">PV = FV / (1 + r)ⁿ</div>
+                            </div>
+                            <div class="calculator-container">
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Future Value (Rp):</label>
+                                        <input type="number" id="pv-future" class="form-control" value="2000000" step="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Diskonto (%):</label>
+                                        <input type="number" id="pv-rate" class="form-control" value="10" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Periode (tahun):</label>
+                                        <input type="number" id="pv-period" class="form-control" value="5" step="1">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-pv">Hitung PV</button>
+                                </div>
+                                <div class="calc-result" id="pv-result">
+                                    Hasil akan ditampilkan di sini
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Future Value (FV)</h3>
+                            <p>Nilai di masa depan dari sejumlah uang yang diinvestasikan saat ini</p>
+                            <div class="formula-display">
+                                <div class="formula-main">FV = PV × (1 + r)ⁿ</div>
+                            </div>
+                            <div class="calculator-container">
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Present Value (Rp):</label>
+                                        <input type="number" id="fv-present" class="form-control" value="1000000" step="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Bunga (%):</label>
+                                        <input type="number" id="fv-rate" class="form-control" value="10" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Periode (tahun):</label>
+                                        <input type="number" id="fv-period" class="form-control" value="5" step="1">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-fv">Hitung FV</button>
+                                </div>
+                                <div class="calc-result" id="fv-result">
+                                    Hasil akan ditampilkan di sini
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-section">
+                        <h3>Timeline Nilai Uang</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="timeline-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Anuitas Section -->
+            <section id="anuitas-section" class="section">
+                <div class="financial-content">
+                    <h2>Anuitas (Annuities)</h2>
+                    
+                    <div class="annuity-overview">
+                        <div class="concept-text">
+                            <h3>Konsep Anuitas</h3>
+                            <div class="definition-box">
+                                <p>Anuitas adalah serangkaian pembayaran atau penerimaan yang sama jumlahnya dalam periode waktu tertentu dengan bunga tertentu.</p>
+                                <div class="formula-display">
+                                    <div class="formula-main">PMT = PV × [r(1+r)ⁿ] / [(1+r)ⁿ - 1]</div>
+                                </div>
+                            </div>
+                            
+                            <div class="annuity-types">
+                                <h4>Jenis Anuitas:</h4>
+                                <div class="type-list">
+                                    <div class="type-item">
+                                        <strong>Anuitas Biasa:</strong> Pembayaran di akhir periode
+                                    </div>
+                                    <div class="type-item">
+                                        <strong>Anuitas Due:</strong> Pembayaran di awal periode  
+                                    </div>
+                                    <div class="type-item">
+                                        <strong>Perpetuitas:</strong> Pembayaran tak terbatas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-visual">
+                            <div class="calculator-container">
+                                <h4>Kalkulator Anuitas</h4>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Nilai Pinjaman (Rp):</label>
+                                        <input type="number" id="annuity-pv" class="form-control" value="100000000" step="1000000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Bunga (% per tahun):</label>
+                                        <input type="number" id="annuity-rate" class="form-control" value="12" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Jangka Waktu (tahun):</label>
+                                        <input type="number" id="annuity-period" class="form-control" value="5" step="1">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-annuity">Hitung Anuitas</button>
+                                </div>
+                                <div class="calc-result" id="annuity-result">
+                                    Hasil akan ditampilkan di sini
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amortization-section">
+                        <h3>Tabel Amortisasi</h3>
+                        <div class="amortization-table" id="amortization-table">
+                            <!-- Amortization table will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalkulator Section -->
+            <section id="kalkulator-section" class="section">
+                <div class="calculator-grid">
+                    <h2>Kalkulator Keuangan Lengkap</h2>
+                    
+                    <div class="calc-cards">
+                        <div class="card calc-card">
+                            <h3>🏠 Kalkulator KPR</h3>
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Harga Rumah (Rp):</label>
+                                    <input type="number" id="kpr-price" class="form-control" value="500000000" step="1000000">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">DP (%):</label>
+                                    <input type="number" id="kpr-dp" class="form-control" value="20" step="5">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Bunga (% per tahun):</label>
+                                    <input type="number" id="kpr-rate" class="form-control" value="8" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Jangka Waktu (tahun):</label>
+                                    <input type="number" id="kpr-period" class="form-control" value="15" step="1">
+                                </div>
+                                <button class="btn btn--primary btn--full-width" id="calc-kpr">Hitung KPR</button>
+                            </div>
+                            <div class="calc-result" id="kpr-result"></div>
+                        </div>
+                        
+                        <div class="card calc-card">
+                            <h3>💰 Kalkulator Investasi</h3>
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Investasi Awal (Rp):</label>
+                                    <input type="number" id="invest-initial" class="form-control" value="10000000" step="1000000">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Investasi Bulanan (Rp):</label>
+                                    <input type="number" id="invest-monthly" class="form-control" value="1000000" step="100000">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Return (% per tahun):</label>
+                                    <input type="number" id="invest-return" class="form-control" value="12" step="0.5">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Jangka Waktu (tahun):</label>
+                                    <input type="number" id="invest-period" class="form-control" value="10" step="1">
+                                </div>
+                                <button class="btn btn--primary btn--full-width" id="calc-investment">Hitung Investasi</button>
+                            </div>
+                            <div class="calc-result" id="investment-result"></div>
+                        </div>
+                        
+                        <div class="card calc-card">
+                            <h3>🏖️ Kalkulator Pensiun</h3>
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Target Dana Pensiun (Rp):</label>
+                                    <input type="number" id="retire-target" class="form-control" value="5000000000" step="100000000">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Umur Sekarang:</label>
+                                    <input type="number" id="retire-current-age" class="form-control" value="30" step="1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Umur Pensiun:</label>
+                                    <input type="number" id="retire-target-age" class="form-control" value="55" step="1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Return Investasi (%):</label>
+                                    <input type="number" id="retire-return" class="form-control" value="10" step="0.5">
+                                </div>
+                                <button class="btn btn--primary btn--full-width" id="calc-retirement">Hitung Kebutuhan</button>
+                            </div>
+                            <div class="calc-result" id="retirement-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Nyata Section -->
+            <section id="aplikasi-nyata-section" class="section">
+                <div class="applications-content">
+                    <h2>Aplikasi Nyata dalam Dunia Keuangan</h2>
+                    
+                    <div class="apps-grid">
+                        <div class="card app-category">
+                            <h3>🏦 Perbankan</h3>
+                            <div class="app-items">
+                                <div class="app-item">
+                                    <h4>Tabungan</h4>
+                                    <p>Bunga majemuk bulanan 0,5% - 3% per tahun</p>
+                                    <div class="app-calc">
+                                        <input type="number" id="saving-amount" placeholder="Jumlah tabungan" value="5000000">
+                                        <input type="number" id="saving-rate" placeholder="Bunga %" value="2.5">
+                                        <button class="btn btn--sm btn--primary" onclick="calcSaving()">Hitung</button>
+                                        <div class="app-result" id="saving-result"></div>
+                                    </div>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Deposito</h4>
+                                    <p>Bunga tetap 3% - 7% per tahun</p>
+                                    <div class="app-calc">
+                                        <input type="number" id="deposit-amount" placeholder="Nominal deposito" value="10000000">
+                                        <input type="number" id="deposit-rate" placeholder="Bunga %" value="6">
+                                        <input type="number" id="deposit-period" placeholder="Bulan" value="12">
+                                        <button class="btn btn--sm btn--primary" onclick="calcDeposit()">Hitung</button>
+                                        <div class="app-result" id="deposit-result"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card app-category">
+                            <h3>📈 Investasi</h3>
+                            <div class="app-items">
+                                <div class="app-item">
+                                    <h4>Reksa Dana</h4>
+                                    <p>Return 8% - 15% per tahun dengan compound effect</p>
+                                    <div class="app-calc">
+                                        <input type="number" id="mutual-monthly" placeholder="Investasi bulanan" value="500000">
+                                        <input type="number" id="mutual-return" placeholder="Return %" value="12">
+                                        <input type="number" id="mutual-years" placeholder="Tahun" value="10">
+                                        <button class="btn btn--sm btn--primary" onclick="calcMutualFund()">Hitung</button>
+                                        <div class="app-result" id="mutual-result"></div>
+                                    </div>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Saham</h4>
+                                    <p>Return 10% - 20% per tahun (volatil)</p>
+                                    <div class="app-calc">
+                                        <input type="number" id="stock-initial" placeholder="Modal awal" value="20000000">
+                                        <input type="number" id="stock-return" placeholder="Return %" value="15">
+                                        <input type="number" id="stock-years" placeholder="Tahun" value="5">
+                                        <button class="btn btn--sm btn--primary" onclick="calcStock()">Hitung</button>
+                                        <div class="app-result" id="stock-result"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card app-category">
+                            <h3>🛡️ Asuransi & Pensiun</h3>
+                            <div class="app-items">
+                                <div class="app-item">
+                                    <h4>Asuransi Jiwa Unit Link</h4>
+                                    <p>Kombinasi proteksi dan investasi</p>
+                                    <div class="app-calc">
+                                        <input type="number" id="insurance-premium" placeholder="Premi tahunan" value="12000000">
+                                        <input type="number" id="insurance-return" placeholder="Return %" value="8">
+                                        <input type="number" id="insurance-years" placeholder="Tahun" value="20">
+                                        <button class="btn btn--sm btn--primary" onclick="calcInsurance()">Hitung</button>
+                                        <div class="app-result" id="insurance-result"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulasi Investasi Section -->
+            <section id="simulasi-section" class="section">
+                <div class="simulation-content">
+                    <h2>Simulasi Investasi & Perencanaan</h2>
+                    
+                    <div class="simulation-controls">
+                        <div class="card">
+                            <h3>Simulator Portofolio Investasi</h3>
+                            <div class="portfolio-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Alokasi Saham (%):</label>
+                                    <input type="range" id="stock-allocation" min="0" max="100" value="60" class="slider">
+                                    <span id="stock-percentage">60%</span>
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Alokasi Obligasi (%):</label>
+                                    <input type="range" id="bond-allocation" min="0" max="100" value="30" class="slider">
+                                    <span id="bond-percentage">30%</span>
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Alokasi Kas (%):</label>
+                                    <input type="range" id="cash-allocation" min="0" max="100" value="10" class="slider">
+                                    <span id="cash-percentage">10%</span>
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Modal Investasi (Rp):</label>
+                                    <input type="number" id="portfolio-amount" class="form-control" value="100000000" step="1000000">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Periode Simulasi (tahun):</label>
+                                    <input type="number" id="simulation-years" class="form-control" value="10" step="1">
+                                </div>
+                                <button class="btn btn--primary btn--full-width" id="run-simulation">Jalankan Simulasi</button>
+                            </div>
+                            <div class="simulation-result" id="portfolio-result"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container" style="position: relative; height: 400px;">
+                        <canvas id="portfolio-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Perencanaan Keuangan Section -->
+            <section id="perencanaan-section" class="section">
+                <div class="planning-content">
+                    <h2>Perencanaan Keuangan Personal</h2>
+                    
+                    <div class="planning-goals">
+                        <div class="goal-cards">
+                            <div class="card goal-card">
+                                <h3>🚨 Dana Darurat</h3>
+                                <p>6-12 bulan pengeluaran untuk kebutuhan darurat</p>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Pengeluaran Bulanan (Rp):</label>
+                                        <input type="number" id="emergency-expense" class="form-control" value="5000000" step="100000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Target Bulan:</label>
+                                        <input type="number" id="emergency-months" class="form-control" value="6" step="1">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-emergency">Hitung Dana Darurat</button>
+                                </div>
+                                <div class="calc-result" id="emergency-result"></div>
+                            </div>
+                            
+                            <div class="card goal-card">
+                                <h3>🎓 Dana Pendidikan</h3>
+                                <p>Persiapan biaya pendidikan anak dengan inflasi</p>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Biaya Pendidikan Saat Ini (Rp):</label>
+                                        <input type="number" id="education-current" class="form-control" value="200000000" step="10000000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tahun ke Pendidikan:</label>
+                                        <input type="number" id="education-years" class="form-control" value="15" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Inflasi Pendidikan (%):</label>
+                                        <input type="number" id="education-inflation" class="form-control" value="10" step="0.5">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-education">Hitung Target</button>
+                                </div>
+                                <div class="calc-result" id="education-result"></div>
+                            </div>
+                            
+                            <div class="card goal-card">
+                                <h3>🏠 Dana Rumah</h3>
+                                <p>Perencanaan pembelian rumah dengan DP dan KPR</p>
+                                <div class="calc-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">Target Harga Rumah (Rp):</label>
+                                        <input type="number" id="house-price" class="form-control" value="800000000" step="10000000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">DP Target (%):</label>
+                                        <input type="number" id="house-dp" class="form-control" value="30" step="5">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Penghasilan Bulanan (Rp):</label>
+                                        <input type="number" id="house-income" class="form-control" value="15000000" step="1000000">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calc-house">Analisis Kemampuan</button>
+                                </div>
+                                <div class="calc-result" id="house-result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Section -->
+            <section id="latihan-section" class="section">
+                <div class="practice-content">
+                    <h2>Latihan Soal Matematika Keuangan</h2>
+                    
+                    <div class="practice-main">
+                        <div class="problem-container">
+                            <div class="card current-problem">
+                                <div class="problem-header">
+                                    <h3>Soal <span id="problem-number">1</span> dari <span id="total-problems">10</span></h3>
+                                    <div class="problem-score">
+                                        <span>Skor: <span id="current-score">0</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="problem-content">
+                                    <p id="problem-text">Modal Rp 5.000.000 dengan bunga tunggal 8% per tahun selama 3 tahun. Berapa total bunganya?</p>
+                                    
+                                    <div class="answer-input">
+                                        <label class="form-label">Jawaban Anda:</label>
+                                        <input type="text" id="answer-input" class="form-control" placeholder="Masukkan jawaban dalam Rupiah">
+                                        <div class="answer-buttons">
+                                            <button class="btn btn--primary" id="check-answer">✓ Periksa</button>
+                                            <button class="btn btn--outline" id="show-hint">💡 Petunjuk</button>
+                                            <button class="btn btn--outline" id="show-solution">📝 Pembahasan</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="answer-feedback" id="answer-feedback"></div>
+                                    
+                                    <div class="problem-navigation">
+                                        <button class="btn btn--outline" id="prev-problem" disabled>← Sebelumnya</button>
+                                        <button class="btn btn--primary" id="next-problem">Selanjutnya →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-sidebar">
+                            <div class="card progress-card">
+                                <h4>Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="progress-text"><span id="completed-problems">0</span> dari <span id="total-problems-2">10</span> soal selesai</p>
+                            </div>
+                            
+                            <div class="card stats-card">
+                                <h4>Statistik</h4>
+                                <div class="stat-item">
+                                    <span class="stat-label">Benar:</span>
+                                    <span class="stat-value" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Salah:</span>
+                                    <span class="stat-value" id="wrong-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Akurasi:</span>
+                                    <span class="stat-value" id="accuracy">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card help-card">
+                                <h4>Tips Matematika Keuangan</h4>
+                                <ul>
+                                    <li>Perhatikan jenis bunga (tunggal/majemuk)</li>
+                                    <li>Konsisten dengan satuan waktu</li>
+                                    <li>Gunakan rumus yang tepat</li>
+                                    <li>Hitung dengan teliti</li>
+                                    <li>Pahami konsep nilai waktu uang</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+   <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Media Pembelajaran Bunga dan Anuitas</h3>
+                    <p>Platform interaktif untuk mempelajari konsep matematika keuangan dengan simulasi, kalkulator, dan aplikasi nyata dalam dunia perbankan, investasi, dan perencanaan keuangan personal</p>
+                </div>
+                
+                <div class="footer-creator">
+                    <div class="creator-info">
+                        <h4>👨‍💼 Dibuat oleh: Geraldi Valeska</h4>
+                        <p class="creator-title">Pembuat Media Pembelajaran</p>
+                        <p class="creation-date">📅 September 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Media Pembelajaran Bunga dan Anuitas - Memudahkan pembelajaran matematika keuangan untuk semua</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

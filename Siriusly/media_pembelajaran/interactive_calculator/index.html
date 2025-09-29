@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Interaktif Matematika - Media Pembelajaran</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="app-title">
+                        <span class="title-icon">🧮</span>
+                        <span class="title-text">Kalkulator Interaktif Matematika</span>
+                    </h1>
+                    <p class="app-subtitle">Media Pembelajaran dengan Solusi Step-by-Step</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn--outline btn--sm" id="help-btn" onclick="toggleHelp()">
+                        <span>❓</span> Bantuan
+                    </button>
+                    <button class="btn btn--outline btn--sm" id="history-btn" onclick="toggleHistory()">
+                        <span>📜</span> Riwayat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mode Selection -->
+    <section class="mode-selection">
+        <div class="container">
+            <div class="mode-tabs">
+                <button class="mode-tab active" data-mode="basic" onclick="switchMode('basic')">
+                    <span class="mode-icon">🧮</span>
+                    <span class="mode-name">Kalkulator Dasar</span>
+                </button>
+                <button class="mode-tab" data-mode="scientific" onclick="switchMode('scientific')">
+                    <span class="mode-icon">🔬</span>
+                    <span class="mode-name">Kalkulator Ilmiah</span>
+                </button>
+                <button class="mode-tab" data-mode="educational" onclick="switchMode('educational')">
+                    <span class="mode-icon">📚</span>
+                    <span class="mode-name">Mode Pembelajaran</span>
+                </button>
+                <button class="mode-tab" data-mode="visual" onclick="switchMode('visual')">
+                    <span class="mode-icon">📊</span>
+                    <span class="mode-name">Visualisasi</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Calculator Container -->
+    <main class="calculator-container">
+        <div class="container">
+            <div class="calculator-layout">
+                <!-- Display Section -->
+                <div class="display-section">
+                    <div class="calculator-display">
+                        <div class="expression-display" id="expression-display">0</div>
+                        <div class="result-display" id="result-display"></div>
+                    </div>
+                    
+                    <!-- Step-by-Step Toggle -->
+                    <div class="display-controls">
+                        <button class="btn btn--secondary btn--sm" id="show-steps-btn" onclick="toggleSteps()">
+                            <span>📝</span> Tampilkan Langkah
+                        </button>
+                        <button class="btn btn--secondary btn--sm" id="clear-btn" onclick="clearCalculator()">
+                            <span>🗑️</span> Hapus Semua
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calculator Buttons -->
+                <div class="calculator-buttons" id="calculator-buttons">
+                    <!-- Basic Mode Buttons -->
+                    <div class="button-grid basic-grid active" id="basic-buttons">
+                        <!-- Memory Functions Row -->
+                        <button class="calc-btn memory-btn" onclick="memoryFunction('MC')">MC</button>
+                        <button class="calc-btn memory-btn" onclick="memoryFunction('MR')">MR</button>
+                        <button class="calc-btn memory-btn" onclick="memoryFunction('M+')">M+</button>
+                        <button class="calc-btn memory-btn" onclick="memoryFunction('M-')">M-</button>
+
+                        <!-- Function Row -->
+                        <button class="calc-btn function-btn" onclick="clearEntry()">CE</button>
+                        <button class="calc-btn function-btn" onclick="backspace()">⌫</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('√')">√</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('÷')">÷</button>
+
+                        <!-- Number Pad -->
+                        <button class="calc-btn number-btn" onclick="insertNumber('7')">7</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('8')">8</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('9')">9</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('×')">×</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('4')">4</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('5')">5</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('6')">6</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('-')">−</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('1')">1</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('2')">2</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('3')">3</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('+')">+</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('0')">0</button>
+                        <button class="calc-btn number-btn" onclick="insertOperator('.')">,</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('%')">%</button>
+                        <button class="calc-btn equals-btn" onclick="calculateResult()">=</button>
+                    </div>
+
+                    <!-- Scientific Mode Buttons -->
+                    <div class="button-grid scientific-grid" id="scientific-buttons">
+                        <!-- Scientific Functions -->
+                        <button class="calc-btn function-btn" onclick="insertFunction('sin(')">sin</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('cos(')">cos</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('tan(')">tan</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('log(')">log</button>
+
+                        <button class="calc-btn function-btn" onclick="insertFunction('ln(')">ln</button>
+                        <button class="calc-btn function-btn" onclick="insertFunction('!')">n!</button>
+                        <button class="calc-btn function-btn" onclick="insertOperator('^')">x^y</button>
+                        <button class="calc-btn function-btn" onclick="insertConstant('π')">π</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('7')">7</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('8')">8</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('9')">9</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('÷')">÷</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('4')">4</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('5')">5</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('6')">6</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('×')">×</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('1')">1</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('2')">2</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('3')">3</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('-')">−</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('0')">0</button>
+                        <button class="calc-btn number-btn" onclick="insertOperator('.')">,</button>
+                        <button class="calc-btn function-btn" onclick="insertConstant('e')">e</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('+')">+</button>
+
+                        <button class="calc-btn function-btn" onclick="clearEntry()">CE</button>
+                        <button class="calc-btn function-btn" onclick="insertOperator('(')">(</button>
+                        <button class="calc-btn function-btn" onclick="insertOperator(')')">)</button>
+                        <button class="calc-btn equals-btn" onclick="calculateResult()">=</button>
+                    </div>
+
+                    <!-- Educational Mode Buttons -->
+                    <div class="button-grid educational-grid" id="educational-buttons">
+                        <button class="calc-btn function-btn" onclick="openFractionCalculator()">🍕 Pecahan</button>
+                        <button class="calc-btn function-btn" onclick="openEquationSolver()">📐 Persamaan</button>
+                        <button class="calc-btn function-btn" onclick="openGeometryCalculator()">📏 Geometri</button>
+                        <button class="calc-btn function-btn" onclick="openGraphPlotter()">📈 Grafik</button>
+
+                        <button class="calc-btn function-btn" onclick="openBaseConverter()">💻 Konversi Basis</button>
+                        <button class="calc-btn function-btn" onclick="openUnitConverter()">⚖️ Konversi Unit</button>
+                        <button class="calc-btn function-btn" onclick="showConstantsInfo()">🔢 Konstanta</button>
+                        <button class="calc-btn function-btn" onclick="openStatistics()">📊 Statistik</button>
+
+                        <!-- Basic operations still available -->
+                        <button class="calc-btn number-btn" onclick="insertNumber('7')">7</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('8')">8</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('9')">9</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('÷')">÷</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('4')">4</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('5')">5</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('6')">6</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('×')">×</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('1')">1</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('2')">2</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('3')">3</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('-')">−</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('0')">0</button>
+                        <button class="calc-btn number-btn" onclick="insertOperator('.')">,</button>
+                        <button class="calc-btn function-btn" onclick="clearEntry()">CE</button>
+                        <button class="calc-btn equals-btn" onclick="calculateResult()">=</button>
+                    </div>
+
+                    <!-- Visual Mode Buttons -->
+                    <div class="button-grid visual-grid" id="visual-buttons">
+                        <button class="calc-btn function-btn" onclick="visualizeFraction()">🥧 Visualisasi Pecahan</button>
+                        <button class="calc-btn function-btn" onclick="showNumberLine()">📏 Garis Bilangan</button>
+                        <button class="calc-btn function-btn" onclick="createChart()">📊 Buat Grafik</button>
+                        <button class="calc-btn function-btn" onclick="showPattern()">🔢 Pola Bilangan</button>
+
+                        <!-- Fraction input helpers -->
+                        <button class="calc-btn function-btn" onclick="insertFraction()">a/b</button>
+                        <button class="calc-btn function-btn" onclick="insertMixedNumber()">a b/c</button>
+                        <button class="calc-btn function-btn" onclick="insertPercentage()">%</button>
+                        <button class="calc-btn function-btn" onclick="insertDecimal()">,</button>
+
+                        <!-- Basic operations -->
+                        <button class="calc-btn number-btn" onclick="insertNumber('7')">7</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('8')">8</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('9')">9</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('÷')">÷</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('4')">4</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('5')">5</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('6')">6</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('×')">×</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('1')">1</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('2')">2</button>
+                        <button class="calc-btn number-btn" onclick="insertNumber('3')">3</button>
+                        <button class="calc-btn operator-btn" onclick="insertOperator('-')">−</button>
+
+                        <button class="calc-btn number-btn" onclick="insertNumber('0')">0</button>
+                        <button class="calc-btn function-btn" onclick="clearEntry()">CE</button>
+                        <button class="calc-btn function-btn" onclick="insertOperator('+')">+</button>
+                        <button class="calc-btn equals-btn" onclick="calculateResult()">=</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results and Explanation Section -->
+            <div class="results-section" id="results-section">
+                <!-- Step-by-Step Solution -->
+                <div class="steps-panel hidden" id="steps-panel">
+                    <div class="panel-header">
+                        <h3>🔍 Langkah-langkah Penyelesaian</h3>
+                        <button class="btn btn--outline btn--sm" onclick="toggleSteps()">Tutup</button>
+                    </div>
+                    <div class="steps-content" id="steps-content">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-description">Masukkan operasi matematika untuk melihat langkah-langkahnya</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Display Area -->
+                <div class="visual-display hidden" id="visual-display">
+                    <div class="panel-header">
+                        <h3>📊 Visualisasi</h3>
+                        <button class="btn btn--outline btn--sm" onclick="hideVisualization()">Tutup</button>
+                    </div>
+                    <div class="visual-content" id="visual-content">
+                        <canvas id="visualization-canvas" style="position: relative; height: 300px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sidebar Panels -->
+    <!-- History Panel -->
+    <div class="sidebar-panel hidden" id="history-panel">
+        <div class="panel-overlay" onclick="toggleHistory()"></div>
+        <div class="panel-content">
+            <div class="panel-header">
+                <h3>📜 Riwayat Perhitungan</h3>
+                <button class="btn btn--outline btn--sm" onclick="clearHistory()">Hapus Semua</button>
+                <button class="panel-close" onclick="toggleHistory()">×</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <div class="history-item">
+                    <div class="history-expression">Riwayat kosong</div>
+                    <div class="history-note">Mulai menghitung untuk melihat riwayat</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Panel -->
+    <div class="sidebar-panel hidden" id="help-panel">
+        <div class="panel-overlay" onclick="toggleHelp()"></div>
+        <div class="panel-content">
+            <div class="panel-header">
+                <h3>❓ Bantuan & Panduan</h3>
+                <button class="panel-close" onclick="toggleHelp()">×</button>
+            </div>
+            <div class="help-content">
+                <div class="help-section">
+                    <h4>🧮 Mode Kalkulator</h4>
+                    <ul>
+                        <li><strong>Dasar:</strong> Operasi aritmatika standar dengan memori</li>
+                        <li><strong>Ilmiah:</strong> Fungsi trigonometri, logaritma, dan exponential</li>
+                        <li><strong>Pembelajaran:</strong> Alat edukatif dengan visualisasi</li>
+                        <li><strong>Visual:</strong> Representasi grafis dari perhitungan</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h4>⌨️ Pintasan Keyboard</h4>
+                    <ul>
+                        <li><strong>Enter:</strong> Hitung hasil</li>
+                        <li><strong>Escape:</strong> Hapus semua</li>
+                        <li><strong>Backspace:</strong> Hapus karakter terakhir</li>
+                        <li><strong>S:</strong> Toggle langkah-langkah</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h4>📚 Fitur Pembelajaran</h4>
+                    <ul>
+                        <li><strong>Langkah-langkah:</strong> Melihat proses perhitungan detail</li>
+                        <li><strong>Visualisasi:</strong> Grafik dan diagram untuk pemahaman</li>
+                        <li><strong>Penjelasan:</strong> Konsep matematika di balik operasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Special Calculators -->
+    <div class="modal hidden" id="special-calculator-modal">
+        <div class="modal-overlay" onclick="closeSpecialCalculator()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Kalkulator Khusus</h3>
+                <button class="modal-close" onclick="closeSpecialCalculator()">×</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+       <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="creator-info">
+                    <p><strong>© 2025 Ralls. Semua hak cipta dilindungi.</strong> Transforming Education Through Innovation</p>
+                </div>
+                <div class="app-info">
+                    <p>Kalkulator Interaktif Matematika v1.0</p>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

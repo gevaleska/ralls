@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logaritma - Media Pembelajaran Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                <span class="math-symbol">log</span>
+                Logaritma
+                <span class="math-symbol">ln</span>
+            </h1>
+            <p class="header__subtitle">Media Pembelajaran Interaktif</p>
+            <div class="theorem-formula">
+                <span class="formula">log_a(b) = c ⟺ a^c = b</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="btn btn--primary nav__btn active" data-section="beranda" id="nav-beranda">
+                    <span class="nav__icon">🏠</span>
+                    Beranda
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="teori" id="nav-teori">
+                    <span class="nav__icon">📚</span>
+                    Teori
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="sifat" id="nav-sifat">
+                    <span class="nav__icon">⚖️</span>
+                    Sifat Logaritma
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="operasi" id="nav-operasi">
+                    <span class="nav__icon">➕</span>
+                    Operasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="persamaan" id="nav-persamaan">
+                    <span class="nav__icon">🔧</span>
+                    Persamaan
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="grafik" id="nav-grafik">
+                    <span class="nav__icon">📈</span>
+                    Grafik
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="kalkulator" id="nav-kalkulator">
+                    <span class="nav__icon">🧮</span>
+                    Kalkulator
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="aplikasi" id="nav-aplikasi">
+                    <span class="nav__icon">🌍</span>
+                    Aplikasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="latihan" id="nav-latihan">
+                    <span class="nav__icon">📝</span>
+                    Latihan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Beranda Section -->
+            <section id="beranda-section" class="section active">
+                <div class="intro-hero">
+                    <h2>Pelajari Logaritma dengan Cara Interaktif</h2>
+                    <p>Memahami konsep logaritma melalui visualisasi, simulasi, dan aplikasi nyata!</p>
+                    <div class="hero-visualization" id="hero-visualization">
+                        <canvas id="hero-canvas" width="500" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <h3>Fitur Pembelajaran</h3>
+                    <div class="feature-cards">
+                        <div class="card feature-card" data-section="teori">
+                            <div class="feature-icon">📚</div>
+                            <h4>Teori Lengkap</h4>
+                            <p>Penjelasan konsep dasar logaritma dengan definisi dan contoh yang mudah dipahami</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="sifat">
+                            <div class="feature-icon">⚖️</div>
+                            <h4>10 Sifat Logaritma</h4>
+                            <p>Interaksi langsung dengan hukum-hukum logaritma dan pembuktian visual</p>
+                            <button class="btn btn--sm btn--primary">Jelajahi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="operasi">
+                            <div class="feature-icon">➕</div>
+                            <h4>Operasi Logaritma</h4>
+                            <p>Simulasi operasi matematika dengan logaritma secara interaktif</p>
+                            <button class="btn btn--sm btn--primary">Coba →</button>
+                        </div>
+                        <div class="card feature-card" data-section="persamaan">
+                            <div class="feature-icon">🔧</div>
+                            <h4>Penyelesaian Persamaan</h4>
+                            <p>Panduan langkah demi langkah menyelesaikan persamaan logaritma</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="grafik">
+                            <div class="feature-icon">📈</div>
+                            <h4>Visualisasi Grafik</h4>
+                            <p>Plotting dan analisis grafik fungsi logaritma dengan berbagai basis</p>
+                            <button class="btn btn--sm btn--primary">Plot →</button>
+                        </div>
+                        <div class="card feature-card" data-section="aplikasi">
+                            <div class="feature-icon">🌍</div>
+                            <h4>Aplikasi Nyata</h4>
+                            <p>Contoh penerapan logaritma dalam pH, Richter, desibel, dan keuangan</p>
+                            <button class="btn btn--sm btn--primary">Lihat →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teori Section -->
+            <section id="teori-section" class="section">
+                <div class="theory-content">
+                    <h2>Konsep Dasar Logaritma</h2>
+                    
+                    <div class="theory-main">
+                        <div class="theory-text">
+                            <h3>Definisi Logaritma</h3>
+                            <div class="definition-box">
+                                <p>Logaritma adalah operasi matematika yang merupakan kebalikan dari eksponen atau pemangkatan</p>
+                                <div class="formula-box">
+                                    <span class="formula-main">log_a(b) = c ↔ a^c = b</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Komponen Logaritma</h3>
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <strong>a</strong> = Basis logaritma (bilangan pokok)
+                                </div>
+                                <div class="component-item">
+                                    <strong>b</strong> = Numerus (argumen/bilangan yang dicari logaritmanya)
+                                </div>
+                                <div class="component-item">
+                                    <strong>c</strong> = Hasil logaritma (pangkat)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-visual">
+                            <canvas id="theory-visualization" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="types-section">
+                        <h3>Jenis-jenis Logaritma</h3>
+                        <div class="types-grid">
+                            <div class="card type-card">
+                                <h4>log(x) atau log₁₀(x)</h4>
+                                <p><strong>Logaritma Biasa/Briggs</strong></p>
+                                <p>Logaritma dengan basis 10, sering digunakan dalam sains dan teknik</p>
+                                <p><em>Contoh:</em> log(100) = 2 karena 10² = 100</p>
+                            </div>
+                            <div class="card type-card">
+                                <h4>ln(x) atau log_e(x)</h4>
+                                <p><strong>Logaritma Natural/Nepper</strong></p>
+                                <p>Logaritma dengan basis e ≈ 2.718, banyak digunakan dalam kalkulus</p>
+                                <p><em>Contoh:</em> ln(e) = 1 karena e¹ = e</p>
+                            </div>
+                            <div class="card type-card">
+                                <h4>log₂(x)</h4>
+                                <p><strong>Logaritma Biner</strong></p>
+                                <p>Logaritma dengan basis 2, digunakan dalam ilmu komputer</p>
+                                <p><em>Contoh:</em> log₂(16) = 4 karena 2⁴ = 16</p>
+                            </div>
+                            <div class="card type-card">
+                                <h4>log_a(x)</h4>
+                                <p><strong>Logaritma Umum</strong></p>
+                                <p>Logaritma dengan basis sembarang a > 0, a ≠ 1</p>
+                                <p><em>Contoh:</em> log₃(27) = 3 karena 3³ = 27</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sifat Logaritma Section -->
+            <section id="sifat-section" class="section">
+                <div class="properties-content">
+                    <h2>Sifat-Sifat Logaritma</h2>
+                    
+                    <div class="properties-interactive">
+                        <div class="property-selector">
+                            <h3>Pilih Sifat untuk Dipelajari</h3>
+                            <div class="property-buttons">
+                                <button class="btn btn--outline property-btn active" data-property="1">log_a(a) = 1</button>
+                                <button class="btn btn--outline property-btn" data-property="2">log_a(1) = 0</button>
+                                <button class="btn btn--outline property-btn" data-property="3">log_a(a^x) = x</button>
+                                <button class="btn btn--outline property-btn" data-property="4">a^(log_a(x)) = x</button>
+                                <button class="btn btn--outline property-btn" data-property="5">log_a(xy) = log_a(x) + log_a(y)</button>
+                                <button class="btn btn--outline property-btn" data-property="6">log_a(x/y) = log_a(x) - log_a(y)</button>
+                                <button class="btn btn--outline property-btn" data-property="7">log_a(x^n) = n × log_a(x)</button>
+                                <button class="btn btn--outline property-btn" data-property="8">log_a(x) = log_b(x)/log_b(a)</button>
+                                <button class="btn btn--outline property-btn" data-property="9">log_a(x) × log_x(y) = log_a(y)</button>
+                                <button class="btn btn--outline property-btn" data-property="10">log_a(1/x) = -log_a(x)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="property-display">
+                            <div class="card property-explanation">
+                                <h3 id="property-title">Logaritma Basis Terhadap Dirinya Sendiri</h3>
+                                <div class="property-rule">
+                                    <span class="formula-main" id="property-formula">log_a(a) = 1</span>
+                                </div>
+                                <p id="property-description">Logaritma suatu bilangan terhadap dirinya sendiri selalu bernilai 1</p>
+                                <div class="property-example">
+                                    <h4>Contoh:</h4>
+                                    <p id="property-example-text">log₅(5) = 1, log₁₀(10) = 1</p>
+                                </div>
+                                <div class="property-proof">
+                                    <h4>Bukti:</h4>
+                                    <p id="property-proof-text">Karena a¹ = a, maka log_a(a) = 1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-demo">
+                        <h3>Demo Interaktif Sifat Logaritma</h3>
+                        <div class="demo-controls">
+                            <div class="input-group">
+                                <label class="form-label">Basis (a):</label>
+                                <input type="number" id="demo-base" class="form-control" value="2" min="2" step="1">
+                            </div>
+                            <div class="input-group">
+                                <label class="form-label">Nilai (x):</label>
+                                <input type="number" id="demo-value" class="form-control" value="8" min="1" step="0.1">
+                            </div>
+                            <button class="btn btn--primary" id="demo-calculate">Hitung</button>
+                        </div>
+                        <div id="demo-result" class="demo-result">
+                            <p>Masukkan nilai dan tekan tombol Hitung untuk melihat hasil</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Operasi Section -->
+            <section id="operasi-section" class="section">
+                <div class="operations-content">
+                    <h2>Operasi dengan Logaritma</h2>
+                    
+                    <div class="operations-grid">
+                        <div class="operation-card">
+                            <h3>➕ Penjumlahan Logaritma</h3>
+                            <div class="operation-content">
+                                <div class="operation-rule">
+                                    <span class="formula-main">log_a(x) + log_a(y) = log_a(xy)</span>
+                                    <p>Penjumlahan logaritma dengan basis sama</p>
+                                </div>
+                                <div class="operation-calculator">
+                                    <div class="calc-inputs">
+                                        <span>log</span>
+                                        <input type="number" id="add-base" class="form-control" value="2" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="add-x" class="form-control" value="4" min="0.1" step="0.1">
+                                        <span>) +</span>
+                                        <span>log</span>
+                                        <input type="number" id="add-base2" class="form-control" value="2" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="add-y" class="form-control" value="8" min="0.1" step="0.1">
+                                        <span>)</span>
+                                        <button class="btn btn--primary" id="calc-log-addition">Hitung</button>
+                                    </div>
+                                    <div id="addition-log-result" class="operation-result">log₂(4) + log₂(8) = log₂(32) = 5</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="operation-card">
+                            <h3>➖ Pengurangan Logaritma</h3>
+                            <div class="operation-content">
+                                <div class="operation-rule">
+                                    <span class="formula-main">log_a(x) - log_a(y) = log_a(x/y)</span>
+                                    <p>Pengurangan logaritma dengan basis sama</p>
+                                </div>
+                                <div class="operation-calculator">
+                                    <div class="calc-inputs">
+                                        <span>log</span>
+                                        <input type="number" id="sub-base" class="form-control" value="3" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="sub-x" class="form-control" value="81" min="0.1" step="0.1">
+                                        <span>) -</span>
+                                        <span>log</span>
+                                        <input type="number" id="sub-base2" class="form-control" value="3" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="sub-y" class="form-control" value="9" min="0.1" step="0.1">
+                                        <span>)</span>
+                                        <button class="btn btn--primary" id="calc-log-subtraction">Hitung</button>
+                                    </div>
+                                    <div id="subtraction-log-result" class="operation-result">log₃(81) - log₃(9) = log₃(9) = 2</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="operation-card">
+                            <h3>✖️ Perubahan Basis</h3>
+                            <div class="operation-content">
+                                <div class="operation-rule">
+                                    <span class="formula-main">log_a(x) = log_b(x) / log_b(a)</span>
+                                    <p>Mengubah basis logaritma</p>
+                                </div>
+                                <div class="operation-calculator">
+                                    <div class="calc-inputs">
+                                        <span>log</span>
+                                        <input type="number" id="change-base-a" class="form-control" value="3" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="change-x" class="form-control" value="10" min="0.1" step="0.1">
+                                        <span>)</span>
+                                        <span>=</span>
+                                        <span>log</span>
+                                        <input type="number" id="change-base-b" class="form-control" value="10" min="2" step="1">
+                                        <span>(...)</span>
+                                        <button class="btn btn--primary" id="calc-change-base">Hitung</button>
+                                    </div>
+                                    <div id="change-base-result" class="operation-result">log₃(10) = log₁₀(10) / log₁₀(3) ≈ 2.096</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="operation-card">
+                            <h3>⚡ Pangkat Logaritma</h3>
+                            <div class="operation-content">
+                                <div class="operation-rule">
+                                    <span class="formula-main">log_a(x^n) = n × log_a(x)</span>
+                                    <p>Logaritma dari bilangan berpangkat</p>
+                                </div>
+                                <div class="operation-calculator">
+                                    <div class="calc-inputs">
+                                        <span>log</span>
+                                        <input type="number" id="power-base" class="form-control" value="2" min="2" step="1">
+                                        <span>(</span>
+                                        <input type="number" id="power-x" class="form-control" value="5" min="0.1" step="0.1">
+                                        <span>^</span>
+                                        <input type="number" id="power-n" class="form-control" value="3" step="0.1">
+                                        <span>)</span>
+                                        <button class="btn btn--primary" id="calc-power-log">Hitung</button>
+                                    </div>
+                                    <div id="power-log-result" class="operation-result">log₂(5³) = 3 × log₂(5) ≈ 6.966</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Persamaan Section -->
+            <section id="persamaan-section" class="section">
+                <div class="equations-content">
+                    <h2>Menyelesaikan Persamaan Logaritma</h2>
+                    
+                    <div class="equation-types">
+                        <div class="equation-type-card">
+                            <h3>Persamaan Logaritma Sederhana</h3>
+                            <div class="equation-form">
+                                <span class="formula-main">log_a(x) = b</span>
+                                <p><strong>Metode:</strong> Ubah ke bentuk eksponensial: x = a^b</p>
+                            </div>
+                            <div class="equation-solver">
+                                <h4>Solver Interaktif</h4>
+                                <div class="solver-inputs">
+                                    <div class="input-group">
+                                        <label class="form-label">log</label>
+                                        <input type="number" id="simple-base" class="form-control" value="3" min="2" step="1">
+                                        <label class="form-label">(x) =</label>
+                                        <input type="number" id="simple-result" class="form-control" value="4" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="solve-simple">Selesaikan</button>
+                                </div>
+                                <div id="simple-solution" class="solution-display">
+                                    <p>Masukkan nilai dan tekan Selesaikan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-type-card">
+                            <h3>Persamaan Jumlah Logaritma</h3>
+                            <div class="equation-form">
+                                <span class="formula-main">log_a(x) + log_a(y) = c</span>
+                                <p><strong>Metode:</strong> Gunakan sifat perkalian: log_a(xy) = c → xy = a^c</p>
+                            </div>
+                            <div class="equation-solver">
+                                <h4>Contoh dan Latihan</h4>
+                                <div class="example-problem">
+                                    <p><strong>Contoh:</strong> log₂(x) + log₂(3) = 5</p>
+                                    <div class="step-by-step">
+                                        <div class="step">1. log₂(3x) = 5</div>
+                                        <div class="step">2. 3x = 2⁵ = 32</div>
+                                        <div class="step">3. x = 32/3 ≈ 10.67</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-type-card">
+                            <h3>Persamaan Eksponensial</h3>
+                            <div class="equation-form">
+                                <span class="formula-main">a^x = b</span>
+                                <p><strong>Metode:</strong> Gunakan logaritma: x = log_a(b)</p>
+                            </div>
+                            <div class="equation-solver">
+                                <h4>Solver Interaktif</h4>
+                                <div class="solver-inputs">
+                                    <div class="input-group">
+                                        <input type="number" id="exp-base" class="form-control" value="2" min="2" step="1">
+                                        <label class="form-label">^x =</label>
+                                        <input type="number" id="exp-result" class="form-control" value="16" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="solve-exponential">Selesaikan</button>
+                                </div>
+                                <div id="exp-solution" class="solution-display">
+                                    <p>Masukkan nilai dan tekan Selesaikan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grafik Section -->
+            <section id="grafik-section" class="section">
+                <div class="graph-content">
+                    <h2>Grafik Fungsi Logaritma</h2>
+                    
+                    <div class="graph-main">
+                        <div class="graph-controls">
+                            <h3>Pengaturan Grafik</h3>
+                            <div class="control-group">
+                                <div class="input-group">
+                                    <label class="form-label">Basis logaritma:</label>
+                                    <input type="number" id="graph-base" class="form-control" value="2" min="1.1" max="10" step="0.1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Rentang x (maks):</label>
+                                    <input type="number" id="graph-range" class="form-control" value="10" min="5" max="20" step="1">
+                                </div>
+                                <button class="btn btn--primary" id="plot-graph">Plot Grafik</button>
+                            </div>
+                            
+                            <div class="preset-functions">
+                                <h4>Fungsi Preset</h4>
+                                <button class="btn btn--outline" data-preset="2">log₂(x)</button>
+                                <button class="btn btn--outline" data-preset="10">log₁₀(x)</button>
+                                <button class="btn btn--outline" data-preset="2.718">ln(x)</button>
+                                <button class="btn btn--outline" data-preset="0.5">log₀.₅(x)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="graph-display">
+                            <canvas id="graph-canvas" width="600" height="450"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="graph-characteristics">
+                        <h3>Karakteristik Grafik Logaritma</h3>
+                        <div class="characteristics-grid">
+                            <div class="card characteristic-item">
+                                <h4>Domain</h4>
+                                <p>x > 0 (bilangan positif)</p>
+                            </div>
+                            <div class="card characteristic-item">
+                                <h4>Range</h4>
+                                <p>Semua bilangan real</p>
+                            </div>
+                            <div class="card characteristic-item">
+                                <h4>Titik Potong Sumbu X</h4>
+                                <p>(1, 0)</p>
+                            </div>
+                            <div class="card characteristic-item">
+                                <h4>Asimtot Vertikal</h4>
+                                <p>x = 0 (sumbu y)</p>
+                            </div>
+                            <div class="card characteristic-item">
+                                <h4>Sifat Monoton</h4>
+                                <p>Naik untuk basis > 1<br>Turun untuk 0 < basis < 1</p>
+                            </div>
+                            <div class="card characteristic-item">
+                                <h4>Kecekungan</h4>
+                                <p>Cekung ke bawah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalkulator Section -->
+            <section id="kalkulator-section" class="section">
+                <div class="calculator-content">
+                    <h2>Kalkulator Logaritma</h2>
+                    
+                    <div class="calculator-modes">
+                        <h3>Mode Kalkulator</h3>
+                        <div class="mode-selector">
+                            <button class="btn btn--primary mode-btn active" data-mode="basic">Perhitungan Dasar</button>
+                            <button class="btn btn--outline mode-btn" data-mode="equation">Penyelesaian Persamaan</button>
+                            <button class="btn btn--outline mode-btn" data-mode="change-base">Perubahan Basis</button>
+                            <button class="btn btn--outline mode-btn" data-mode="multi">Multi-Fungsi</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Basic Calculator -->
+                    <div class="calculator-panel" id="basic-calculator">
+                        <div class="calc-main">
+                            <div class="card calc-form">
+                                <h3>Perhitungan log_a(b)</h3>
+                                <div class="calc-controls">
+                                    <div class="input-group">
+                                        <label class="form-label">Basis (a):</label>
+                                        <input type="number" id="calc-base" class="form-control" value="10" step="0.1" min="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Numerus (b):</label>
+                                        <input type="number" id="calc-numerus" class="form-control" value="100" step="0.1" min="0.001">
+                                    </div>
+                                    <button class="btn btn--primary btn--full-width" id="calculate-log">Hitung Logaritma</button>
+                                </div>
+                                
+                                <div class="calc-result-section">
+                                    <h4>Hasil:</h4>
+                                    <div id="calc-result" class="result-display">
+                                        <p>Masukkan nilai dan tekan Hitung Logaritma</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card quick-calculations">
+                                <h4>Perhitungan Cepat</h4>
+                                <div class="quick-buttons">
+                                    <button class="btn btn--outline" data-quick="log10-100">log₁₀(100)</button>
+                                    <button class="btn btn--outline" data-quick="log2-8">log₂(8)</button>
+                                    <button class="btn btn--outline" data-quick="ln-e">ln(e)</button>
+                                    <button class="btn btn--outline" data-quick="log3-27">log₃(27)</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-history-panel">
+                            <div class="card calc-history">
+                                <h4>Riwayat Perhitungan</h4>
+                                <div id="calc-history-list" class="history-list">
+                                    <p class="history-empty">Belum ada perhitungan</p>
+                                </div>
+                                <button class="btn btn--outline btn--sm" id="clear-calc-history">Hapus Riwayat</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other calculator panels would be implemented similarly -->
+                    <div class="calculator-panel hidden" id="equation-calculator">
+                        <div class="card">
+                            <h3>Penyelesaian Persamaan Logaritma</h3>
+                            <p>Mode ini akan dikembangkan untuk menyelesaikan berbagai jenis persamaan logaritma.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-panel hidden" id="change-base-calculator">
+                        <div class="card">
+                            <h3>Kalkulator Perubahan Basis</h3>
+                            <p>Mode ini akan dikembangkan untuk konversi antar basis logaritma.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-panel hidden" id="multi-calculator">
+                        <div class="card">
+                            <h3>Kalkulator Multi-Fungsi</h3>
+                            <p>Mode ini akan dikembangkan untuk operasi logaritma yang kompleks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Section -->
+            <section id="aplikasi-section" class="section">
+                <div class="applications-content">
+                    <h2>Aplikasi Logaritma dalam Kehidupan</h2>
+                    
+                    <div class="apps-grid">
+                        <div class="app-card">
+                            <h3>🧪 Skala pH dalam Kimia</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> pH = -log₁₀[H⁺]</p>
+                                    <p>Mengukur tingkat keasaman atau kebasaan larutan</p>
+                                    <p><strong>Skala:</strong> 0-14 (asam: 0-7, netral: 7, basa: 7-14)</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Konsentrasi H⁺ (M):</label>
+                                        <input type="number" id="ph-concentration" class="form-control" value="0.01" step="0.0001" min="0.0001">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-ph">Hitung pH</button>
+                                    <div id="ph-result" class="app-result">
+                                        pH = -log₁₀(0.01) = -(-2) = 2 (sangat asam)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🌍 Skala Richter untuk Gempa</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> M = log₁₀(A/A₀)</p>
+                                    <p>Mengukur kekuatan/magnitudo gempa bumi</p>
+                                    <p><strong>Catatan:</strong> Setiap peningkatan 1.0 = amplitudo 10x lebih besar</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Amplitudo (A):</label>
+                                        <input type="number" id="richter-amplitude" class="form-control" value="1000" step="1" min="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Amplitudo Referensi (A₀):</label>
+                                        <input type="number" id="richter-reference" class="form-control" value="1" step="0.1" min="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-richter">Hitung Magnitudo</button>
+                                    <div id="richter-result" class="app-result">
+                                        M = log₁₀(1000/1) = log₁₀(1000) = 3.0
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🔊 Skala Desibel untuk Suara</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> dB = 10 × log₁₀(I/I₀)</p>
+                                    <p>Mengukur intensitas atau kenyaringan suara</p>
+                                    <p><strong>Referensi:</strong> Normal (60 dB), Konser (110 dB), Jet (140 dB)</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Intensitas (I) dalam W/m²:</label>
+                                        <input type="number" id="decibel-intensity" class="form-control" value="0.001" step="0.0001" min="0.000000000001">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-decibel">Hitung Desibel</button>
+                                    <div id="decibel-result" class="app-result">
+                                        dB = 10 × log₁₀(0.001/10⁻¹²) = 90 dB
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>💰 Bunga Majemuk dalam Keuangan</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> t = log(A/P) / log(1+r)</p>
+                                    <p>Menghitung waktu investasi untuk mencapai target tertentu</p>
+                                    <p><strong>Aplikasi:</strong> Perencanaan keuangan, investasi, kredit</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Modal Awal (P):</label>
+                                        <input type="number" id="compound-principal" class="form-control" value="10000000" step="100000" min="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Target Akhir (A):</label>
+                                        <input type="number" id="compound-amount" class="form-control" value="20000000" step="100000" min="1000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Bunga per tahun (r):</label>
+                                        <input type="number" id="compound-rate" class="form-control" value="0.08" step="0.01" min="0.01" max="1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-compound">Hitung Waktu</button>
+                                    <div id="compound-result" class="app-result">
+                                        t = log(20M/10M) / log(1.08) ≈ 9 tahun
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🦠 Pertumbuhan Populasi</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> t = log(N/N₀) / log(1+r)</p>
+                                    <p>Model pertumbuhan eksponensial organisme</p>
+                                    <p><strong>Aplikasi:</strong> Ekologi, demografi, epidemiologi</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Populasi Awal (N₀):</label>
+                                        <input type="number" id="population-initial" class="form-control" value="1000" step="10" min="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Populasi Target (N):</label>
+                                        <input type="number" id="population-target" class="form-control" value="10000" step="100" min="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat Pertumbuhan (r):</label>
+                                        <input type="number" id="population-rate" class="form-control" value="0.1" step="0.01" min="0.01" max="2">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-population">Hitung Waktu</button>
+                                    <div id="population-result" class="app-result">
+                                        t = log(10000/1000) / log(1.1) ≈ 24.2 periode
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Section -->
+            <section id="latihan-section" class="section">
+                <div class="practice-content">
+                    <h2>Latihan Soal Logaritma</h2>
+                    
+                    <div class="practice-main">
+                        <div class="problem-container">
+                            <div class="card current-problem">
+                                <div class="problem-header">
+                                    <h3>Soal <span id="problem-number">1</span> dari <span id="total-problems">8</span></h3>
+                                    <div class="problem-score">
+                                        <span>Skor: <span id="current-score">0</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="problem-content">
+                                    <p id="problem-text">Hitunglah log₂(32)</p>
+                                    
+                                    <div class="answer-input">
+                                        <label class="form-label">Jawaban:</label>
+                                        <input type="text" id="answer-input" class="form-control" placeholder="Masukkan jawaban Anda">
+                                        <div class="answer-buttons">
+                                            <button class="btn btn--primary" id="check-answer">✓ Periksa</button>
+                                            <button class="btn btn--outline" id="show-hint">💡 Petunjuk</button>
+                                            <button class="btn btn--outline" id="show-solution">📝 Pembahasan</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="answer-feedback" id="answer-feedback"></div>
+                                    
+                                    <div class="problem-navigation">
+                                        <button class="btn btn--outline" id="prev-problem" disabled>← Sebelumnya</button>
+                                        <button class="btn btn--primary" id="next-problem">Selanjutnya →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-sidebar">
+                            <div class="card progress-card">
+                                <h4>Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="progress-text"><span id="completed-problems">0</span> dari <span id="total-problems-2">8</span> soal selesai</p>
+                            </div>
+                            
+                            <div class="card stats-card">
+                                <h4>Statistik</h4>
+                                <div class="stat-item">
+                                    <span class="stat-label">Benar:</span>
+                                    <span class="stat-value" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Salah:</span>
+                                    <span class="stat-value" id="wrong-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Akurasi:</span>
+                                    <span class="stat-value" id="accuracy">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card help-card">
+                                <h4>Tips</h4>
+                                <ul>
+                                    <li>Pahami hubungan log_a(b) = c ↔ a^c = b</li>
+                                    <li>Gunakan sifat-sifat logaritma untuk menyederhanakan</li>
+                                    <li>Ingat: log_a(a) = 1 dan log_a(1) = 0</li>
+                                    <li>Untuk perubahan basis: log_a(x) = log_b(x)/log_b(a)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+   <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Media Pembelajaran Logaritma</h3>
+                    <p>Platform interaktif untuk mempelajari konsep logaritma dengan simulasi, visualisasi, dan aplikasi nyata dalam kehidupan sehari-hari</p>
+                </div>
+                
+                <div class="footer-creator">
+                    <div class="creator-info">
+                        <h4>👨‍🎓 Dibuat oleh: Geraldi Valeska</h4>
+                        <p class="creator-title">Pembuat Media Pembelajaran</p>
+                        <p class="creation-date">📅 September 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Media Pembelajaran Logaritma - Memudahkan pembelajaran matematika untuk semua</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

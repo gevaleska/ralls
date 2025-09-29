@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi Matematika - Media Pembelajaran Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                <span class="math-symbol">f(x)</span>
+                Fungsi Matematika
+                <span class="math-symbol">y=</span>
+            </h1>
+            <p class="header__subtitle">Media Pembelajaran Interaktif</p>
+            <div class="theorem-formula">
+                <span class="formula">f: A → B</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="btn btn--primary nav__btn active" data-section="beranda" id="nav-beranda">
+                    <span class="nav__icon">🏠</span>
+                    Beranda
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="teori" id="nav-teori">
+                    <span class="nav__icon">📚</span>
+                    Teori
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="jenis" id="nav-jenis">
+                    <span class="nav__icon">🔢</span>
+                    Jenis Fungsi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="domain" id="nav-domain">
+                    <span class="nav__icon">🎯</span>
+                    Domain & Range
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="grafik" id="nav-grafik">
+                    <span class="nav__icon">📈</span>
+                    Grafik
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="transformasi" id="nav-transformasi">
+                    <span class="nav__icon">🔄</span>
+                    Transformasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="komposisi" id="nav-komposisi">
+                    <span class="nav__icon">🔗</span>
+                    Komposisi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="invers" id="nav-invers">
+                    <span class="nav__icon">↩️</span>
+                    Invers
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="aplikasi" id="nav-aplikasi">
+                    <span class="nav__icon">🌍</span>
+                    Aplikasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="latihan" id="nav-latihan">
+                    <span class="nav__icon">📝</span>
+                    Latihan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Beranda Section -->
+            <section id="beranda-section" class="section active">
+                <div class="intro-hero">
+                    <h2>Pelajari Fungsi Matematika dengan Cara Interaktif</h2>
+                    <p>Memahami konsep fungsi melalui visualisasi, simulasi, dan aplikasi nyata!</p>
+                    <div class="hero-visualization" id="hero-visualization">
+                        <canvas id="hero-canvas" width="600" height="350"></canvas>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <h3>Fitur Pembelajaran</h3>
+                    <div class="feature-cards">
+                        <div class="card feature-card" data-section="teori">
+                            <div class="feature-icon">📚</div>
+                            <h4>Konsep Dasar</h4>
+                            <p>Definisi fungsi sebagai pemetaan f: A → B dengan penjelasan domain, kodomain, dan range</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="jenis">
+                            <div class="feature-icon">🔢</div>
+                            <h4>Jenis-jenis Fungsi</h4>
+                            <p>Linear, kuadrat, polinomial, eksponensial, logaritma, trigonometri, dan lainnya</p>
+                            <button class="btn btn--sm btn--primary">Jelajahi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="domain">
+                            <div class="feature-icon">🎯</div>
+                            <h4>Domain & Range</h4>
+                            <p>Eksplorasi interaktif untuk menentukan domain dan range berbagai fungsi</p>
+                            <button class="btn btn--sm btn--primary">Coba →</button>
+                        </div>
+                        <div class="card feature-card" data-section="grafik">
+                            <div class="feature-icon">📈</div>
+                            <h4>Plotter Grafik</h4>
+                            <p>Visualisasi grafik fungsi dengan kontrol interaktif dan analisis karakteristik</p>
+                            <button class="btn btn--sm btn--primary">Plot →</button>
+                        </div>
+                        <div class="card feature-card" data-section="transformasi">
+                            <div class="feature-icon">🔄</div>
+                            <h4>Transformasi Fungsi</h4>
+                            <p>Slider interaktif untuk pergeseran, peregangan, dan refleksi grafik fungsi</p>
+                            <button class="btn btn--sm btn--primary">Transform →</button>
+                        </div>
+                        <div class="card feature-card" data-section="aplikasi">
+                            <div class="feature-icon">🌍</div>
+                            <h4>Aplikasi Nyata</h4>
+                            <p>Penerapan fungsi dalam fisika, ekonomi, biologi, dan bidang lainnya</p>
+                            <button class="btn btn--sm btn--primary">Lihat →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teori Section -->
+            <section id="teori-section" class="section">
+                <div class="theory-content">
+                    <h2>Konsep Dasar Fungsi</h2>
+                    
+                    <div class="theory-main">
+                        <div class="theory-text">
+                            <h3>Definisi Fungsi</h3>
+                            <div class="definition-box">
+                                <p>Fungsi adalah suatu aturan atau relasi yang menghubungkan setiap elemen dalam domain (daerah asal) dengan tepat satu elemen dalam kodomain (daerah kawan)</p>
+                                <div class="formula-box">
+                                    <span class="formula-main">f: A → B atau y = f(x)</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Komponen Fungsi</h3>
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <strong>Domain (A)</strong> = Himpunan semua nilai input yang valid (daerah asal)
+                                </div>
+                                <div class="component-item">
+                                    <strong>Kodomain (B)</strong> = Himpunan yang memuat semua kemungkinan output (daerah kawan)
+                                </div>
+                                <div class="component-item">
+                                    <strong>Range</strong> = Himpunan nilai output yang benar-benar dihasilkan (daerah hasil)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-visual">
+                            <canvas id="theory-visualization" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="example-section">
+                        <h3>Contoh Fungsi</h3>
+                        <div class="example-card">
+                            <p><strong>f(x) = 2x + 1</strong> dengan domain {1, 2, 3}</p>
+                            <div class="mapping-example">
+                                <div class="domain-set">
+                                    <h4>Domain</h4>
+                                    <div class="set-elements">
+                                        <span class="element">1</span>
+                                        <span class="element">2</span>
+                                        <span class="element">3</span>
+                                    </div>
+                                </div>
+                                <div class="arrows">
+                                    <div class="arrow">→</div>
+                                    <div class="arrow">→</div>
+                                    <div class="arrow">→</div>
+                                </div>
+                                <div class="range-set">
+                                    <h4>Range</h4>
+                                    <div class="set-elements">
+                                        <span class="element">3</span>
+                                        <span class="element">5</span>
+                                        <span class="element">7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jenis Fungsi Section -->
+            <section id="jenis-section" class="section">
+                <div class="types-content">
+                    <h2>Jenis-jenis Fungsi</h2>
+                    
+                    <div class="type-selector">
+                        <div class="type-buttons">
+                            <button class="btn btn--outline type-btn active" data-type="linear">Linear</button>
+                            <button class="btn btn--outline type-btn" data-type="quadratic">Kuadrat</button>
+                            <button class="btn btn--outline type-btn" data-type="polynomial">Polinomial</button>
+                            <button class="btn btn--outline type-btn" data-type="rational">Rasional</button>
+                            <button class="btn btn--outline type-btn" data-type="exponential">Eksponensial</button>
+                            <button class="btn btn--outline type-btn" data-type="logarithmic">Logaritma</button>
+                            <button class="btn btn--outline type-btn" data-type="trigonometric">Trigonometri</button>
+                            <button class="btn btn--outline type-btn" data-type="absolute">Nilai Mutlak</button>
+                        </div>
+                    </div>
+
+                    <div class="type-display">
+                        <div class="card type-explanation">
+                            <h3 id="type-title">Fungsi Linear</h3>
+                            <div class="type-formula">
+                                <span class="formula-main" id="type-formula">f(x) = mx + b</span>
+                            </div>
+                            <p id="type-description">Fungsi polinomial berderajat satu yang grafiknya berupa garis lurus</p>
+                            <div class="type-characteristics">
+                                <h4>Karakteristik:</h4>
+                                <ul id="type-characteristics-list">
+                                    <li>Grafik berupa garis lurus</li>
+                                    <li>m = gradien/kemiringan</li>
+                                    <li>b = titik potong sumbu y</li>
+                                </ul>
+                            </div>
+                            <div class="type-example">
+                                <h4>Contoh:</h4>
+                                <p id="type-example-text">f(x) = 2x + 3</p>
+                            </div>
+                            <div class="type-domain-range">
+                                <h4>Domain & Range:</h4>
+                                <p><strong>Domain:</strong> <span id="type-domain">ℝ</span></p>
+                                <p><strong>Range:</strong> <span id="type-range">ℝ</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="type-graph">
+                            <canvas id="type-graph-canvas" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Domain & Range Section -->
+            <section id="domain-section" class="section">
+                <div class="domain-content">
+                    <h2>Domain dan Range Fungsi</h2>
+                    
+                    <div class="domain-explorer">
+                        <div class="function-input-section">
+                            <h3>Eksplorasi Domain dan Range</h3>
+                            <div class="input-group">
+                                <label class="form-label">Masukkan fungsi f(x):</label>
+                                <input type="text" id="domain-function" class="form-control" value="sqrt(x-2)" placeholder="Contoh: sqrt(x-2), 1/(x-3), x^2">
+                            </div>
+                            <button class="btn btn--primary" id="analyze-domain">Analisis Domain & Range</button>
+                        </div>
+                        
+                        <div class="domain-result">
+                            <div class="card">
+                                <h4>Hasil Analisis</h4>
+                                <div id="domain-analysis" class="analysis-result">
+                                    <p>Masukkan fungsi dan tekan tombol Analisis untuk melihat hasil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="common-domains">
+                        <h3>Domain dan Range Fungsi Umum</h3>
+                        <div class="domain-grid">
+                            <div class="card domain-card">
+                                <h4>f(x) = √x</h4>
+                                <p><strong>Domain:</strong> [0, ∞)</p>
+                                <p><strong>Range:</strong> [0, ∞)</p>
+                                <p><strong>Alasan:</strong> Akar kuadrat hanya terdefinisi untuk x ≥ 0</p>
+                            </div>
+                            <div class="card domain-card">
+                                <h4>f(x) = 1/x</h4>
+                                <p><strong>Domain:</strong> ℝ \ {0}</p>
+                                <p><strong>Range:</strong> ℝ \ {0}</p>
+                                <p><strong>Alasan:</strong> Pembagian dengan nol tidak terdefinisi</p>
+                            </div>
+                            <div class="card domain-card">
+                                <h4>f(x) = x²</h4>
+                                <p><strong>Domain:</strong> ℝ</p>
+                                <p><strong>Range:</strong> [0, ∞)</p>
+                                <p><strong>Alasan:</strong> Kuadrat selalu menghasilkan nilai non-negatif</p>
+                            </div>
+                            <div class="card domain-card">
+                                <h4>f(x) = ln(x)</h4>
+                                <p><strong>Domain:</strong> (0, ∞)</p>
+                                <p><strong>Range:</strong> ℝ</p>
+                                <p><strong>Alasan:</strong> Logaritma hanya terdefinisi untuk x > 0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grafik Section -->
+            <section id="grafik-section" class="section">
+                <div class="graph-content">
+                    <h2>Plotter Grafik Fungsi</h2>
+                    
+                    <div class="graph-main">
+                        <div class="graph-controls">
+                            <h3>Kontrol Grafik</h3>
+                            <div class="control-group">
+                                <div class="input-group">
+                                    <label class="form-label">Fungsi f(x):</label>
+                                    <input type="text" id="graph-function" class="form-control" value="x^2" placeholder="Contoh: x^2, sin(x), 2*x+1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Rentang x minimum:</label>
+                                    <input type="number" id="graph-x-min" class="form-control" value="-5" step="0.5">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Rentang x maksimum:</label>
+                                    <input type="number" id="graph-x-max" class="form-control" value="5" step="0.5">
+                                </div>
+                                <button class="btn btn--primary" id="plot-function">Plot Grafik</button>
+                            </div>
+                            
+                            <div class="preset-functions">
+                                <h4>Fungsi Preset</h4>
+                                <button class="btn btn--outline" data-function="x^2">y = x²</button>
+                                <button class="btn btn--outline" data-function="2*x+1">y = 2x + 1</button>
+                                <button class="btn btn--outline" data-function="sin(x)">y = sin(x)</button>
+                                <button class="btn btn--outline" data-function="abs(x)">y = |x|</button>
+                                <button class="btn btn--outline" data-function="sqrt(x)">y = √x</button>
+                                <button class="btn btn--outline" data-function="1/x">y = 1/x</button>
+                            </div>
+                        </div>
+                        
+                        <div class="graph-display" style="position: relative; height: 450px;">
+                            <canvas id="graph-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transformasi Section -->
+            <section id="transformasi-section" class="section">
+                <div class="transformation-content">
+                    <h2>Transformasi Fungsi</h2>
+                    
+                    <div class="transformation-main">
+                        <div class="transformation-controls">
+                            <h3>Kontrol Transformasi</h3>
+                            <p>Fungsi dasar: <span id="base-function">f(x) = x²</span></p>
+                            <p>Fungsi hasil: <span id="transformed-function">g(x) = x²</span></p>
+                            
+                            <div class="slider-group">
+                                <div class="slider-item">
+                                    <label class="form-label">Pergeseran Horizontal (h): <span id="h-value">0</span></label>
+                                    <input type="range" id="h-slider" class="slider" min="-5" max="5" step="0.5" value="0">
+                                    <p class="slider-help">f(x - h): negatif = kiri, positif = kanan</p>
+                                </div>
+                                
+                                <div class="slider-item">
+                                    <label class="form-label">Pergeseran Vertikal (k): <span id="k-value">0</span></label>
+                                    <input type="range" id="k-slider" class="slider" min="-5" max="5" step="0.5" value="0">
+                                    <p class="slider-help">f(x) + k: negatif = bawah, positif = atas</p>
+                                </div>
+                                
+                                <div class="slider-item">
+                                    <label class="form-label">Peregangan Vertikal (a): <span id="a-value">1</span></label>
+                                    <input type="range" id="a-slider" class="slider" min="0.1" max="3" step="0.1" value="1">
+                                    <p class="slider-help">a × f(x): > 1 regangkan, < 1 kompres</p>
+                                </div>
+                                
+                                <div class="slider-item">
+                                    <label class="form-label">Peregangan Horizontal (b): <span id="b-value">1</span></label>
+                                    <input type="range" id="b-slider" class="slider" min="0.1" max="3" step="0.1" value="1">
+                                    <p class="slider-help">f(bx): > 1 kompres, < 1 regangkan</p>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="reflect-x"> Refleksi terhadap sumbu X
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="reflect-y"> Refleksi terhadap sumbu Y
+                                    </label>
+                                </div>
+                                
+                                <button class="btn btn--outline" id="reset-transformation">Reset Transformasi</button>
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-graph" style="position: relative; height: 450px;">
+                            <canvas id="transformation-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Komposisi Section -->
+            <section id="komposisi-section" class="section">
+                <div class="composition-content">
+                    <h2>Komposisi Fungsi</h2>
+                    
+                    <div class="composition-calculator">
+                        <div class="card">
+                            <h3>Kalkulator Komposisi</h3>
+                            <div class="function-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Fungsi f(x):</label>
+                                    <input type="text" id="func-f" class="form-control" value="2*x+1" placeholder="Contoh: 2*x+1">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Fungsi g(x):</label>
+                                    <input type="text" id="func-g" class="form-control" value="x^2" placeholder="Contoh: x^2">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Nilai x:</label>
+                                    <input type="number" id="composition-x" class="form-control" value="2" step="0.1">
+                                </div>
+                                <button class="btn btn--primary" id="calculate-composition">Hitung Komposisi</button>
+                            </div>
+                            
+                            <div class="composition-result">
+                                <div id="composition-steps" class="steps-display">
+                                    <p>Masukkan fungsi dan nilai x untuk melihat langkah-langkah komposisi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="composition-types">
+                        <h3>Jenis Komposisi</h3>
+                        <div class="composition-grid">
+                            <div class="card composition-card">
+                                <h4>(f ∘ g)(x) = f(g(x))</h4>
+                                <p>Komposisi f dengan g: terapkan g terlebih dahulu, lalu f</p>
+                                <div class="composition-example">
+                                    <p><strong>Contoh:</strong></p>
+                                    <p>f(x) = 2x + 1, g(x) = x²</p>
+                                    <p>(f ∘ g)(x) = f(x²) = 2(x²) + 1 = 2x² + 1</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card composition-card">
+                                <h4>(g ∘ f)(x) = g(f(x))</h4>
+                                <p>Komposisi g dengan f: terapkan f terlebih dahulu, lalu g</p>
+                                <div class="composition-example">
+                                    <p><strong>Contoh:</strong></p>
+                                    <p>f(x) = 2x + 1, g(x) = x²</p>
+                                    <p>(g ∘ f)(x) = g(2x + 1) = (2x + 1)² = 4x² + 4x + 1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Invers Section -->
+            <section id="invers-section" class="section">
+                <div class="inverse-content">
+                    <h2>Fungsi Invers</h2>
+                    
+                    <div class="inverse-calculator">
+                        <div class="card">
+                            <h3>Kalkulator Fungsi Invers</h3>
+                            <div class="inverse-inputs">
+                                <div class="input-group">
+                                    <label class="form-label">Fungsi f(x):</label>
+                                    <input type="text" id="inverse-function" class="form-control" value="2*x+3" placeholder="Contoh: 2*x+3">
+                                </div>
+                                <button class="btn btn--primary" id="calculate-inverse">Cari Fungsi Invers</button>
+                            </div>
+                            
+                            <div class="inverse-result">
+                                <div id="inverse-steps" class="steps-display">
+                                    <p>Masukkan fungsi untuk melihat langkah-langkah mencari invers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inverse-examples">
+                        <h3>Contoh Fungsi Invers</h3>
+                        <div class="inverse-grid">
+                            <div class="card inverse-example">
+                                <h4>Fungsi Linear</h4>
+                                <p><strong>f(x) = 3x - 5</strong></p>
+                                <div class="inverse-steps-example">
+                                    <p>1. y = 3x - 5</p>
+                                    <p>2. x = 3y - 5</p>
+                                    <p>3. 3y = x + 5</p>
+                                    <p>4. y = (x + 5)/3</p>
+                                    <p><strong>f⁻¹(x) = (x + 5)/3</strong></p>
+                                </div>
+                            </div>
+                            
+                            <div class="card inverse-example">
+                                <h4>Fungsi Kuadrat</h4>
+                                <p><strong>f(x) = x² (x ≥ 0)</strong></p>
+                                <div class="inverse-steps-example">
+                                    <p>1. y = x²</p>
+                                    <p>2. x = y²</p>
+                                    <p>3. y = ±√x</p>
+                                    <p>4. Karena x ≥ 0, maka y ≥ 0</p>
+                                    <p><strong>f⁻¹(x) = √x</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Section -->
+            <section id="aplikasi-section" class="section">
+                <div class="applications-content">
+                    <h2>Aplikasi Fungsi dalam Kehidupan</h2>
+                    
+                    <div class="apps-grid">
+                        <div class="app-card">
+                            <h3>⚡ Fisika - Gerak dan Kinematika</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> s(t) = s₀ + v₀t + ½at²</p>
+                                    <p>Fungsi untuk menggambarkan posisi, kecepatan, dan percepatan</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Posisi awal (s₀) meter:</label>
+                                        <input type="number" id="physics-s0" class="form-control" value="2" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Kecepatan awal (v₀) m/s:</label>
+                                        <input type="number" id="physics-v0" class="form-control" value="20" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Percepatan (a) m/s²:</label>
+                                        <input type="number" id="physics-a" class="form-control" value="-10" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (t) detik:</label>
+                                        <input type="number" id="physics-t" class="form-control" value="1" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-physics">Hitung Posisi</button>
+                                    <div id="physics-result" class="app-result">
+                                        h(1) = 2 + 20(1) + ½(-10)(1)² = 17 meter
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>💰 Ekonomi - Fungsi Biaya dan Keuntungan</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> P(x) = R(x) - C(x)</p>
+                                    <p>Model matematika untuk analisis bisnis dan ekonomi</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Biaya tetap (ribu):</label>
+                                        <input type="number" id="econ-fixed" class="form-control" value="1000" step="10">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Biaya variabel per unit (ribu):</label>
+                                        <input type="number" id="econ-variable" class="form-control" value="50" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Harga jual per unit (ribu):</label>
+                                        <input type="number" id="econ-price" class="form-control" value="100" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Jumlah unit (x):</label>
+                                        <input type="number" id="econ-quantity" class="form-control" value="50" step="1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-economics">Hitung Keuntungan</button>
+                                    <div id="economics-result" class="app-result">
+                                        P(50) = 100(50) - (1000 + 50(50)) = 1500 ribu
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🦠 Biologi - Pertumbuhan Populasi</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> P(t) = P₀eʳᵗ</p>
+                                    <p>Model pertumbuhan eksponensial organisme</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Populasi awal (P₀):</label>
+                                        <input type="number" id="bio-p0" class="form-control" value="100" step="10">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Tingkat pertumbuhan (r):</label>
+                                        <input type="number" id="bio-r" class="form-control" value="0.1" step="0.01">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (t) periode:</label>
+                                        <input type="number" id="bio-t" class="form-control" value="5" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-biology">Hitung Populasi</button>
+                                    <div id="biology-result" class="app-result">
+                                        P(5) = 100 × e^(0.1×5) ≈ 165 organisme
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>💱 Matematika Keuangan</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p><strong>Rumus:</strong> A = P(1 + r)ᵗ</p>
+                                    <p>Perhitungan bunga majemuk dan investasi</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Modal awal (P) juta:</label>
+                                        <input type="number" id="finance-p" class="form-control" value="10" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Bunga per tahun (r):</label>
+                                        <input type="number" id="finance-r" class="form-control" value="0.08" step="0.01">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Waktu (t) tahun:</label>
+                                        <input type="number" id="finance-t" class="form-control" value="10" step="0.5">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-finance">Hitung Nilai Akhir</button>
+                                    <div id="finance-result" class="app-result">
+                                        A(10) = 10(1.08)¹⁰ ≈ 21.6 juta
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Section -->
+            <section id="latihan-section" class="section">
+                <div class="practice-content">
+                    <h2>Latihan Soal Fungsi</h2>
+                    
+                    <div class="practice-main">
+                        <div class="problem-container">
+                            <div class="card current-problem">
+                                <div class="problem-header">
+                                    <h3>Soal <span id="problem-number">1</span> dari <span id="total-problems">8</span></h3>
+                                    <div class="problem-score">
+                                        <span>Skor: <span id="current-score">0</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="problem-content">
+                                    <p id="problem-text">Tentukan domain dan range dari f(x) = √(x - 2)</p>
+                                    
+                                    <div class="answer-input">
+                                        <label class="form-label">Jawaban:</label>
+                                        <input type="text" id="answer-input" class="form-control" placeholder="Masukkan jawaban Anda">
+                                        <div class="answer-buttons">
+                                            <button class="btn btn--primary" id="check-answer">✓ Periksa</button>
+                                            <button class="btn btn--outline" id="show-hint">💡 Petunjuk</button>
+                                            <button class="btn btn--outline" id="show-solution">📝 Pembahasan</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="answer-feedback" id="answer-feedback"></div>
+                                    
+                                    <div class="problem-navigation">
+                                        <button class="btn btn--outline" id="prev-problem" disabled>← Sebelumnya</button>
+                                        <button class="btn btn--primary" id="next-problem">Selanjutnya →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-sidebar">
+                            <div class="card progress-card">
+                                <h4>Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="progress-text"><span id="completed-problems">0</span> dari <span id="total-problems-2">8</span> soal selesai</p>
+                            </div>
+                            
+                            <div class="card stats-card">
+                                <h4>Statistik</h4>
+                                <div class="stat-item">
+                                    <span class="stat-label">Benar:</span>
+                                    <span class="stat-value" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Salah:</span>
+                                    <span class="stat-value" id="wrong-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Akurasi:</span>
+                                    <span class="stat-value" id="accuracy">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card help-card">
+                                <h4>Tips</h4>
+                                <ul>
+                                    <li>Untuk akar kuadrat: nilai di dalam akar ≥ 0</li>
+                                    <li>Untuk pecahan: penyebut ≠ 0</li>
+                                    <li>Untuk logaritma: argumen > 0</li>
+                                    <li>Range adalah nilai y yang mungkin</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Media Pembelajaran Fungsi Matematika</h3>
+                    <p>Platform interaktif untuk mempelajari konsep fungsi dengan simulasi, visualisasi, dan aplikasi nyata dalam berbagai bidang kehidupan</p>
+                </div>
+                
+                <div class="footer-creator">
+                    <div class="creator-info">
+                        <h4>👨‍🎓 Dibuat oleh: Geraldi Valeska</h4>
+                        <p class="creator-title">Pembuat Media Pembelajaran</p>
+                        <p class="creation-date">📅 September 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+               <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+            <div class="footer-bottom">
+                <p>&copy;  2025 Siriusly. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

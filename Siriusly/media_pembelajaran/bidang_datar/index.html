@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidang Datar - Media Pembelajaran Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                <span class="shape-symbol">◯</span>
+                Bidang Datar
+                <span class="shape-symbol">△</span>
+            </h1>
+            <p class="header__subtitle">Media Pembelajaran Interaktif</p>
+            <div class="concept-formula">
+                <span class="formula">Bangun 2 Dimensi: Panjang × Lebar</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="btn btn--primary nav__btn active" data-section="beranda" id="nav-beranda">
+                    <span class="nav__icon">🏠</span>
+                    Beranda
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="teori" id="nav-teori">
+                    <span class="nav__icon">📚</span>
+                    Teori
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="jenis" id="nav-jenis">
+                    <span class="nav__icon">🔷</span>
+                    Jenis Bangun
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="sifat" id="nav-sifat">
+                    <span class="nav__icon">📐</span>
+                    Sifat Bangun
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="luas-keliling" id="nav-luas-keliling">
+                    <span class="nav__icon">📏</span>
+                    Luas & Keliling
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="konstruksi" id="nav-konstruksi">
+                    <span class="nav__icon">📝</span>
+                    Konstruksi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="simetri" id="nav-simetri">
+                    <span class="nav__icon">🔄</span>
+                    Simetri
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="kalkulator" id="nav-kalkulator">
+                    <span class="nav__icon">🧮</span>
+                    Kalkulator
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="aplikasi" id="nav-aplikasi">
+                    <span class="nav__icon">🌍</span>
+                    Aplikasi
+                </button>
+                <button class="btn btn--outline nav__btn" data-section="latihan" id="nav-latihan">
+                    <span class="nav__icon">📝</span>
+                    Latihan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Beranda Section -->
+            <section id="beranda-section" class="section active">
+                <div class="intro-hero">
+                    <h2>Pelajari Bidang Datar dengan Cara Interaktif</h2>
+                    <p>Memahami konsep bangun datar melalui visualisasi, simulasi, dan aplikasi nyata!</p>
+                    <div class="hero-visualization" id="hero-visualization">
+                        <canvas id="hero-canvas" width="600" height="350"></canvas>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <h3>Fitur Pembelajaran</h3>
+                    <div class="feature-cards">
+                        <div class="card feature-card" data-section="teori">
+                            <div class="feature-icon">📚</div>
+                            <h4>Konsep Dasar</h4>
+                            <p>Definisi bidang datar sebagai bentuk geometri 2 dimensi dengan karakteristik khusus</p>
+                            <button class="btn btn--sm btn--primary">Pelajari →</button>
+                        </div>
+                        <div class="card feature-card" data-section="jenis">
+                            <div class="feature-icon">🔷</div>
+                            <h4>Jenis-jenis Bangun</h4>
+                            <p>Persegi, persegi panjang, segitiga, lingkaran, dan bangun datar lainnya</p>
+                            <button class="btn btn--sm btn--primary">Jelajahi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="sifat">
+                            <div class="feature-icon">📐</div>
+                            <h4>Sifat & Karakteristik</h4>
+                            <p>Eksplorasi interaktif sisi, sudut, diagonal, dan simetri setiap bangun</p>
+                            <button class="btn btn--sm btn--primary">Coba →</button>
+                        </div>
+                        <div class="card feature-card" data-section="luas-keliling">
+                            <div class="feature-icon">📏</div>
+                            <h4>Luas & Keliling</h4>
+                            <p>Kalkulator interaktif dengan rumus dan visualisasi langkah demi langkah</p>
+                            <button class="btn btn--sm btn--primary">Hitung →</button>
+                        </div>
+                        <div class="card feature-card" data-section="simetri">
+                            <div class="feature-icon">🔄</div>
+                            <h4>Simetri & Transformasi</h4>
+                            <p>Simulasi simetri lipat, simetri putar, dan transformasi geometri</p>
+                            <button class="btn btn--sm btn--primary">Simulasi →</button>
+                        </div>
+                        <div class="card feature-card" data-section="aplikasi">
+                            <div class="feature-icon">🌍</div>
+                            <h4>Aplikasi Nyata</h4>
+                            <p>Penerapan bidang datar dalam arsitektur, seni, teknik, dan kehidupan sehari-hari</p>
+                            <button class="btn btn--sm btn--primary">Lihat →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teori Section -->
+            <section id="teori-section" class="section">
+                <div class="theory-content">
+                    <h2>Konsep Dasar Bidang Datar</h2>
+                    
+                    <div class="theory-main">
+                        <div class="theory-text">
+                            <h3>Definisi Bidang Datar</h3>
+                            <div class="definition-box">
+                                <p>Bidang datar atau bangun datar adalah bentuk geometri dua dimensi yang memiliki panjang dan lebar, tetapi tidak memiliki tinggi atau ketebalan</p>
+                                <div class="formula-box">
+                                    <span class="formula-main">Dimensi: Panjang × Lebar</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Karakteristik Bidang Datar</h3>
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <strong>Dua Dimensi</strong> = Memiliki panjang dan lebar saja
+                                </div>
+                                <div class="component-item">
+                                    <strong>Tidak Ada Ketebalan</strong> = Tidak memiliki tinggi atau kedalaman
+                                </div>
+                                <div class="component-item">
+                                    <strong>Dibatasi Garis</strong> = Dibentuk oleh garis lurus atau lengkung
+                                </div>
+                                <div class="component-item">
+                                    <strong>Dapat Diukur</strong> = Memiliki luas dan keliling yang dapat dihitung
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-visual">
+                            <canvas id="theory-visualization" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="classification-section">
+                        <h3>Klasifikasi Bidang Datar</h3>
+                        <div class="classification-grid">
+                            <div class="card classification-card">
+                                <h4>Berdasarkan Sisi</h4>
+                                <div class="classification-content">
+                                    <p><strong>Poligon:</strong> Dibatasi garis lurus (segitiga, segiempat, dll)</p>
+                                    <p><strong>Lingkaran:</strong> Dibatasi garis lengkung (lingkaran, elips)</p>
+                                </div>
+                            </div>
+                            <div class="card classification-card">
+                                <h4>Berdasarkan Keteraturan</h4>
+                                <div class="classification-content">
+                                    <p><strong>Beraturan:</strong> Semua sisi dan sudut sama</p>
+                                    <p><strong>Tidak Beraturan:</strong> Sisi dan sudut tidak semuanya sama</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jenis Bangun Section -->
+            <section id="jenis-section" class="section">
+                <div class="types-content">
+                    <h2>Jenis-jenis Bangun Datar</h2>
+                    
+                    <div class="shape-selector">
+                        <div class="shape-buttons">
+                            <button class="btn btn--outline shape-btn active" data-shape="square">Persegi</button>
+                            <button class="btn btn--outline shape-btn" data-shape="rectangle">Persegi Panjang</button>
+                            <button class="btn btn--outline shape-btn" data-shape="triangle">Segitiga</button>
+                            <button class="btn btn--outline shape-btn" data-shape="circle">Lingkaran</button>
+                            <button class="btn btn--outline shape-btn" data-shape="parallelogram">Jajar Genjang</button>
+                            <button class="btn btn--outline shape-btn" data-shape="rhombus">Belah Ketupat</button>
+                            <button class="btn btn--outline shape-btn" data-shape="kite">Layang-layang</button>
+                            <button class="btn btn--outline shape-btn" data-shape="trapezoid">Trapesium</button>
+                        </div>
+                    </div>
+
+                    <div class="shape-display">
+                        <div class="card shape-explanation">
+                            <h3 id="shape-title">Persegi</h3>
+                            <div class="shape-formula">
+                                <span class="formula-main" id="shape-formula">L = s², K = 4s</span>
+                            </div>
+                            <p id="shape-description">Bangun datar segiempat dengan keempat sisi sama panjang dan keempat sudut siku-siku</p>
+                            <div class="shape-properties">
+                                <h4>Sifat-sifat:</h4>
+                                <ul id="shape-properties-list">
+                                    <li>Keempat sisi sama panjang</li>
+                                    <li>Keempat sudutnya siku-siku</li>
+                                    <li>Diagonal sama panjang dan berpotongan tegak lurus</li>
+                                    <li>Memiliki 4 sumbu simetri</li>
+                                </ul>
+                            </div>
+                            <div class="shape-examples">
+                                <h4>Contoh dalam Kehidupan:</h4>
+                                <p id="shape-examples-text">Papan catur, kertas origami, keramik lantai, jendela persegi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shape-visual">
+                            <canvas id="shape-canvas" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sifat Bangun Section -->
+            <section id="sifat-section" class="section">
+                <div class="properties-content">
+                    <h2>Sifat-sifat Bangun Datar</h2>
+                    
+                    <div class="properties-explorer">
+                        <div class="property-selector">
+                            <h3>Pilih Bangun untuk Dieksplorasi</h3>
+                            <div class="property-shape-buttons">
+                                <button class="btn btn--outline property-shape-btn active" data-prop-shape="square">
+                                    <span class="shape-icon">⬜</span>
+                                    Persegi
+                                </button>
+                                <button class="btn btn--outline property-shape-btn" data-prop-shape="rectangle">
+                                    <span class="shape-icon">▬</span>
+                                    Persegi Panjang
+                                </button>
+                                <button class="btn btn--outline property-shape-btn" data-prop-shape="triangle">
+                                    <span class="shape-icon">▲</span>
+                                    Segitiga
+                                </button>
+                                <button class="btn btn--outline property-shape-btn" data-prop-shape="circle">
+                                    <span class="shape-icon">●</span>
+                                    Lingkaran
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="property-display">
+                            <div class="card property-info">
+                                <h4 id="property-shape-name">Persegi</h4>
+                                <div class="property-details">
+                                    <div class="property-item">
+                                        <strong>Jumlah Sisi:</strong> <span id="prop-sides">4</span>
+                                    </div>
+                                    <div class="property-item">
+                                        <strong>Jumlah Sudut:</strong> <span id="prop-angles">4</span>
+                                    </div>
+                                    <div class="property-item">
+                                        <strong>Sumbu Simetri:</strong> <span id="prop-symmetry">4</span>
+                                    </div>
+                                    <div class="property-item">
+                                        <strong>Diagonal:</strong> <span id="prop-diagonals">2 diagonal sama panjang</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="property-visual">
+                                <canvas id="property-canvas" width="350" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Luas & Keliling Section -->
+            <section id="luas-keliling-section" class="section">
+                <div class="calculation-content">
+                    <h2>Luas dan Keliling Bangun Datar</h2>
+                    
+                    <div class="calculation-main">
+                        <div class="calculation-controls">
+                            <h3>Kalkulator Luas & Keliling</h3>
+                            <div class="calc-shape-selector">
+                                <label class="form-label">Pilih Bangun:</label>
+                                <select id="calc-shape" class="form-control">
+                                    <option value="square">Persegi</option>
+                                    <option value="rectangle">Persegi Panjang</option>
+                                    <option value="triangle">Segitiga</option>
+                                    <option value="circle">Lingkaran</option>
+                                    <option value="parallelogram">Jajar Genjang</option>
+                                    <option value="rhombus">Belah Ketupat</option>
+                                </select>
+                            </div>
+                            
+                            <div id="calc-inputs" class="calc-inputs">
+                                <!-- Dynamic inputs will be inserted here -->
+                            </div>
+                            
+                            <button class="btn btn--primary" id="calculate-btn">Hitung</button>
+                            
+                            <div class="calculation-result">
+                                <div id="calc-result" class="result-display">
+                                    <p>Pilih bangun dan masukkan dimensi untuk menghitung luas dan keliling</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="calculation-visual">
+                            <canvas id="calc-canvas" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="formulas-reference">
+                        <h3>Rumus-rumus Penting</h3>
+                        <div class="formulas-grid">
+                            <div class="card formula-card">
+                                <h4>Persegi</h4>
+                                <p><strong>Luas:</strong> L = s²</p>
+                                <p><strong>Keliling:</strong> K = 4s</p>
+                            </div>
+                            <div class="card formula-card">
+                                <h4>Persegi Panjang</h4>
+                                <p><strong>Luas:</strong> L = p × l</p>
+                                <p><strong>Keliling:</strong> K = 2(p + l)</p>
+                            </div>
+                            <div class="card formula-card">
+                                <h4>Segitiga</h4>
+                                <p><strong>Luas:</strong> L = ½ × a × t</p>
+                                <p><strong>Keliling:</strong> K = a + b + c</p>
+                            </div>
+                            <div class="card formula-card">
+                                <h4>Lingkaran</h4>
+                                <p><strong>Luas:</strong> L = πr²</p>
+                                <p><strong>Keliling:</strong> K = 2πr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Konstruksi Section -->
+            <section id="konstruksi-section" class="section">
+                <div class="construction-content">
+                    <h2>Konstruksi Geometri</h2>
+                    
+                    <div class="construction-tools">
+                        <h3>Alat Konstruksi Digital</h3>
+                        <div class="tool-buttons">
+                            <button class="btn btn--outline tool-btn active" id="compass-tool">
+                                <span class="tool-icon">⭕</span>
+                                Jangka
+                            </button>
+                            <button class="btn btn--outline tool-btn" id="ruler-tool">
+                                <span class="tool-icon">📏</span>
+                                Penggaris
+                            </button>
+                            <button class="btn btn--outline tool-btn" id="protractor-tool">
+                                <span class="tool-icon">📐</span>
+                                Busur Derajat
+                            </button>
+                            <button class="btn btn--outline tool-btn" id="clear-tool">
+                                <span class="tool-icon">🗑️</span>
+                                Hapus
+                            </button>
+                        </div>
+                        
+                        <div class="construction-canvas-container">
+                            <canvas id="construction-canvas" width="600" height="400"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="construction-instructions">
+                        <h3>Petunjuk Konstruksi</h3>
+                        <div class="instruction-tabs">
+                            <button class="btn btn--outline instruction-tab active" data-instruction="perpendicular">
+                                Garis Tegak Lurus
+                            </button>
+                            <button class="btn btn--outline instruction-tab" data-instruction="bisector">
+                                Pembagi Sudut
+                            </button>
+                            <button class="btn btn--outline instruction-tab" data-instruction="triangle">
+                                Segitiga
+                            </button>
+                        </div>
+                        
+                        <div class="card instruction-display">
+                            <div id="instruction-content">
+                                <h4>Membuat Garis Tegak Lurus</h4>
+                                <ol>
+                                    <li>Buat busur dari kedua ujung garis dengan jari-jari yang sama</li>
+                                    <li>Tandai perpotongan busur di atas dan bawah garis</li>
+                                    <li>Hubungkan kedua titik perpotongan dengan garis lurus</li>
+                                    <li>Garis yang terbentuk tegak lurus terhadap garis asli</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simetri Section -->
+            <section id="simetri-section" class="section">
+                <div class="symmetry-content">
+                    <h2>Simetri dan Transformasi</h2>
+                    
+                    <div class="symmetry-explorer">
+                        <div class="symmetry-controls">
+                            <h3>Eksplorasi Simetri</h3>
+                            <div class="symmetry-shape-selector">
+                                <label class="form-label">Pilih Bangun:</label>
+                                <select id="symmetry-shape" class="form-control">
+                                    <option value="square">Persegi</option>
+                                    <option value="rectangle">Persegi Panjang</option>
+                                    <option value="triangle">Segitiga Sama Sisi</option>
+                                    <option value="circle">Lingkaran</option>
+                                    <option value="rhombus">Belah Ketupat</option>
+                                </select>
+                            </div>
+                            
+                            <div class="symmetry-options">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="show-line-symmetry" checked>
+                                        Tampilkan Sumbu Simetri
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="show-rotation-center">
+                                        Tampilkan Pusat Rotasi
+                                    </label>
+                                </div>
+                                
+                                <div class="rotation-control">
+                                    <label class="form-label">Rotasi: <span id="rotation-value">0°</span></label>
+                                    <input type="range" id="rotation-slider" class="slider" min="0" max="360" step="15" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="symmetry-display">
+                            <canvas id="symmetry-canvas" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="symmetry-info">
+                        <h3>Jenis Simetri</h3>
+                        <div class="symmetry-types">
+                            <div class="card symmetry-type-card">
+                                <h4>Simetri Lipat</h4>
+                                <p>Sifat bangun yang dapat dilipat sehingga bagian satu dengan lainnya tepat berhimpit</p>
+                                <div class="symmetry-examples">
+                                    <p><strong>Persegi:</strong> 4 sumbu simetri</p>
+                                    <p><strong>Persegi Panjang:</strong> 2 sumbu simetri</p>
+                                    <p><strong>Segitiga Sama Sisi:</strong> 3 sumbu simetri</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card symmetry-type-card">
+                                <h4>Simetri Putar</h4>
+                                <p>Sifat bangun yang tampak sama setelah diputar dengan sudut tertentu</p>
+                                <div class="symmetry-examples">
+                                    <p><strong>Persegi:</strong> Orde 4 (90°, 180°, 270°)</p>
+                                    <p><strong>Segitiga Sama Sisi:</strong> Orde 3 (120°, 240°)</p>
+                                    <p><strong>Lingkaran:</strong> Orde tak terhingga</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalkulator Section -->
+            <section id="kalkulator-section" class="section">
+                <div class="calculator-content">
+                    <h2>Kalkulator Bidang Datar</h2>
+                    
+                    <div class="calculator-main">
+                        <div class="calculator-input">
+                            <div class="card">
+                                <h3>Input Perhitungan</h3>
+                                <div class="calc-type-selector">
+                                    <label class="form-label">Jenis Perhitungan:</label>
+                                    <select id="calc-type" class="form-control">
+                                        <option value="single">Bangun Tunggal</option>
+                                        <option value="composite">Bangun Gabungan</option>
+                                        <option value="compare">Perbandingan</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="calculator-inputs">
+                                    <!-- Dynamic calculator inputs -->
+                                </div>
+                                
+                                <button class="btn btn--primary btn--full-width" id="advanced-calculate">
+                                    Hitung Lengkap
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="calculator-output">
+                            <div class="card">
+                                <h3>Hasil Perhitungan</h3>
+                                <div id="calculator-result" class="calculator-result-display">
+                                    <p>Pilih jenis perhitungan dan masukkan data untuk melihat hasil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplikasi Section -->
+            <section id="aplikasi-section" class="section">
+                <div class="applications-content">
+                    <h2>Aplikasi Bidang Datar dalam Kehidupan</h2>
+                    
+                    <div class="apps-grid">
+                        <div class="app-card">
+                            <h3>🏗️ Arsitektur dan Konstruksi</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p>Menghitung luas lantai, dinding, atap untuk kebutuhan material konstruksi</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Panjang ruangan (m):</label>
+                                        <input type="number" id="room-length" class="form-control" value="8" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Lebar ruangan (m):</label>
+                                        <input type="number" id="room-width" class="form-control" value="6" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Ukuran keramik (cm):</label>
+                                        <input type="number" id="tile-size" class="form-control" value="30" step="1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-architecture">Hitung Kebutuhan Keramik</button>
+                                    <div id="architecture-result" class="app-result">
+                                        Masukkan data untuk melihat hasil perhitungan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🎨 Seni dan Desain</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p>Membuat pola, ornamen, dan komposisi visual menggunakan bentuk geometris</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Ukuran kanvas (cm):</label>
+                                        <input type="number" id="canvas-size" class="form-control" value="50" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Ukuran motif (cm):</label>
+                                        <input type="number" id="motif-size" class="form-control" value="5" step="0.1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Jenis pola:</label>
+                                        <select id="pattern-type" class="form-control">
+                                            <option value="square">Persegi</option>
+                                            <option value="hexagon">Heksagon</option>
+                                            <option value="triangle">Segitiga</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-art">Hitung Jumlah Motif</button>
+                                    <div id="art-result" class="app-result">
+                                        Masukkan data untuk melihat hasil perhitungan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>🌱 Pertanian dan Kehutanan</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p>Mengukur lahan, merencanakan tata tanam, menghitung kebutuhan pupuk</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Panjang lahan (m):</label>
+                                        <input type="number" id="land-length" class="form-control" value="100" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Lebar lahan (m):</label>
+                                        <input type="number" id="land-width" class="form-control" value="80" step="1">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Kebutuhan pupuk (kg/m²):</label>
+                                        <input type="number" id="fertilizer-rate" class="form-control" value="0.5" step="0.1">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-agriculture">Hitung Kebutuhan Pupuk</button>
+                                    <div id="agriculture-result" class="app-result">
+                                        Masukkan data untuk melihat hasil perhitungan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <h3>⚽ Olahraga dan Rekreasi</h3>
+                            <div class="app-content">
+                                <div class="app-description">
+                                    <p>Merancang lapangan, menghitung area bermain, perencanaan fasilitas</p>
+                                </div>
+                                <div class="app-calculator">
+                                    <div class="input-group">
+                                        <label class="form-label">Jenis lapangan:</label>
+                                        <select id="field-type" class="form-control">
+                                            <option value="football">Sepak Bola</option>
+                                            <option value="basketball">Basket</option>
+                                            <option value="tennis">Tenis</option>
+                                            <option value="badminton">Bulu Tangkis</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="form-label">Biaya per m² (ribu):</label>
+                                        <input type="number" id="cost-per-sqm" class="form-control" value="100" step="10">
+                                    </div>
+                                    <button class="btn btn--primary" id="calc-sports">Hitung Biaya Lapangan</button>
+                                    <div id="sports-result" class="app-result">
+                                        Pilih jenis lapangan untuk melihat hasil perhitungan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Section -->
+            <section id="latihan-section" class="section">
+                <div class="practice-content">
+                    <h2>Latihan Soal Bidang Datar</h2>
+                    
+                    <div class="practice-main">
+                        <div class="problem-container">
+                            <div class="card current-problem">
+                                <div class="problem-header">
+                                    <h3>Soal <span id="problem-number">1</span> dari <span id="total-problems">8</span></h3>
+                                    <div class="problem-score">
+                                        <span>Skor: <span id="current-score">0</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="problem-content">
+                                    <p id="problem-text">Sebuah persegi memiliki sisi 8 cm. Hitunglah luasnya!</p>
+                                    
+                                    <div class="answer-input">
+                                        <label class="form-label">Jawaban:</label>
+                                        <input type="text" id="answer-input" class="form-control" placeholder="Masukkan jawaban Anda">
+                                        <div class="answer-buttons">
+                                            <button class="btn btn--primary" id="check-answer">✓ Periksa</button>
+                                            <button class="btn btn--outline" id="show-hint">💡 Petunjuk</button>
+                                            <button class="btn btn--outline" id="show-solution">📝 Pembahasan</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="answer-feedback" id="answer-feedback"></div>
+                                    
+                                    <div class="problem-navigation">
+                                        <button class="btn btn--outline" id="prev-problem" disabled>← Sebelumnya</button>
+                                        <button class="btn btn--primary" id="next-problem">Selanjutnya →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-sidebar">
+                            <div class="card progress-card">
+                                <h4>Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="progress-text"><span id="completed-problems">0</span> dari <span id="total-problems-2">8</span> soal selesai</p>
+                            </div>
+                            
+                            <div class="card stats-card">
+                                <h4>Statistik</h4>
+                                <div class="stat-item">
+                                    <span class="stat-label">Benar:</span>
+                                    <span class="stat-value" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Salah:</span>
+                                    <span class="stat-value" id="wrong-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Akurasi:</span>
+                                    <span class="stat-value" id="accuracy">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card help-card">
+                                <h4>Tips</h4>
+                                <ul>
+                                    <li>Perhatikan satuan dalam soal</li>
+                                    <li>Gunakan rumus yang tepat</li>
+                                    <li>Hitung dengan teliti</li>
+                                    <li>Periksa kembali jawaban</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+       <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Media Pembelajaran Bidang Datar</h3>
+                    <p>Platform interaktif untuk mempelajari konsep bidang datar dengan simulasi, visualisasi, dan aplikasi nyata dalam berbagai bidang kehidupan</p>
+                </div>
+                
+                <div class="footer-creator">
+                    <div class="creator-info">
+                        <h4>👨‍🎓 Dibuat oleh: Geraldi Valeska</h4>
+                        <p class="creator-title">Pembuat Media Pembelajaran</p>
+                        <p class="creation-date">📅 September 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Siriusly - Transforming Education Through Innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

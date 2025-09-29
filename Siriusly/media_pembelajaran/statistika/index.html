@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistika SMK - Platform Pembelajaran</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>📊 Statistika SMK</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#beranda" class="nav-link active" data-section="beranda">Beranda</a>
+                <a href="#materi" class="nav-link" data-section="materi">Materi</a>
+                <a href="#contoh" class="nav-link" data-section="contoh">Contoh Soal</a>
+                <a href="#simulasi" class="nav-link" data-section="simulasi">Simulasi</a>
+                <a href="#aplikasi" class="nav-link" data-section="aplikasi">Aplikasi</a>
+                <a href="#latihan" class="nav-link" data-section="latihan">Latihan</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Beranda Section -->
+        <section id="beranda" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Selamat Datang di Platform Pembelajaran Statistika SMK</h1>
+                        <p>Pelajari statistika dengan cara yang menyenangkan dan interaktif. Platform ini dirancang khusus untuk siswa SMK dengan materi lengkap, simulasi, dan latihan soal.</p>
+                        <button class="btn btn--primary" onclick="navigateToSection('materi')">Mulai Belajar</button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="math-shapes">
+                            <div class="shape shape-1">📈</div>
+                            <div class="shape shape-2">📊</div>
+                            <div class="shape shape-3">🔢</div>
+                            <div class="shape shape-4">📋</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="container">
+                    <h2>Yang Akan Anda Pelajari</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3>📚 Materi Lengkap</h3>
+                            <p>Pengenalan statistika, penyajian data, ukuran pemusatan, dan penyebaran data</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>💡 Contoh Soal</h3>
+                            <p>Pembahasan soal dengan langkah-langkah yang jelas dan mudah dipahami</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>🎮 Simulasi Interaktif</h3>
+                            <p>Kalkulator statistika dan generator grafik untuk pemahaman yang lebih baik</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>🏆 Latihan Soal</h3>
+                            <p>10 soal latihan dengan sistem penilaian otomatis dan pembahasan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materi Section -->
+        <section id="materi" class="section">
+            <div class="container">
+                <h1>Materi Pembelajaran</h1>
+                
+                <div class="topic-nav">
+                    <button class="topic-btn active" data-topic="pengenalan">Pengenalan Statistika</button>
+                    <button class="topic-btn" data-topic="penyajian">Penyajian Data</button>
+                    <button class="topic-btn" data-topic="pemusatan">Ukuran Pemusatan</button>
+                    <button class="topic-btn" data-topic="penyebaran">Ukuran Penyebaran</button>
+                </div>
+
+                <!-- Pengenalan Statistika -->
+                <div class="topic-content active" id="pengenalan">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2>Pengenalan Statistika</h2>
+                            <h3>Definisi Statistika</h3>
+                            <p>Statistika adalah ilmu yang mempelajari cara mengumpulkan, mengolah, menganalisis, dan menyajikan data untuk penarikan kesimpulan yang berguna dalam pengambilan keputusan.</p>
+                            
+                            <h3>Jenis-jenis Data</h3>
+                            <div class="data-types">
+                                <div class="data-type">
+                                    <h4>Data Kualitatif</h4>
+                                    <p>Data yang berbentuk kategori atau atribut. Contoh: jenis kelamin, warna, kualitas produk.</p>
+                                </div>
+                                <div class="data-type">
+                                    <h4>Data Kuantitatif</h4>
+                                    <p>Data yang berbentuk angka. Dibagi menjadi:</p>
+                                    <ul>
+                                        <li><strong>Diskrit:</strong> Data yang nilainya berupa bilangan bulat. Contoh: jumlah siswa, jumlah mobil.</li>
+                                        <li><strong>Kontinu:</strong> Data yang nilainya berupa interval. Contoh: tinggi badan, berat badan.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Populasi dan Sampel</h3>
+                            <p><strong>Populasi:</strong> Keseluruhan objek yang akan diteliti.</p>
+                            <p><strong>Sampel:</strong> Bagian dari populasi yang dipilih untuk diteliti.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penyajian Data -->
+                <div class="topic-content" id="penyajian">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2>Penyajian Data</h2>
+                            
+                            <h3>Tabel Distribusi Frekuensi</h3>
+                            <p>Tabel yang menunjukkan frekuensi kemunculan setiap nilai atau kelompok nilai dalam data.</p>
+                            
+                            <div class="example-table">
+                                <h4>Contoh Tabel Distribusi Frekuensi:</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nilai</th>
+                                            <th>Frekuensi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>60-69</td><td>5</td></tr>
+                                        <tr><td>70-79</td><td>8</td></tr>
+                                        <tr><td>80-89</td><td>12</td></tr>
+                                        <tr><td>90-99</td><td>10</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>Diagram dan Grafik</h3>
+                            <ul>
+                                <li><strong>Diagram Batang:</strong> Untuk data kualitatif atau kuantitatif diskrit</li>
+                                <li><strong>Diagram Lingkaran:</strong> Untuk menunjukkan proporsi data</li>
+                                <li><strong>Histogram:</strong> Untuk data kuantitatif berkelompok</li>
+                                <li><strong>Poligon Frekuensi:</strong> Garis yang menghubungkan titik-titik tengah histogram</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ukuran Pemusatan -->
+                <div class="topic-content" id="pemusatan">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2>Ukuran Pemusatan Data</h2>
+                            
+                            <div class="measure">
+                                <h3>Mean (Rata-rata)</h3>
+                                <p>Jumlah semua nilai dibagi dengan banyaknya data.</p>
+                                <div class="formula">$$\bar{x} = \frac{\sum x_i}{n}$$</div>
+                                <p><strong>Data berkelompok:</strong></p>
+                                <div class="formula">$$\bar{x} = \frac{\sum f_i \cdot x_i}{\sum f_i}$$</div>
+                                <p>dimana f<sub>i</sub> = frekuensi, x<sub>i</sub> = titik tengah kelas</p>
+                            </div>
+
+                            <div class="measure">
+                                <h3>Median (Nilai Tengah)</h3>
+                                <p>Nilai yang membagi data menjadi dua bagian sama besar setelah data diurutkan.</p>
+                                <p><strong>Data ganjil (n ganjil):</strong></p>
+                                <div class="formula">$$Me = x_{\frac{n+1}{2}}$$</div>
+                                <p><strong>Data genap (n genap):</strong></p>
+                                <div class="formula">$$Me = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2}$$</div>
+                            </div>
+
+                            <div class="measure">
+                                <h3>Modus</h3>
+                                <p>Nilai yang paling sering muncul dalam data.</p>
+                                <p>Untuk data berkelompok, modus berada pada kelas dengan frekuensi tertinggi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ukuran Penyebaran -->
+                <div class="topic-content" id="penyebaran">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2>Ukuran Penyebaran Data</h2>
+                            
+                            <div class="measure">
+                                <h3>Jangkauan (Range)</h3>
+                                <p>Selisih antara nilai tertinggi dan nilai terendah.</p>
+                                <div class="formula">$$R = x_{max} - x_{min}$$</div>
+                            </div>
+
+                            <div class="measure">
+                                <h3>Ragam (Variance)</h3>
+                                <p>Rata-rata kuadrat selisih setiap data dengan rata-ratanya.</p>
+                                <div class="formula">$$s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}$$</div>
+                            </div>
+
+                            <div class="measure">
+                                <h3>Simpangan Baku (Standard Deviation)</h3>
+                                <p>Akar kuadrat dari ragam.</p>
+                                <div class="formula">$$s = \sqrt{s^2} = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}$$</div>
+                            </div>
+
+                            <div class="measure">
+                                <h3>Kuartil dan Persentil</h3>
+                                <p><strong>Kuartil:</strong> Nilai yang membagi data menjadi 4 bagian sama besar.</p>
+                                <ul>
+                                    <li>Q1 = kuartil pertama (25%)</li>
+                                    <li>Q2 = kuartil kedua = median (50%)</li>
+                                    <li>Q3 = kuartil ketiga (75%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contoh Soal Section -->
+        <section id="contoh" class="section">
+            <div class="container">
+                <h1>Contoh Soal dan Pembahasan</h1>
+                
+                <div class="examples-list">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Contoh 1: Menghitung Mean Data Tunggal</h3>
+                            <p><strong>Soal:</strong> Nilai ujian 8 siswa adalah: 75, 80, 85, 70, 90, 85, 75, 88. Hitunglah rata-rata nilai ujian tersebut!</p>
+                            
+                            <div class="solution">
+                                <h4>Pembahasan:</h4>
+                                <p><strong>Langkah 1:</strong> Jumlahkan semua nilai</p>
+                                <p>75 + 80 + 85 + 70 + 90 + 85 + 75 + 88 = 648</p>
+                                
+                                <p><strong>Langkah 2:</strong> Hitung banyaknya data</p>
+                                <p>n = 8</p>
+                                
+                                <p><strong>Langkah 3:</strong> Gunakan rumus mean</p>
+                                <div class="formula">$$\bar{x} = \frac{\sum x_i}{n} = \frac{648}{8} = 81$$</div>
+                                
+                                <p><strong>Jawab:</strong> Rata-rata nilai ujian adalah 81</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Contoh 2: Menghitung Median</h3>
+                            <p><strong>Soal:</strong> Dari data: 12, 15, 10, 18, 14, 16, 11. Tentukan median!</p>
+                            
+                            <div class="solution">
+                                <h4>Pembahasan:</h4>
+                                <p><strong>Langkah 1:</strong> Urutkan data dari kecil ke besar</p>
+                                <p>10, 11, 12, 14, 15, 16, 18</p>
+                                
+                                <p><strong>Langkah 2:</strong> Tentukan banyaknya data</p>
+                                <p>n = 7 (ganjil)</p>
+                                
+                                <p><strong>Langkah 3:</strong> Cari posisi median</p>
+                                <p>Posisi median = (n+1)/2 = (7+1)/2 = 4</p>
+                                
+                                <p><strong>Langkah 4:</strong> Tentukan nilai median</p>
+                                <p>Median = data ke-4 = 14</p>
+                                
+                                <p><strong>Jawab:</strong> Median = 14</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Contoh 3: Membuat Tabel Distribusi Frekuensi</h3>
+                            <p><strong>Soal:</strong> Data nilai ujian 20 siswa: 65, 70, 75, 80, 68, 72, 78, 85, 67, 73, 76, 82, 69, 74, 77, 83, 66, 71, 79, 84. Buatlah tabel distribusi frekuensi dengan 5 kelas!</p>
+                            
+                            <div class="solution">
+                                <h4>Pembahasan:</h4>
+                                <p><strong>Langkah 1:</strong> Tentukan nilai tertinggi dan terendah</p>
+                                <p>Nilai tertinggi = 85, Nilai terendah = 65</p>
+                                
+                                <p><strong>Langkah 2:</strong> Hitung jangkauan (range)</p>
+                                <p>R = 85 - 65 = 20</p>
+                                
+                                <p><strong>Langkah 3:</strong> Tentukan panjang interval</p>
+                                <p>Panjang interval = R/banyak kelas = 20/5 = 4</p>
+                                
+                                <p><strong>Langkah 4:</strong> Buat tabel distribusi frekuensi</p>
+                                <table>
+                                    <thead>
+                                        <tr><th>Kelas</th><th>Frekuensi</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>65-68</td><td>4</td></tr>
+                                        <tr><td>69-72</td><td>4</td></tr>
+                                        <tr><td>73-76</td><td>4</td></tr>
+                                        <tr><td>77-80</td><td>4</td></tr>
+                                        <tr><td>81-84</td><td>3</td></tr>
+                                        <tr><td>85-88</td><td>1</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulasi Section -->
+        <section id="simulasi" class="section">
+            <div class="container">
+                <h1>Simulasi Interaktif</h1>
+                
+                <div class="simulators">
+                    <!-- Kalkulator Statistika -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🧮 Kalkulator Statistika</h3>
+                            <p>Masukkan data Anda (pisahkan dengan koma):</p>
+                            <input type="text" id="dataInput" class="form-control" placeholder="Contoh: 5,7,8,6,9,5,7,8,6,9">
+                            <button class="btn btn--primary mt-8" onclick="calculateStats()">Hitung</button>
+                            
+                            <div id="statsResults" class="stats-results hidden">
+                                <h4>Hasil Perhitungan:</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Mean:</span>
+                                        <span id="meanResult" class="stat-value">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Median:</span>
+                                        <span id="medianResult" class="stat-value">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Modus:</span>
+                                        <span id="modeResult" class="stat-value">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Range:</span>
+                                        <span id="rangeResult" class="stat-value">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generator Grafik -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>📊 Generator Grafik</h3>
+                            <p>Masukkan data dan label (pisahkan dengan koma):</p>
+                            <div class="form-group">
+                                <label class="form-label">Label:</label>
+                                <input type="text" id="chartLabels" class="form-control" placeholder="A,B,C,D,E">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Data:</label>
+                                <input type="text" id="chartData" class="form-control" placeholder="10,20,30,25,15">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Jenis Grafik:</label>
+                                <select id="chartType" class="form-control">
+                                    <option value="bar">Diagram Batang</option>
+                                    <option value="pie">Diagram Lingkaran</option>
+                                    <option value="line">Diagram Garis</option>
+                                </select>
+                            </div>
+                            <button class="btn btn--primary" onclick="generateChart()">Buat Grafik</button>
+                            
+                            <div class="chart-container" style="position: relative; height: 400px; margin-top: 20px;">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplikasi Section -->
+        <section id="aplikasi" class="section">
+            <div class="container">
+                <h1>Aplikasi dalam Kehidupan</h1>
+                
+                <div class="applications">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🏢 Bisnis dan Ekonomi</h3>
+                            <div class="app-examples">
+                                <div class="app-item">
+                                    <h4>Analisis Penjualan</h4>
+                                    <p>Toko ABC mencatat penjualan harian selama sebulan. Dengan statistika, pemilik dapat mengetahui rata-rata penjualan, hari dengan penjualan tertinggi, dan tren penjualan.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Kontrol Kualitas Produksi</h4>
+                                    <p>Pabrik menggunakan statistika untuk memantau kualitas produk, mengidentifikasi cacat produksi, dan memastikan standar kualitas terpenuhi.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Riset Pasar</h4>
+                                    <p>Survei konsumen menggunakan statistika untuk menganalisis preferensi pelanggan dan membantu pengambilan keputusan bisnis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🏠 Kehidupan Sehari-hari</h3>
+                            <div class="app-examples">
+                                <div class="app-item">
+                                    <h4>Prakiraan Cuaca</h4>
+                                    <p>BMKG menggunakan data statistik suhu, kelembaban, dan tekanan udara untuk memprediksi cuaca esok hari.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Statistik Olahraga</h4>
+                                    <p>Rata-rata skor pemain, persentase tembakan berhasil, dan analisis performa tim menggunakan konsep statistika.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Data Kesehatan</h4>
+                                    <p>Rumah sakit menganalisis data pasien untuk mengidentifikasi penyakit yang sering muncul dan merencanakan pelayanan kesehatan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🏭 Aplikasi Industri</h3>
+                            <div class="app-examples">
+                                <div class="app-item">
+                                    <h4>Evaluasi Kinerja Karyawan</h4>
+                                    <p>HR menggunakan statistika untuk menilai produktivitas karyawan dan membuat program pelatihan yang tepat.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Manajemen Inventori</h4>
+                                    <p>Perusahaan menganalisis pola pembelian untuk menentukan stok optimal dan menghindari kelebihan atau kekurangan barang.</p>
+                                </div>
+                                <div class="app-item">
+                                    <h4>Perencanaan Keuangan</h4>
+                                    <p>Bank menggunakan statistika untuk menganalisis risiko kredit dan menentukan suku bunga yang tepat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latihan Section -->
+        <section id="latihan" class="section">
+            <div class="container">
+                <h1>Latihan Soal</h1>
+                
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressBar"></div>
+                            </div>
+                            <span id="questionCounter">1/10</span>
+                        </div>
+                        <div class="quiz-score">
+                            <span>Skor: <span id="currentScore">0</span>/10</span>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="quizQuestion">
+                        <h3 id="questionText"></h3>
+                        <div class="answer-options" id="answerOptions">
+                            <!-- Options will be inserted here -->
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="btn btn--primary" id="submitAnswer" onclick="submitAnswer()">Submit Jawaban</button>
+                            <button class="btn btn--secondary hidden" id="nextQuestion" onclick="nextQuestion()">Soal Berikutnya</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-feedback hidden" id="quizFeedback">
+                        <div class="feedback-content">
+                            <h4 id="feedbackTitle"></h4>
+                            <p id="feedbackExplanation"></p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-results hidden" id="quizResults">
+                        <div class="results-content">
+                            <h2>🎉 Quiz Selesai!</h2>
+                            <div class="final-score">
+                                <span>Skor Akhir: <span id="finalScore">0</span>/10</span>
+                                <div class="score-percentage" id="scorePercentage">0%</div>
+                            </div>
+                            <button class="btn btn--primary" onclick="restartQuiz()">Ulang Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+       <!--Ballon Saweria-->
+    <!-- Balloon Floating Button -->
+<div id="donation-balloon">
+  🎈
+  <span id="donation-text">Klik di sini untuk donasi</span>
+</div>
+
+<style>
+#donation-balloon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffebc2;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 2s infinite;
+}
+
+#donation-text {
+  position: absolute;
+  right: 60px;
+  background: #fff3cd;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+</style>
+
+<script>
+const balloon = document.getElementById("donation-balloon");
+const text = document.getElementById("donation-text");
+
+// Klik balon → buka link donasi
+balloon.addEventListener("click", () => {
+  window.open("https://nyawer.co/ralls", "_blank");
+});
+
+// Sembunyikan teks setelah 15 detik
+setTimeout(() => {
+  text.style.display = "none";
+}, 15000);
+</script>
+
+        <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ralls. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
